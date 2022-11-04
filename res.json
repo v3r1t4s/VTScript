@@ -1,0 +1,1344 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "type_description": "Win32 EXE",
+                "tlsh": "T1D6D3F1ABE75A14B8D582863085E78333FC36FC540E75506E0690CB3E3E62B84DA39E47",
+                "vhash": "0150d76d1515151c051d1az2233fz1011z1fz",
+                "trid": [
+                    {
+                        "file_type": "Microsoft Visual C++ compiled executable (generic)",
+                        "probability": 43.3
+                    },
+                    {
+                        "file_type": "Win64 Executable (generic)",
+                        "probability": 27.6
+                    },
+                    {
+                        "file_type": "Win16 NE executable (generic)",
+                        "probability": 13.2
+                    },
+                    {
+                        "file_type": "OS/2 Executable (generic)",
+                        "probability": 5.3
+                    },
+                    {
+                        "file_type": "Generic Win/DOS Executable",
+                        "probability": 5.2
+                    }
+                ],
+                "creation_date": 1643730472,
+                "names": [
+                    "git-cmd.exe",
+                    "git.exe",
+                    "git",
+                    "git-cmd.exe (copy)"
+                ],
+                "signature_info": {
+                    "product": "Git",
+                    "verified": "Signed",
+                    "description": "Git for Windows",
+                    "signing date": "03:59 PM 02/01/2022",
+                    "x509": [
+                        {
+                            "name": "Johannes Schindelin",
+                            "algorithm": "sha256RSA",
+                            "valid from": "2021-05-17 00:00:00",
+                            "valid to": "2022-05-17 23:59:59",
+                            "serial number": "52 C9 95 B4 31 72 41 20 D8 C5 F8 4D 05 39 88 D0",
+                            "cert issuer": "Sectigo RSA Code Signing CA",
+                            "thumbprint": "5FF4E1DB05A00905D6AE88B95BB52CACBEB10A7F",
+                            "valid_usage": "Code Signing"
+                        },
+                        {
+                            "name": "Sectigo RSA Code Signing CA",
+                            "algorithm": "sha384RSA",
+                            "valid from": "2018-11-02 00:00:00",
+                            "valid to": "2030-12-31 23:59:59",
+                            "serial number": "1D A2 48 30 6F 9B 26 18 D0 82 E0 96 7D 33 D3 6A",
+                            "cert issuer": "USERTrust RSA Certification Authority",
+                            "thumbprint": "94C95DA1E850BD85209A4A2AF3E1FB1604F9BB66",
+                            "valid_usage": "Code Signing, Timestamp Signing"
+                        },
+                        {
+                            "name": "USERTrust RSA Certification Authority",
+                            "algorithm": "sha384RSA",
+                            "valid from": "2019-03-12 00:00:00",
+                            "valid to": "2028-12-31 23:59:59",
+                            "serial number": "39 72 44 3A F9 22 B7 51 D7 D3 6C 10 DD 31 35 95",
+                            "cert issuer": "AAA Certificate Services",
+                            "thumbprint": "D89E3BD43D5D909B47A18977AA9D5CE36CEE184C",
+                            "valid_usage": null
+                        },
+                        {
+                            "name": "AAA Certificate Services",
+                            "algorithm": "sha1RSA",
+                            "valid from": "2004-01-01 00:00:00",
+                            "valid to": "2028-12-31 23:59:59",
+                            "serial number": "01",
+                            "cert issuer": "AAA Certificate Services",
+                            "thumbprint": "D1EB23A46D17D68FD92564C2F1F1601764D8E349",
+                            "valid_usage": null
+                        },
+                        {
+                            "name": "Sectigo RSA Time Stamping Signer #2",
+                            "algorithm": "sha384RSA",
+                            "valid from": "2020-10-23 00:00:00",
+                            "valid to": "2032-01-22 23:59:59",
+                            "serial number": "8C 77 A0 00 8F F4 D1 B0 C6 3D 9F 3A 48 83 8D 6B",
+                            "cert issuer": "Sectigo RSA Time Stamping CA",
+                            "thumbprint": "951137101D882F31BD513F949ADA4C68AD8C08F5",
+                            "valid_usage": "ff"
+                        },
+                        {
+                            "name": "Sectigo RSA Time Stamping CA",
+                            "algorithm": "sha384RSA",
+                            "valid from": "2019-05-02 00:00:00",
+                            "valid to": "2038-01-18 23:59:59",
+                            "serial number": "30 0F 6F AC DD 66 98 74 7C A9 46 36 A7 78 2D B9",
+                            "cert issuer": "USERTrust RSA Certification Authority",
+                            "thumbprint": "02D65B95E28370C1570095FA88F923DD937FAD8F",
+                            "valid_usage": "Timestamp Signing"
+                        }
+                    ],
+                    "original name": "git.exe",
+                    "signers": "Johannes Schindelin; Sectigo RSA Code Signing CA; USERTrust RSA Certification Authority; Sectigo (AAA)",
+                    "counter signers details": [
+                        {
+                            "status": "Valid",
+                            "valid usage": "Timestamp Signing",
+                            "name": "Sectigo RSA Time Stamping Signer #2",
+                            "algorithm": "sha384RSA",
+                            "valid from": "12:00 AM 10/23/2020",
+                            "valid to": "11:59 PM 01/22/2032",
+                            "serial number": "00 8C 77 A0 00 8F F4 D1 B0 C6 3D 9F 3A 48 83 8D 6B",
+                            "cert issuer": "Sectigo RSA Time Stamping CA",
+                            "thumbprint": "951137101D882F31BD513F949ADA4C68AD8C08F5"
+                        },
+                        {
+                            "status": "Valid",
+                            "valid usage": "Timestamp Signing",
+                            "name": "Sectigo RSA Time Stamping CA",
+                            "algorithm": "sha384RSA",
+                            "valid from": "12:00 AM 05/02/2019",
+                            "valid to": "11:59 PM 01/18/2038",
+                            "serial number": "30 0F 6F AC DD 66 98 74 7C A9 46 36 A7 78 2D B9",
+                            "cert issuer": "USERTrust RSA Certification Authority",
+                            "thumbprint": "02D65B95E28370C1570095FA88F923DD937FAD8F"
+                        },
+                        {
+                            "status": "Valid",
+                            "valid usage": "All",
+                            "name": "USERTrust RSA Certification Authority",
+                            "algorithm": "sha384RSA",
+                            "valid from": "12:00 AM 03/12/2019",
+                            "valid to": "11:59 PM 12/31/2028",
+                            "serial number": "39 72 44 3A F9 22 B7 51 D7 D3 6C 10 DD 31 35 95",
+                            "cert issuer": "AAA Certificate Services",
+                            "thumbprint": "D89E3BD43D5D909B47A18977AA9D5CE36CEE184C"
+                        },
+                        {
+                            "status": "Valid",
+                            "valid usage": "Client Auth, Code Signing, EFS, Email Protection, IPSEC Tunnel, IPSEC User, Server Auth, Timestamp Signing",
+                            "name": "Sectigo (AAA)",
+                            "algorithm": "sha1RSA",
+                            "valid from": "12:00 AM 01/01/2004",
+                            "valid to": "11:59 PM 12/31/2028",
+                            "serial number": "01",
+                            "cert issuer": "AAA Certificate Services",
+                            "thumbprint": "D1EB23A46D17D68FD92564C2F1F1601764D8E349"
+                        }
+                    ],
+                    "counter signers": "Sectigo RSA Time Stamping Signer #2; Sectigo RSA Time Stamping CA; USERTrust RSA Certification Authority; Sectigo (AAA)",
+                    "signers details": [
+                        {
+                            "status": "Valid",
+                            "valid usage": "Code Signing",
+                            "name": "Johannes Schindelin",
+                            "algorithm": "sha256RSA",
+                            "valid from": "12:00 AM 05/17/2021",
+                            "valid to": "11:59 PM 05/17/2022",
+                            "serial number": "52 C9 95 B4 31 72 41 20 D8 C5 F8 4D 05 39 88 D0",
+                            "cert issuer": "Sectigo RSA Code Signing CA",
+                            "thumbprint": "5FF4E1DB05A00905D6AE88B95BB52CACBEB10A7F"
+                        },
+                        {
+                            "status": "Valid",
+                            "valid usage": "Code Signing, Timestamp Signing",
+                            "name": "Sectigo RSA Code Signing CA",
+                            "algorithm": "sha384RSA",
+                            "valid from": "12:00 AM 11/02/2018",
+                            "valid to": "11:59 PM 12/31/2030",
+                            "serial number": "1D A2 48 30 6F 9B 26 18 D0 82 E0 96 7D 33 D3 6A",
+                            "cert issuer": "USERTrust RSA Certification Authority",
+                            "thumbprint": "94C95DA1E850BD85209A4A2AF3E1FB1604F9BB66"
+                        },
+                        {
+                            "status": "Valid",
+                            "valid usage": "All",
+                            "name": "USERTrust RSA Certification Authority",
+                            "algorithm": "sha384RSA",
+                            "valid from": "12:00 AM 03/12/2019",
+                            "valid to": "11:59 PM 12/31/2028",
+                            "serial number": "39 72 44 3A F9 22 B7 51 D7 D3 6C 10 DD 31 35 95",
+                            "cert issuer": "AAA Certificate Services",
+                            "thumbprint": "D89E3BD43D5D909B47A18977AA9D5CE36CEE184C"
+                        },
+                        {
+                            "status": "Valid",
+                            "valid usage": "Client Auth, Code Signing, EFS, Email Protection, IPSEC Tunnel, IPSEC User, Server Auth, Timestamp Signing",
+                            "name": "Sectigo (AAA)",
+                            "algorithm": "sha1RSA",
+                            "valid from": "12:00 AM 01/01/2004",
+                            "valid to": "11:59 PM 12/31/2028",
+                            "serial number": "01",
+                            "cert issuer": "AAA Certificate Services",
+                            "thumbprint": "D1EB23A46D17D68FD92564C2F1F1601764D8E349"
+                        }
+                    ],
+                    "internal name": "git"
+                },
+                "last_modification_date": 1667156402,
+                "type_tag": "peexe",
+                "times_submitted": 4,
+                "total_votes": {
+                    "harmless": 0,
+                    "malicious": 0
+                },
+                "size": 137232,
+                "type_extension": "exe",
+                "authentihash": "76fbf30d695b69ff4390cfc4183f2d5e9805f7ebabc55dfc646b1486bd305265",
+                "last_submission_date": 1666425685,
+                "last_analysis_results": {
+                    "Bkav": {
+                        "category": "undetected",
+                        "engine_name": "Bkav",
+                        "engine_version": "1.3.0.9899",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220330"
+                    },
+                    "Lionic": {
+                        "category": "undetected",
+                        "engine_name": "Lionic",
+                        "engine_version": "7.5",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "tehtris": {
+                        "category": "undetected",
+                        "engine_name": "tehtris",
+                        "engine_version": "v0.0.7",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "MicroWorld-eScan": {
+                        "category": "undetected",
+                        "engine_name": "MicroWorld-eScan",
+                        "engine_version": "14.0.409.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "CMC": {
+                        "category": "undetected",
+                        "engine_name": "CMC",
+                        "engine_version": "2.10.2019.1",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20211026"
+                    },
+                    "CAT-QuickHeal": {
+                        "category": "undetected",
+                        "engine_name": "CAT-QuickHeal",
+                        "engine_version": "14.00",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220331"
+                    },
+                    "ALYac": {
+                        "category": "undetected",
+                        "engine_name": "ALYac",
+                        "engine_version": "1.1.3.1",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Cylance": {
+                        "category": "undetected",
+                        "engine_name": "Cylance",
+                        "engine_version": "2.3.1.101",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Sangfor": {
+                        "category": "undetected",
+                        "engine_name": "Sangfor",
+                        "engine_version": "2.9.0.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "K7AntiVirus": {
+                        "category": "undetected",
+                        "engine_name": "K7AntiVirus",
+                        "engine_version": "12.3.41597",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Alibaba": {
+                        "category": "undetected",
+                        "engine_name": "Alibaba",
+                        "engine_version": "0.3.0.5",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20190527"
+                    },
+                    "K7GW": {
+                        "category": "undetected",
+                        "engine_name": "K7GW",
+                        "engine_version": "12.3.41596",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Cybereason": {
+                        "category": "undetected",
+                        "engine_name": "Cybereason",
+                        "engine_version": "1.2.449",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20210330"
+                    },
+                    "Baidu": {
+                        "category": "undetected",
+                        "engine_name": "Baidu",
+                        "engine_version": "1.0.0.2",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20190318"
+                    },
+                    "VirIT": {
+                        "category": "undetected",
+                        "engine_name": "VirIT",
+                        "engine_version": "9.5.166",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220331"
+                    },
+                    "Cyren": {
+                        "category": "undetected",
+                        "engine_name": "Cyren",
+                        "engine_version": "6.5.1.2",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "SymantecMobileInsight": {
+                        "category": "type-unsupported",
+                        "engine_name": "SymantecMobileInsight",
+                        "engine_version": "2.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220208"
+                    },
+                    "Symantec": {
+                        "category": "undetected",
+                        "engine_name": "Symantec",
+                        "engine_version": "1.17.0.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Elastic": {
+                        "category": "undetected",
+                        "engine_name": "Elastic",
+                        "engine_version": "4.0.35",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220302"
+                    },
+                    "ESET-NOD32": {
+                        "category": "undetected",
+                        "engine_name": "ESET-NOD32",
+                        "engine_version": "25035",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "APEX": {
+                        "category": "undetected",
+                        "engine_name": "APEX",
+                        "engine_version": "6.277",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Paloalto": {
+                        "category": "undetected",
+                        "engine_name": "Paloalto",
+                        "engine_version": "0.9.0.1003",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "ClamAV": {
+                        "category": "undetected",
+                        "engine_name": "ClamAV",
+                        "engine_version": "0.104.2.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Kaspersky": {
+                        "category": "undetected",
+                        "engine_name": "Kaspersky",
+                        "engine_version": "21.0.1.45",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "BitDefender": {
+                        "category": "undetected",
+                        "engine_name": "BitDefender",
+                        "engine_version": "7.2",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "NANO-Antivirus": {
+                        "category": "undetected",
+                        "engine_name": "NANO-Antivirus",
+                        "engine_version": "1.0.146.25576",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "ViRobot": {
+                        "category": "undetected",
+                        "engine_name": "ViRobot",
+                        "engine_version": "2014.3.20.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Avast": {
+                        "category": "undetected",
+                        "engine_name": "Avast",
+                        "engine_version": "21.1.5827.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Tencent": {
+                        "category": "undetected",
+                        "engine_name": "Tencent",
+                        "engine_version": "1.0.0.1",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Ad-Aware": {
+                        "category": "undetected",
+                        "engine_name": "Ad-Aware",
+                        "engine_version": "3.0.21.193",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Trustlook": {
+                        "category": "type-unsupported",
+                        "engine_name": "Trustlook",
+                        "engine_version": "1.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "TACHYON": {
+                        "category": "undetected",
+                        "engine_name": "TACHYON",
+                        "engine_version": "2022-04-01.02",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Sophos": {
+                        "category": "undetected",
+                        "engine_name": "Sophos",
+                        "engine_version": "1.4.1.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Comodo": {
+                        "category": "undetected",
+                        "engine_name": "Comodo",
+                        "engine_version": "34490",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "F-Secure": {
+                        "category": "undetected",
+                        "engine_name": "F-Secure",
+                        "engine_version": "12.0.86.52",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "DrWeb": {
+                        "category": "undetected",
+                        "engine_name": "DrWeb",
+                        "engine_version": "7.0.54.3080",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Zillya": {
+                        "category": "undetected",
+                        "engine_name": "Zillya",
+                        "engine_version": "2.0.0.4603",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "TrendMicro": {
+                        "category": "undetected",
+                        "engine_name": "TrendMicro",
+                        "engine_version": "11.0.0.1006",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "McAfee-GW-Edition": {
+                        "category": "undetected",
+                        "engine_name": "McAfee-GW-Edition",
+                        "engine_version": "v2019.1.2+3728",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Trapmine": {
+                        "category": "undetected",
+                        "engine_name": "Trapmine",
+                        "engine_version": "3.5.45.75",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220217"
+                    },
+                    "FireEye": {
+                        "category": "undetected",
+                        "engine_name": "FireEye",
+                        "engine_version": "32.44.1.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Emsisoft": {
+                        "category": "undetected",
+                        "engine_name": "Emsisoft",
+                        "engine_version": "2021.5.0.7597",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "SentinelOne": {
+                        "category": "undetected",
+                        "engine_name": "SentinelOne",
+                        "engine_version": "22.2.1.2",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220330"
+                    },
+                    "GData": {
+                        "category": "undetected",
+                        "engine_name": "GData",
+                        "engine_version": "A:25.32686B:27.26868",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Jiangmin": {
+                        "category": "undetected",
+                        "engine_name": "Jiangmin",
+                        "engine_version": "16.0.100",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220331"
+                    },
+                    "Webroot": {
+                        "category": "undetected",
+                        "engine_name": "Webroot",
+                        "engine_version": "1.0.0.403",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Avira": {
+                        "category": "undetected",
+                        "engine_name": "Avira",
+                        "engine_version": "8.3.3.14",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Antiy-AVL": {
+                        "category": "undetected",
+                        "engine_name": "Antiy-AVL",
+                        "engine_version": "3.0.0.1",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Kingsoft": {
+                        "category": "undetected",
+                        "engine_name": "Kingsoft",
+                        "engine_version": "2017.9.26.565",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Gridinsoft": {
+                        "category": "undetected",
+                        "engine_name": "Gridinsoft",
+                        "engine_version": "1.0.74.174",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Arcabit": {
+                        "category": "undetected",
+                        "engine_name": "Arcabit",
+                        "engine_version": "1.0.0.889",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "SUPERAntiSpyware": {
+                        "category": "undetected",
+                        "engine_name": "SUPERAntiSpyware",
+                        "engine_version": "5.6.0.1032",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220327"
+                    },
+                    "ZoneAlarm": {
+                        "category": "undetected",
+                        "engine_name": "ZoneAlarm",
+                        "engine_version": "1.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Avast-Mobile": {
+                        "category": "type-unsupported",
+                        "engine_name": "Avast-Mobile",
+                        "engine_version": "220401-02",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Microsoft": {
+                        "category": "undetected",
+                        "engine_name": "Microsoft",
+                        "engine_version": "1.1.19000.8",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Cynet": {
+                        "category": "undetected",
+                        "engine_name": "Cynet",
+                        "engine_version": "4.0.0.27",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "BitDefenderFalx": {
+                        "category": "type-unsupported",
+                        "engine_name": "BitDefenderFalx",
+                        "engine_version": "2.0.936",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220103"
+                    },
+                    "AhnLab-V3": {
+                        "category": "undetected",
+                        "engine_name": "AhnLab-V3",
+                        "engine_version": "3.21.3.10230",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Acronis": {
+                        "category": "undetected",
+                        "engine_name": "Acronis",
+                        "engine_version": "1.1.1.82",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20210512"
+                    },
+                    "McAfee": {
+                        "category": "undetected",
+                        "engine_name": "McAfee",
+                        "engine_version": "6.0.6.653",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220331"
+                    },
+                    "MAX": {
+                        "category": "undetected",
+                        "engine_name": "MAX",
+                        "engine_version": "2019.9.16.1",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "VBA32": {
+                        "category": "undetected",
+                        "engine_name": "VBA32",
+                        "engine_version": "5.0.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Malwarebytes": {
+                        "category": "undetected",
+                        "engine_name": "Malwarebytes",
+                        "engine_version": "4.2.2.27",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Zoner": {
+                        "category": "undetected",
+                        "engine_name": "Zoner",
+                        "engine_version": "2.2.2.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220331"
+                    },
+                    "TrendMicro-HouseCall": {
+                        "category": "undetected",
+                        "engine_name": "TrendMicro-HouseCall",
+                        "engine_version": "10.0.0.1040",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Rising": {
+                        "category": "undetected",
+                        "engine_name": "Rising",
+                        "engine_version": "25.0.0.27",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Yandex": {
+                        "category": "undetected",
+                        "engine_name": "Yandex",
+                        "engine_version": "5.5.2.24",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "Ikarus": {
+                        "category": "undetected",
+                        "engine_name": "Ikarus",
+                        "engine_version": "6.0.15.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "MaxSecure": {
+                        "category": "undetected",
+                        "engine_name": "MaxSecure",
+                        "engine_version": "1.0.0.1",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220331"
+                    },
+                    "Fortinet": {
+                        "category": "undetected",
+                        "engine_name": "Fortinet",
+                        "engine_version": "6.2.142.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220401"
+                    },
+                    "BitDefenderTheta": {
+                        "category": "undetected",
+                        "engine_name": "BitDefenderTheta",
+                        "engine_version": "7.2.37796.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220318"
+                    },
+                    "Panda": {
+                        "category": "undetected",
+                        "engine_name": "Panda",
+                        "engine_version": "4.6.4.2",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20220331"
+                    },
+                    "CrowdStrike": {
+                        "category": "undetected",
+                        "engine_name": "CrowdStrike",
+                        "engine_version": "1.0",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20210907"
+                    }
+                },
+                "sandbox_verdicts": {
+                    "Zenbox": {
+                        "category": "harmless",
+                        "confidence": 1,
+                        "sandbox_name": "Zenbox",
+                        "malware_classification": [
+                            "CLEAN"
+                        ]
+                    }
+                },
+                "sha256": "c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85",
+                "tags": [
+                    "64bits",
+                    "peexe",
+                    "assembly",
+                    "signed",
+                    "overlay"
+                ],
+                "last_analysis_date": 1648807561,
+                "unique_sources": 4,
+                "first_submission_date": 1643747739,
+                "sha1": "4f4dbf88f956457ddb9f64fef127670c2626a6a7",
+                "ssdeep": "3072:M1UMbfLwoUbOB2P0ap/RtfwXALweSaIKg/ur124D5:Cjbz/Ua2PTWXAse/g4v5",
+                "md5": "500d748f41ce776eedb062c24a7d3dbc",
+                "pe_info": {
+                    "resource_details": [
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 5.386451244354248,
+                            "chi2": 6281.26025390625,
+                            "filetype": "application/xml",
+                            "sha256": "8af071994d0fe7164c6681cc9ce5ec2225722228eb0cdfe665ec2e6cbe14d0ec",
+                            "type": "RT_MANIFEST"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.522126197814941,
+                            "chi2": 418.6612243652344,
+                            "filetype": "image/x-png",
+                            "sha256": "1a5c7cf97fdc496af48c73fcee802ee6b9aa459f7e5aa27dca68e9bd9ec22913",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.603852272033691,
+                            "chi2": 555.722900390625,
+                            "filetype": "image/x-png",
+                            "sha256": "be6f35f69661d66f717079dfe019db5143a94aa8e592e7293022a28b5a8065d6",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.751320838928223,
+                            "chi2": 350.93994140625,
+                            "filetype": "image/x-png",
+                            "sha256": "22ade40c00a78378c0fff30a04ea24be6b0ca283213a4af4aaf54aee8d5bb55b",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.777142524719238,
+                            "chi2": 458.25341796875,
+                            "filetype": "image/x-png",
+                            "sha256": "32e88252459d26b2a7bbb62a582077e8e35fe41c26b42f0a52d28aa2e9b3756d",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.770188331604004,
+                            "chi2": 358.566162109375,
+                            "filetype": "image/x-png",
+                            "sha256": "9746a04cf2afd1a9feae450e47919ddd2c1e3b7f5aac37ca9acda9f76a065756",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.768488883972168,
+                            "chi2": 490.71502685546875,
+                            "filetype": "image/x-png",
+                            "sha256": "0b8cd2192bd48c91d98cd95b41ac07fe82a0f9e343f3e9f476ba7d02a798b38b",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.822908878326416,
+                            "chi2": 398.7010498046875,
+                            "filetype": "image/x-png",
+                            "sha256": "bda2446264d3126f6535a8a4fba5b9b136266422717481ffc26c850490a32962",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.8783955574035645,
+                            "chi2": 451.947509765625,
+                            "filetype": "image/x-png",
+                            "sha256": "6ca2991785d30f935064efd76b64dbe6624f4eb584b7fe66515fd703cf8dc80f",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.874002456665039,
+                            "chi2": 526.3818359375,
+                            "filetype": "image/x-png",
+                            "sha256": "4020b7b0b3dcafba93b4847d212a1a012ee30f826566fdafe27e6fb10294b983",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.838757038116455,
+                            "chi2": 456.82080078125,
+                            "filetype": "image/x-png",
+                            "sha256": "e4cd7347375dc0e3555f9394cae5284e9a09d8948233005e096de10c73e3e401",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.8929314613342285,
+                            "chi2": 424.17083740234375,
+                            "filetype": "image/x-png",
+                            "sha256": "977b904d09f07f401d523b38d2b01ed40644b6c4de59b948beb0ec247e273126",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.890249729156494,
+                            "chi2": 437.4715881347656,
+                            "filetype": "image/x-png",
+                            "sha256": "ad98bf4f0fc46dcf808212b4cedef10d41b7538773d81083952ea375c85bebb1",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.907227993011475,
+                            "chi2": 467.380859375,
+                            "filetype": "image/x-png",
+                            "sha256": "30b18576a3dbbcf6971a34f4d784972539fe7d5c4339d3097424abfddbad13a5",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.905123233795166,
+                            "chi2": 497.686767578125,
+                            "filetype": "image/x-png",
+                            "sha256": "f1847a35dfab401b397bb0b1040369fd167580fd15a674cba0ef44c87085d8b2",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.928633689880371,
+                            "chi2": 504.4748229980469,
+                            "filetype": "image/x-png",
+                            "sha256": "ba626960ff9125d319f806c8f4279c82663c20e1ce90260ae7b6cffe83b2b867",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.843489170074463,
+                            "chi2": 859.7606811523438,
+                            "filetype": "image/x-png",
+                            "sha256": "f759fec89ab264b028ae7a6b1f25cf39c999567a60c7279c2df2ba8486afc94a",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.939333438873291,
+                            "chi2": 475.6518249511719,
+                            "filetype": "image/x-png",
+                            "sha256": "f3049e3cd09fb82c2aa6bb1e9d11eeaf996f7766c6ca4d3cb7817fc3478c8bfa",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.912359714508057,
+                            "chi2": 767.5609741210938,
+                            "filetype": "image/x-png",
+                            "sha256": "daed44c1d497b9ffc1d50cbe44a33b573bdd52f6a4ccd8f77092a6cbb02f850a",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.950868129730225,
+                            "chi2": 531.6754760742188,
+                            "filetype": "image/x-png",
+                            "sha256": "220a96bd9be1e4919af6f3518eb238b1fcc6bf98170b62bd6006ca4c26d34530",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.90477991104126,
+                            "chi2": 986.8931274414062,
+                            "filetype": "image/x-png",
+                            "sha256": "dcd997b6a8ec2b4988e2ab7cd4712aa8d0f1332f0d9a149f4d7f02b4a08290dd",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.95898962020874,
+                            "chi2": 625.1539916992188,
+                            "filetype": "image/x-png",
+                            "sha256": "ca365c839f25d6652d034a987247d84472423377d18233d32bd2b7c7abf1e5c8",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.943709373474121,
+                            "chi2": 951.0852661132812,
+                            "filetype": "image/x-png",
+                            "sha256": "60cf19bb9bde5492f6b5b4b092bd235894555267dbb8016f57e2f2c343ab09a9",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 7.767034530639648,
+                            "chi2": 2737.02294921875,
+                            "filetype": "image/x-png",
+                            "sha256": "6e25d0480e6aeb56d4531e2c55fb2c0cdbfa14ec386898461d21a63e0a340fd8",
+                            "type": "RT_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 3.04323410987854,
+                            "chi2": 15691.1279296875,
+                            "filetype": "ASCII text",
+                            "sha256": "aea5747c7ec91befe6048a231c9d489859b230b3b4595d78cf4e6a05cdf7fa67",
+                            "type": "RT_STRING"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 3.563176155090332,
+                            "chi2": 22598.03515625,
+                            "filetype": "Data",
+                            "sha256": "f4d44858a4ce76651c356f04bd7a65e3aaf450d858a9832523938302a067828b",
+                            "type": "RT_GROUP_ICON"
+                        },
+                        {
+                            "lang": "ENGLISH US",
+                            "entropy": 3.3522496223449707,
+                            "chi2": 48314.40625,
+                            "filetype": "Data",
+                            "sha256": "3150b70fe7e6e20854611c97aaff4d0dace1c85bacfaf3c15474444a717fa2c0",
+                            "type": "RT_VERSION"
+                        },
+                        {
+                            "lang": "NEUTRAL",
+                            "entropy": 5.137929439544678,
+                            "chi2": 11779.318359375,
+                            "filetype": "application/xml",
+                            "sha256": "a73f26a8d504043f785d7360e8febf2eeb8522ec873a0d4dd5d1d4bfd1e67d3d",
+                            "type": "RT_MANIFEST"
+                        }
+                    ],
+                    "resource_types": {
+                        "RT_MANIFEST": 2,
+                        "RT_STRING": 1,
+                        "RT_ICON": 23,
+                        "RT_VERSION": 1,
+                        "RT_GROUP_ICON": 1
+                    },
+                    "imphash": "b5c28ab8b10670f75eb53affc23558e6",
+                    "overlay": {
+                        "entropy": 7.562373638153076,
+                        "offset": 125596,
+                        "chi2": 11670.11328125,
+                        "filetype": "Data",
+                        "size": 11636,
+                        "md5": "5c1e2eb9bc55f4d6c9908f8f29a79278"
+                    },
+                    "resource_langs": {
+                        "NEUTRAL": 1,
+                        "ENGLISH US": 27
+                    },
+                    "machine_type": 34404,
+                    "timestamp": 1643730472,
+                    "entry_point": 5360,
+                    "sections": [
+                        {
+                            "name": ".text",
+                            "chi2": 178882.89,
+                            "virtual_address": 4096,
+                            "flags": "rx",
+                            "raw_size": 15360,
+                            "entropy": 6.04,
+                            "virtual_size": 15048,
+                            "md5": "74c0a3b9e71e33606ba40738afec8040"
+                        },
+                        {
+                            "name": ".data",
+                            "chi2": 106482.0,
+                            "virtual_address": 20480,
+                            "flags": "rw",
+                            "raw_size": 512,
+                            "entropy": 0.74,
+                            "virtual_size": 192,
+                            "md5": "24af5bd1769152ae62ee27c73f571063"
+                        },
+                        {
+                            "name": ".rdata",
+                            "chi2": 271238.56,
+                            "virtual_address": 24576,
+                            "flags": "r",
+                            "raw_size": 5632,
+                            "entropy": 4.26,
+                            "virtual_size": 5264,
+                            "md5": "110e9dd8ea72140bc3a62c5e6730d649"
+                        },
+                        {
+                            "name": ".pdata",
+                            "chi2": 121750.0,
+                            "virtual_address": 32768,
+                            "flags": "r",
+                            "raw_size": 1024,
+                            "entropy": 2.82,
+                            "virtual_size": 660,
+                            "md5": "04372042de0b1d34ef52598026992dbf"
+                        },
+                        {
+                            "name": ".xdata",
+                            "chi2": 94573.0,
+                            "virtual_address": 36864,
+                            "flags": "r",
+                            "raw_size": 1024,
+                            "entropy": 2.94,
+                            "virtual_size": 588,
+                            "md5": "6136a7eb4c7530ef84f1d458d4cc2526"
+                        },
+                        {
+                            "name": ".bss",
+                            "chi2": -1.0,
+                            "virtual_address": 40960,
+                            "flags": "rw",
+                            "raw_size": 0,
+                            "entropy": 0.0,
+                            "virtual_size": 262656,
+                            "md5": "d41d8cd98f00b204e9800998ecf8427e"
+                        },
+                        {
+                            "name": ".edata",
+                            "chi2": 116653.0,
+                            "virtual_address": 307200,
+                            "flags": "r",
+                            "raw_size": 512,
+                            "entropy": 0.51,
+                            "virtual_size": 52,
+                            "md5": "3428ba71c187c7c00551504619b0c5a8"
+                        },
+                        {
+                            "name": ".idata",
+                            "chi2": 182806.84,
+                            "virtual_address": 311296,
+                            "flags": "rw",
+                            "raw_size": 3584,
+                            "entropy": 4.18,
+                            "virtual_size": 3344,
+                            "md5": "800b40e49f02a8e8f536bd92ab0ebed5"
+                        },
+                        {
+                            "name": ".CRT",
+                            "chi2": 122518.0,
+                            "virtual_address": 315392,
+                            "flags": "rw",
+                            "raw_size": 512,
+                            "entropy": 0.29,
+                            "virtual_size": 96,
+                            "md5": "ff750a72cecc029b231d981222c2b7c2"
+                        },
+                        {
+                            "name": ".tls",
+                            "chi2": 130560.0,
+                            "virtual_address": 319488,
+                            "flags": "rw",
+                            "raw_size": 512,
+                            "entropy": 0.0,
+                            "virtual_size": 16,
+                            "md5": "bf619eac0cdf3f68d496ea9344137e8b"
+                        },
+                        {
+                            "name": ".rsrc",
+                            "chi2": 20764.91,
+                            "virtual_address": 323584,
+                            "flags": "rw",
+                            "raw_size": 94272,
+                            "entropy": 7.92,
+                            "virtual_size": 94272,
+                            "md5": "cd8f873aa32a57ac6cce74db21e78921"
+                        },
+                        {
+                            "name": ".reloc",
+                            "chi2": 85979.0,
+                            "virtual_address": 421888,
+                            "flags": "r",
+                            "raw_size": 512,
+                            "entropy": 1.48,
+                            "virtual_size": 128,
+                            "md5": "c02b1513ba13aac612b7e2a9bfa81f82"
+                        },
+                        {
+                            "name": ".debug",
+                            "chi2": 3464.11,
+                            "virtual_address": 425984,
+                            "flags": "rw",
+                            "raw_size": 156,
+                            "entropy": 4.6,
+                            "virtual_size": 512,
+                            "md5": "7c9e01d125475fe9d67b782947be089f"
+                        }
+                    ],
+                    "import_list": [
+                        {
+                            "library_name": "SHELL32.dll",
+                            "imported_functions": [
+                                "CommandLineToArgvW"
+                            ]
+                        },
+                        {
+                            "library_name": "KERNEL32.dll",
+                            "imported_functions": [
+                                "GetLastError",
+                                "GetEnvironmentVariableA",
+                                "GetStdHandle",
+                                "EnterCriticalSection",
+                                "GetModuleFileNameW",
+                                "WaitForSingleObject",
+                                "GetExitCodeProcess",
+                                "ExitProcess",
+                                "VirtualProtect",
+                                "GetFileAttributesW",
+                                "DeleteCriticalSection",
+                                "GetCurrentProcess",
+                                "SetConsoleCtrlHandler",
+                                "GetFinalPathNameByHandleW",
+                                "GetCommandLineW",
+                                "GetStartupInfoW",
+                                "SetEnvironmentVariableW",
+                                "GetProcAddress",
+                                "LoadLibraryW",
+                                "GetSystemDirectoryW",
+                                "SetUnhandledExceptionFilter",
+                                "CloseHandle",
+                                "GetModuleHandleW",
+                                "SetEnvironmentVariableA",
+                                "LocalFree",
+                                "FormatMessageW",
+                                "InitializeCriticalSection",
+                                "CreateFileW",
+                                "VirtualQuery",
+                                "CreateProcessW",
+                                "TlsGetValue",
+                                "Sleep",
+                                "GetEnvironmentVariableW",
+                                "LeaveCriticalSection"
+                            ]
+                        },
+                        {
+                            "library_name": "SHLWAPI.dll",
+                            "imported_functions": [
+                                "PathRemoveFileSpecW"
+                            ]
+                        },
+                        {
+                            "library_name": "msvcrt.dll",
+                            "imported_functions": [
+                                "strncmp",
+                                "__wgetmainargs",
+                                "malloc",
+                                "realloc",
+                                "_wcsnicmp",
+                                "_waccess",
+                                "fwprintf",
+                                "abort",
+                                "fprintf",
+                                "fgets",
+                                "_fmode",
+                                "_vsnwprintf",
+                                "__winitenv",
+                                "_amsg_exit",
+                                "wcslen",
+                                "__C_specific_handler",
+                                "fwrite",
+                                "_onexit",
+                                "_wcsdup",
+                                "wcscmp",
+                                "isalpha",
+                                "exit",
+                                "_commode",
+                                "wcsncat",
+                                "__setusermatherr",
+                                "isspace",
+                                "_wcmdln",
+                                "_cexit",
+                                "_wcsicmp",
+                                "fclose",
+                                "wcsncpy",
+                                "free",
+                                "swprintf",
+                                "wcscat",
+                                "wcsncmp",
+                                "vfprintf",
+                                "_wfopen",
+                                "calloc",
+                                "strlen",
+                                "memcpy",
+                                "memmove",
+                                "wcsspn",
+                                "signal",
+                                "__iob_func",
+                                "wcscpy",
+                                "wcschr",
+                                "strcpy",
+                                "wcsstr",
+                                "_initterm",
+                                "__set_app_type"
+                            ]
+                        },
+                        {
+                            "library_name": "USER32.dll",
+                            "imported_functions": [
+                                "LoadStringW"
+                            ]
+                        }
+                    ]
+                },
+                "magic": "PE32+ executable for MS Windows (console) Mono/.Net assembly",
+                "last_analysis_stats": {
+                    "harmless": 0,
+                    "type-unsupported": 4,
+                    "suspicious": 0,
+                    "confirmed-timeout": 0,
+                    "timeout": 0,
+                    "failure": 0,
+                    "malicious": 0,
+                    "undetected": 69
+                },
+                "meaningful_name": "git.exe",
+                "reputation": 0,
+                "first_seen_itw_date": 1612864364
+            },
+            "type": "file",
+            "id": "c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85",
+            "links": {
+                "self": "https://www.virustotal.com/api/v3/files/c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85"
+            }
+        }
+    ],
+    "links": {
+        "self": "https://www.virustotal.com/api/v3/search?query=c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85"
+    }
+}
