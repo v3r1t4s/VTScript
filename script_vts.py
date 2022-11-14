@@ -5,6 +5,7 @@ import os
 import sys
 from pathlib import Path
 import json
+from time import sleep
 import requests
 
 
@@ -26,24 +27,24 @@ def get_path(prompt):
     """Get Path with input(), check if both path/file exist"""
 
     try:
-        res = input("Please input an absolute path: " + prompt)
-        if os.path.exists(res):
+        response = input("Please input an absolute path: " + prompt)
+        if os.path.exists(response):
             print("[+] The path is valid!")
-            res = Path(res)
+            response = Path(response)
 
-            if res.is_file():
+            if response.is_file():
                 print("[+] We did find the file!")
             else:
                 print("[-] We didn't found the file!")
-                return
+                exit(1)
         else:
             print("[-] The path is not valid!")
-            return
+            exit(1)
     except ValueError as val_err:
         exception_handler(True, val_err)
         return
 
-    return res
+    return response
 
 
 def read_api_key(file):
@@ -57,7 +58,7 @@ def read_api_key(file):
         return
 
 
-def api_req(key, data):
+def search_api_req(key, data):
     """Function to make api request to search for a string"""
     url = f"https://www.virustotal.com/api/v3/search?query={data}"
 
@@ -74,7 +75,24 @@ def api_req(key, data):
         return
 
 
-def parse_json(res, string):
+def file_rep_api_req(key, hash):
+    """Function to make api request to get a file report"""
+    url = f"https://www.virustotal.com/api/v3/files/{hash}"
+
+    headers = {"accept": "application/json",
+               "x-apikey": key
+               }
+
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        return response.text
+    else:
+        print(f"[-] HTTP response wasn't successful: {response.status_code}")
+        return
+
+
+def parse_json(res, string, key):
     """Parse json response from VT to find malicious signs"""
     # Print the line to separate each parsing when having multiple responses...
     print("\n-------------------------------------------------------------------------------------")
@@ -105,8 +123,10 @@ def parse_json(res, string):
     print(
         f"[*] Latest Analysis Statistics available counting the number of reports: {analysis_stat}")
 
+    malicious = analysis_stat['malicious']
+
     # Checking if malicious key has a hit
-    if analysis_stat['malicious']:
+    if malicious:
         print(
             "[*] Detailed reports about this IOC (engine name : result of the analysis):")
 
@@ -117,6 +137,23 @@ def parse_json(res, string):
         for value in analysis_res.values():
             if "malicious" in value['category']:
                 print(f"[+] {value['engine_name']} : {value['result']}")
+
+        # Checking if string provided was a hash
+        check_hash = '.' in string
+
+        if malicious >= 3 and check_hash is not True:
+            print(
+                f"\n[*] Writing a file report, since the hash was flagged {malicious} times...")
+            file_report = file_rep_api_req(key, string)
+
+            try:
+                with open("report.json", "w", encoding="UTF-8") as file:
+                    file.write(file_report)
+            except IOError as io_err:
+                exception_handler(True, io_err)
+                return
+
+            print(f"[+] The file report of {string} can be found as report.json")
     else:
         print("[+] This doesn't seems to be an IOC.")
 
@@ -143,29 +180,27 @@ if __name__ == '__main__':
         exit(1)
 
     # Set file argument to false until we know there's one
-    FILE_ARG = False
+    file_arg = False
 
     # Set to true if we find that it is used as cmdline argument
     # Remove any blank line so we can send proper string to the api_req()
     if args.file:
-        FILE_ARG = True
+        file_arg = True
 
         # Checking if the file is well formatted (no blank line, a string on each line),
         # if not format the file
         try:
-            with open(sys.argv[2], 'r+', encoding="UTF-8") as f:
-                lines = f.readlines()
-                f.seek(0)
-                f.writelines(line for line in lines if line.strip())
-                f.truncate()
+            with open(sys.argv[2], encoding="UTF-8") as in_file, open(sys.argv[2], 'r+', encoding="UTF-8") as out_file:
+                out_file.writelines(line for line in in_file if line.strip())
+                out_file.truncate()
         except IOError as strip_err:
             exception_handler(True, strip_err)
             exit(1)
 
-    STRING = ""
+    string = ""
 
     # Call the get_path function to have the path of the API Key File
-    path = get_path(STRING)
+    path = get_path(string)
 
     # If we receive nothing quit with error
     if path is None:
@@ -178,41 +213,42 @@ if __name__ == '__main__':
     if api_key is None:
         exit(1)
 
-    RESPONSE = ""
+    res = ""
 
     # If user launched the script with the file cmdline arg
     # else then string cmdline argument scenario start
-    if FILE_ARG:
-        # Create a list with each elements on each line
-        data_list = args.file.readlines()
+    if file_arg:
+        data_list = args.file.readlines()  # Create a list with each elements on each line
 
-        # Initialize request var to check how many request we sent
-        REQUEST = 0
+        request = 0  # Initialize request var to check how many request we sent
 
         # Using for loop to sent each element of the list to the api request function
         for d in data_list:
-            RESPONSE = api_req(api_key, d)
+            response = search_api_req(api_key, d)
 
             # If we receive nothing quit with error
-            if RESPONSE is None:
+            if response is None:
                 exit(1)
 
-            parse_json(RESPONSE, d)
+            parse_json(response, d, api_key)
 
-            REQUEST += 1
+            request += 1
 
-            if REQUEST == 4:
-                print("\n[*] Sorry but the quota is 4 lookups/min")
-                exit(0)
+            if request == 4:
+                print(
+                    "\n[*] Sorry but the quota is 4 lookups/min, please wait 60 seconds...")
+                # Should we use sleep or exit ? (more than 4 request works totally fine...)
+                sleep(60)
+                # exit(0)
     else:
-        RESPONSE = api_req(api_key, args.string)
+        response = search_api_req(api_key, args.string)
 
         # If we receive nothing quit with error
-        if RESPONSE is None:
+        if response is None:
             exit(1)
 
         # If we receive nothing quit with error
-        if parse_json(RESPONSE, args.string) is None:
+        if parse_json(response, args.string, api_key) is None:
             exit(1)
         else:
             exit(0)
