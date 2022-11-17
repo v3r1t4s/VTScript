@@ -1,12 +1,13 @@
 """import of modules"""
 
-import argparse
+
 import os
 import sys
-from pathlib import Path
 import json
-from time import sleep
+import argparse
 import requests
+from time import sleep
+from pathlib import Path
 
 
 def exception_handler(print_exception=False, exception=""):
@@ -20,19 +21,17 @@ def exception_handler(print_exception=False, exception=""):
         print("Exception on line: ", exc_tb.tb_lineno, " in ", fname)
     return
 
-# Might recode or put a helper function just before to list path when hitting tab...
-
 
 def get_path(prompt):
     """Get Path with input(), check if both path/file exist"""
 
     try:
-        response = input("Please input an absolute path: " + prompt)
-        if os.path.exists(response):
+        prompt = input("Please input an absolute path: ")
+        if os.path.exists(prompt):
             print("[+] The path is valid!")
-            response = Path(response)
+            prompt = Path(prompt)
 
-            if response.is_file():
+            if prompt.is_file():
                 print("[+] We did find the file!")
             else:
                 print("[-] We didn't found the file!")
@@ -44,7 +43,7 @@ def get_path(prompt):
         exception_handler(True, val_err)
         return
 
-    return response
+    return prompt
 
 
 def read_api_key(file):
@@ -58,7 +57,7 @@ def read_api_key(file):
         return
 
 
-def search_api_req(key, data):
+def search_api_request(key, data):
     """Function to make api request to search for a string"""
     url = f"https://www.virustotal.com/api/v3/search?query={data}"
 
@@ -70,12 +69,12 @@ def search_api_req(key, data):
 
     if response.status_code == 200:
         return response.text
-    else:
-        print(f"[-] HTTP response wasn't successful: {response.status_code}")
-        return
+
+    print(f"[-] HTTP response wasn't successful: {response.status_code}")
+    return
 
 
-def file_rep_api_req(key, hash):
+def file_reputation_api_request(key, hash):
     """Function to make api request to get a file report"""
     url = f"https://www.virustotal.com/api/v3/files/{hash}"
 
@@ -87,9 +86,9 @@ def file_rep_api_req(key, hash):
 
     if response.status_code == 200:
         return response.text
-    else:
-        print(f"[-] HTTP response wasn't successful: {response.status_code}")
-        return
+
+    print(f"[-] HTTP response wasn't successful: {response.status_code}")
+    return
 
 
 def parse_json(res, string, key):
@@ -144,18 +143,41 @@ def parse_json(res, string, key):
         if malicious >= 3 and check_hash is not True:
             print(
                 f"\n[*] Writing a file report, since the hash was flagged {malicious} times...")
-            file_report = file_rep_api_req(key, string)
+            file_report = file_reputation_api_request(key, string)
+
+            filename = ""
+
+            while filename.isalnum() is False:
+                try:
+                    filename = input("Please provide a filename: ")
+                except ValueError as val_err:
+                    exception_handler(True, val_err)
 
             try:
-                with open("report.json", "w", encoding="UTF-8") as file:
+                with open(f"{filename}.json", "w", encoding="UTF-8") as file:
                     file.write(file_report)
             except IOError as io_err:
                 exception_handler(True, io_err)
                 return
 
-            print(f"[+] The file report of {string} can be found as report.json")
+            print(
+                f"[+] The file report for {string} can be found as {filename}.json")
     else:
         print("[+] This doesn't seems to be an IOC.")
+
+    return
+
+
+def formating_file():
+    """ Checking if the file is well formatted (no blank line, a string on each line),
+    if not format the file"""
+    try:
+        with open(sys.argv[2], encoding="UTF-8") as in_file, open(sys.argv[2], 'r+', encoding="UTF-8") as out_file:
+            out_file.writelines(line for line in in_file if line.strip())
+            out_file.truncate()
+    except IOError as strip_err:
+        exception_handler(True, strip_err)
+        exit(1)
 
     return
 
@@ -187,15 +209,7 @@ if __name__ == '__main__':
     if args.file:
         file_arg = True
 
-        # Checking if the file is well formatted (no blank line, a string on each line),
-        # if not format the file
-        try:
-            with open(sys.argv[2], encoding="UTF-8") as in_file, open(sys.argv[2], 'r+', encoding="UTF-8") as out_file:
-                out_file.writelines(line for line in in_file if line.strip())
-                out_file.truncate()
-        except IOError as strip_err:
-            exception_handler(True, strip_err)
-            exit(1)
+        formating_file()
 
     string = ""
 
@@ -224,7 +238,7 @@ if __name__ == '__main__':
 
         # Using for loop to sent each element of the list to the api request function
         for d in data_list:
-            response = search_api_req(api_key, d)
+            response = search_api_request(api_key, d)
 
             # If we receive nothing quit with error
             if response is None:
@@ -241,7 +255,7 @@ if __name__ == '__main__':
                 sleep(60)
                 # exit(0)
     else:
-        response = search_api_req(api_key, args.string)
+        response = search_api_request(api_key, args.string)
 
         # If we receive nothing quit with error
         if response is None:
