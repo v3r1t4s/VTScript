@@ -1,6 +1,5 @@
 """import of modules"""
 
-
 import os
 import sys
 import json
@@ -65,42 +64,47 @@ def search_api_request(key, data):
                "x-apikey": key
                }
 
-    response = requests.get(url, headers=headers, timeout=10)
+    response_search_api = requests.get(url, headers=headers, timeout=10)
 
-    if response.status_code == 200:
-        return response.text
+    if response_search_api.status_code == 200:
+        return response_search_api.text
 
-    print(f"[-] HTTP response wasn't successful: {response.status_code}")
+    print(
+        f"[-] HTTP response wasn't successful: {response_search_api.status_code}")
     return
 
 
-def file_reputation_api_request(key, hash):
+def file_reputation_api_request(key, hash_file_reputation):
     """Function to make api request to get a file report"""
-    url = f"https://www.virustotal.com/api/v3/files/{hash}"
+    url = f"https://www.virustotal.com/api/v3/files/{hash_file_reputation}"
 
     headers = {"accept": "application/json",
                "x-apikey": key
                }
 
-    response = requests.get(url, headers=headers)
+    response_file_reputation = requests.get(url, headers=headers, timeout=10)
 
-    if response.status_code == 200:
-        return response.text
+    if response_file_reputation.status_code == 200:
+        return response_file_reputation.text
 
-    print(f"[-] HTTP response wasn't successful: {response.status_code}")
+    print(
+        f"[-] HTTP response wasn't successful: {response_file_reputation.status_code}")
     return
 
 
-def parse_json(res, string, key):
+def parse_json(res_parse_json, string_parse_json, file_reputation_parse_json):
     """Parse json response from VT to find malicious signs"""
     # Print the line to separate each parsing when having multiple responses...
     print("\n-------------------------------------------------------------------------------------")
 
     # Printing out the string that's being parsed at this time
-    print(f"\n[*] Checking {string}")
+    print(f"\n[*] Checking {string_parse_json}")
+
+    # Removing \n character
+    string_parse_json = string_parse_json.replace('\n', '')
 
     # Loading the output into a dictionnary
-    res_dic = json.loads(res)
+    res_dic = json.loads(res_parse_json)
 
     # Check if VT returns us something interesting when we query api_req(), If not, return.
     if res_dic['data'] == []:
@@ -137,33 +141,54 @@ def parse_json(res, string, key):
             if "malicious" in value['category']:
                 print(f"[+] {value['engine_name']} : {value['result']}")
 
-        # Checking if string provided was a hash
-        check_hash = '.' in string
+    # Checking if string provided was a hash
+    check_hash = '.' in string_parse_json
 
-        if malicious >= 3 and check_hash is not True:
-            print(
-                f"\n[*] Writing a file report, since the hash was flagged {malicious} times...")
-            file_report = file_reputation_api_request(key, string)
+    if malicious >= 3 and check_hash is not True:
+        print(f"\n[+] {string_parse_json} is definitely malicious")
 
-            filename = ""
+        file_reputation_parse_json = True
+        print(
+            f"\n[*] Writing a file report, since the hash was flagged {malicious} times...")
 
-            while filename.isalnum() is False:
-                try:
-                    filename = input("Please provide a filename: ")
-                except ValueError as val_err:
-                    exception_handler(True, val_err)
-
-            try:
-                with open(f"{filename}.json", "w", encoding="UTF-8") as file:
-                    file.write(file_report)
-            except IOError as io_err:
-                exception_handler(True, io_err)
-                return
-
-            print(
-                f"[+] The file report for {string} can be found as {filename}.json")
+        return file_reputation_parse_json
+    elif malicious:
+        print(f"\n[+] {string_parse_json} is definitely malicious")
     else:
         print("[+] This doesn't seems to be an IOC.")
+
+    return
+
+
+def write_file_reputation_report(key, string_file_reputation):
+    """Function to write a file reputation report"""
+    file_report = file_reputation_api_request(key, string_file_reputation)
+
+    filename = ""
+    filename_parsed = ""
+
+    while filename_parsed.isalnum() is False:
+        try:
+            filename = input(
+                "Please provide a filename (without an extension / _ is accepted between chars): ")
+
+            filename_parsed = filename
+
+            if filename[0] != '_' and filename[-1] != '_' and filename.count('_') == 1:
+                filename_parsed = filename.replace('_', '')
+
+        except ValueError as val_err:
+            exception_handler(True, val_err)
+
+    try:
+        with open(f"{filename}.json", "w", encoding="UTF-8") as file:
+            file.write(file_report)
+    except IOError as io_err:
+        exception_handler(True, io_err)
+        return
+
+    print(
+        f"[+] The file report for {string_file_reputation} can be found as {filename}.json in {Path.cwd()}")
 
     return
 
@@ -227,7 +252,8 @@ if __name__ == '__main__':
     if api_key is None:
         exit(1)
 
-    res = ""
+    # creating a bool to know if we need to call write_file_reputation_report()
+    file_reputation = False
 
     # If user launched the script with the file cmdline arg
     # else then string cmdline argument scenario start
@@ -244,7 +270,8 @@ if __name__ == '__main__':
             if response is None:
                 exit(1)
 
-            parse_json(response, d, api_key)
+            if parse_json(response, d, file_reputation) is True:
+                write_file_reputation_report(api_key, d)
 
             request += 1
 
@@ -261,8 +288,9 @@ if __name__ == '__main__':
         if response is None:
             exit(1)
 
-        # If we receive nothing quit with error
-        if parse_json(response, args.string, api_key) is None:
-            exit(1)
+        # check if we need to call file_reputation()
+        if parse_json(response, args.string, file_reputation) is True:
+            write_file_reputation_report(api_key, args.string)
+            exit(0)
         else:
             exit(0)
