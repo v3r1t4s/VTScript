@@ -21,11 +21,18 @@ def exception_handler(print_exception=False, exception=""):
     return
 
 
+def checking_arguments(arguments):
+    """Function checking the number of arguments"""
+    if len(arguments) > 1:
+        return arguments
+    return
+
+
 def get_path(prompt):
     """Get Path with input(), check if both path/file exist"""
 
     try:
-        prompt = input("Please input an absolute path: ")
+        prompt = input("Please input the absolute path of your API key configuration file: ")
         if os.path.exists(prompt):
             print("[+] The path is valid!")
             prompt = Path(prompt)
@@ -34,10 +41,10 @@ def get_path(prompt):
                 print("[+] We did find the file!")
             else:
                 print("[-] We didn't found the file!")
-                exit(1)
+                return
         else:
             print("[-] The path is not valid!")
-            exit(1)
+            return
     except ValueError as val_err:
         exception_handler(True, val_err)
         return
@@ -69,6 +76,12 @@ def search_api_request(key, data):
     if response_search_api.status_code == 200:
         return response_search_api.text
 
+    if response_search_api.status_code == 400:
+        print(
+            f"[-] HTTP response wasn't successful: {response_search_api.status_code}, made too many request need to wait 60 seconds...")
+        sleep(60)
+        search_api_request(key, data)
+
     print(
         f"[-] HTTP response wasn't successful: {response_search_api.status_code}")
     return
@@ -87,109 +100,101 @@ def file_reputation_api_request(key, hash_file_reputation):
     if response_file_reputation.status_code == 200:
         return response_file_reputation.text
 
+    if response_file_reputation.status_code == 400:
+        print(
+            f"[-] HTTP response wasn't successful: {response_file_reputation.status_code}, made too many request need to wait 60 seconds...")
+        sleep(60)
+        file_reputation_api_request(key, hash_file_reputation)
+
     print(
         f"[-] HTTP response wasn't successful: {response_file_reputation.status_code}")
     return
 
 
-def parse_json(res_parse_json, string_parse_json, file_reputation_parse_json):
+def parse_json(res_parse_json, string_parse_json, file_reputation_parse_json, filename_report):
     """Parse json response from VT to find malicious signs"""
-    # Print the line to separate each parsing when having multiple responses...
-    print("\n-------------------------------------------------------------------------------------")
 
-    # Printing out the string that's being parsed at this time
-    print(f"\n[*] Checking {string_parse_json}")
+    print(f"[*] Working on {string_parse_json}...\n")  # Print the line to separate each parsing when having multiple responses and Printing out the string that's being parsed at this time
+    append_report(filename_report, f"------------------------------------------------------------------------------------- \n\n[*] Checking {string_parse_json}\n")  # Print the line to separate each parsing when having multiple responses and Printing out the string that's being parsed at this time
 
-    # Removing \n character
-    string_parse_json = string_parse_json.replace('\n', '')
+    string_parse_json = string_parse_json.replace('\n', '')  # Removing \n character
 
-    # Loading the output into a dictionnary
-    res_dic = json.loads(res_parse_json)
+    res_dic = json.loads(res_parse_json)  # Loading the output into a dictionnary
 
-    # Check if VT returns us something interesting when we query api_req(), If not, return.
-    if res_dic['data'] == []:
-        print("[-] Sorry but VirusTotal didn't found something...")
+    if res_dic['data'] == []:  # Check if VT returns us something interesting when we query api_req(), If not, return.
+        append_report(filename_report, "[-] Sorry but VirusTotal didn't found something...\n")
         return
 
-    # text is a unique key (in the dictionnary)
-    # only found in the response of a Tag comment specific API query
-    # If we're finding this key return to main
-    if "text" in res_dic['data'][0]['attributes']:
-        print("[*] Sorry but searching Tag Comment isn't available.")
-        print(
-            "[*] If you want to search one go there: https://www.virustotal.com/gui/home/search")
+    if "text" in res_dic['data'][0]['attributes']:  # text is a unique key (in the dictionnary), only found in the response of a Tag comment specific API query, If we're finding this key return to main
+        append_report(filename_report, "[*] Sorry but searching Tag Comment isn't available.")
+        append_report(filename_report, "[*] If you want to search one go there: https://www.virustotal.com/gui/home/search\n")
         return
 
-    # Parsing the output for last analysis statistics
-    analysis_stat = res_dic['data'][0]['attributes']['last_analysis_stats']
+    analysis_stat = res_dic['data'][0]['attributes']['last_analysis_stats']  # Parsing the output for last analysis statistics
 
-    print(
-        f"[*] Latest Analysis Statistics available counting the number of reports: {analysis_stat}")
+    append_report(filename_report, f"[*] Latest Analysis Statistics available counting the number of reports: {analysis_stat}\n")
 
     malicious = analysis_stat['malicious']
 
-    # Checking if malicious key has a hit
-    if malicious:
-        print(
-            "[*] Detailed reports about this IOC (engine name : result of the analysis):")
+    if malicious:  # Checking if malicious key has a hit
+        append_report(filename_report, f"[*] Detailed reports about {string_parse_json} (engine name : result of the analysis): \n")
 
-        # Preparing to parse the output for latest analysis results
-        analysis_res = res_dic['data'][0]['attributes']['last_analysis_results']
+        analysis_res = res_dic['data'][0]['attributes']['last_analysis_results']  # Preparing to parse the output for latest analysis results
 
-        # Parsing the output and checking every analysis made to find malicious one
-        for value in analysis_res.values():
+        for value in analysis_res.values():  # Parsing the output and checking every analysis made to find malicious one
             if "malicious" in value['category']:
-                print(f"[+] {value['engine_name']} : {value['result']}")
+                append_report(filename_report, f"[+] {value['engine_name']} : {value['result']}")
 
-    # Checking if string provided was a hash
-    check_hash = '.' in string_parse_json
+    append_report(filename_report, "\n[+] You can find the full report from the search request here: \n")
+    append_report(filename_report, res_parse_json)
+
+    append_report(filename_report, f"\n[+] The string was flagged {malicious} times.")
+
+    check_hash = '.' in string_parse_json  # Checking if string provided was a hash
 
     if malicious >= 3 and check_hash is not True:
-        print(f"\n[+] {string_parse_json} is definitely malicious")
+        append_report(filename_report, f"\n[+] {string_parse_json} is definitely malicious\n")
 
         file_reputation_parse_json = True
-        print(
-            f"\n[*] Writing a file report, since the hash was flagged {malicious} times...")
 
         return file_reputation_parse_json
     elif malicious:
-        print(f"\n[+] {string_parse_json} is definitely malicious")
+        append_report(filename_report, f"\n[+] {string_parse_json} is definitely malicious\n")
     else:
-        print("[+] This doesn't seems to be an IOC.")
+        append_report(filename_report, "[+] This doesn't seems to be malicious.\n")
 
     return
 
 
-def write_file_reputation_report(key, string_file_reputation):
-    """Function to write a file reputation report"""
-    file_report = file_reputation_api_request(key, string_file_reputation)
-
-    filename = ""
-    filename_parsed = ""
+def parse_filename(filename_parsed):
+    """Function used to get a filename as input and parse it until we got a proper one"""
 
     while filename_parsed.isalnum() is False:
         try:
             filename = input(
-                "Please provide a filename (without an extension / _ is accepted between chars): ")
+                "Please provide a filename for your report (without an extension / _ is accepted between chars): ")
 
             filename_parsed = filename
 
-            if filename[0] != '_' and filename[-1] != '_' and filename.count('_') == 1:
-                filename_parsed = filename.replace('_', '')
+            if filename != '':
+                if filename[0] != '_' and filename[-1] != '_' and filename.count('_') == 1:
+                    filename_parsed = filename.replace('_', '')
 
         except ValueError as val_err:
             exception_handler(True, val_err)
+            return
+
+    return filename
+
+
+def append_report(filename_to_append_to, data_to_write):
+    """Writing/Appending data to our report"""
 
     try:
-        with open(f"{filename}.json", "w", encoding="UTF-8") as file:
-            file.write(file_report)
+        with open(f"{filename_to_append_to}.txt", "a", encoding="UTF-8") as file:
+            file.write(data_to_write + "\n")
     except IOError as io_err:
         exception_handler(True, io_err)
-        return
-
-    print(
-        f"[+] The file report for {string_file_reputation} can be found as {filename}.json in {Path.cwd()}")
-
     return
 
 
@@ -202,95 +207,84 @@ def formating_file():
             out_file.truncate()
     except IOError as strip_err:
         exception_handler(True, strip_err)
-        exit(1)
 
     return
 
 
+def logic_func():
+    """Creating our logic for calling our functions"""
+
+    prompt_filename = ""
+
+    filename = parse_filename(prompt_filename)
+
+    file_reputation = False  # creating a bool to know if we need to call write_file_reputation_report()
+
+    if file_arg:  # If user launched the script with the file cmdline arg, else then string cmdline argument scenario start
+        data_list = args.file.readlines()  # Create a list with each elements on each line
+
+        for d in data_list:  # Using for loop to sent each element of the list to the api request function
+            response = search_api_request(api_key, d)
+
+            if response is None:  # If we receive nothing quit with error
+                print("[-] We didn't receive something from our search request.")
+                exit(1)
+
+            if parse_json(response, d, file_reputation, filename) is True:
+                response_file_reputation = file_reputation_api_request(api_key, d)
+                append_report(filename, "[+] Response from File reputation request: \n")
+                append_report(filename, response_file_reputation)
+
+    else:
+        response = search_api_request(api_key, args.string)
+
+        if response is None:  # If we receive nothing quit with error
+            exit(1)
+
+        if parse_json(response, args.string, file_reputation, filename) is True:  # check if we need to call write_report() for file reputation
+            response_file_reputation = file_reputation_api_request(api_key, args.string)
+            append_report(filename, "[+] Response from File reputation request: \n")
+            append_report(filename, response_file_reputation)
+
+    print(
+        f"[+] The file report can be found as {filename}.txt in {Path.cwd()}")
+
+    exit(0)
+
+
 if __name__ == '__main__':
 
-    # Create the parser to have arguments in the script
-    parser = argparse.ArgumentParser()
-
-    # Adding string argument
-    parser.add_argument('--string', type=str, )
-
-    # Adding File argument
-    parser.add_argument('--file', type=argparse.FileType('r'))
-
-    # Parse the argument
-    args = parser.parse_args()
-
-    # Check if an argument is provided
-    if len(sys.argv) <= 1:
+    if checking_arguments(sys.argv) is None:  # Check if an argument is provided
         print("[-] Please provide at least one command line argument")
         exit(1)
 
-    # Set file argument to false until we know there's one
-    file_arg = False
+    parser = argparse.ArgumentParser()  # Create the parser to have arguments in the script
 
-    # Set to true if we find that it is used as cmdline argument
-    # Remove any blank line so we can send proper string to the api_req()
-    if args.file:
+    parser.add_argument('--string', type=str, )  # Adding string argument
+
+    parser.add_argument('--file', type=argparse.FileType('r'))  # Adding File argument
+
+    args = parser.parse_args()  # Parse the argument
+
+    file_arg = False  # Set file argument to false until we know there's one
+
+    if args.file:  # Set to true if we find that it is used as cmdline argument, Remove any blank line so we can send proper string to the api_req()
         file_arg = True
 
         formating_file()
 
     string = ""
 
-    # Call the get_path function to have the path of the API Key File
-    path = get_path(string)
+    path = get_path(string)  # Call the get_path function to have the path of the API Key File
 
-    # If we receive nothing quit with error
-    if path is None:
+    if path is None:  # If we receive nothing quit with error
+        print("[-] We didn't receive a proper path from the function")
         exit(1)
 
-    # Call the read_api_key function to read the API Key from the file
-    api_key = read_api_key(path)
+    api_key = read_api_key(path)  # Call the read_api_key function to read the API Key from the file
 
-    # If we receive nothing quit with error
-    if api_key is None:
+    if api_key == '':  # If we receive nothing quit with error
+        print("[-] We couldn't find your API Key.")
         exit(1)
 
-    # creating a bool to know if we need to call write_file_reputation_report()
-    file_reputation = False
-
-    # If user launched the script with the file cmdline arg
-    # else then string cmdline argument scenario start
-    if file_arg:
-        data_list = args.file.readlines()  # Create a list with each elements on each line
-
-        request = 0  # Initialize request var to check how many request we sent
-
-        # Using for loop to sent each element of the list to the api request function
-        for d in data_list:
-            response = search_api_request(api_key, d)
-
-            # If we receive nothing quit with error
-            if response is None:
-                exit(1)
-
-            if parse_json(response, d, file_reputation) is True:
-                write_file_reputation_report(api_key, d)
-
-            request += 1
-
-            if request == 4:
-                print(
-                    "\n[*] Sorry but the quota is 4 lookups/min, please wait 60 seconds...")
-                # Should we use sleep or exit ? (more than 4 request works totally fine...)
-                sleep(60)
-                # exit(0)
-    else:
-        response = search_api_request(api_key, args.string)
-
-        # If we receive nothing quit with error
-        if response is None:
-            exit(1)
-
-        # check if we need to call file_reputation()
-        if parse_json(response, args.string, file_reputation) is True:
-            write_file_reputation_report(api_key, args.string)
-            exit(0)
-        else:
-            exit(0)
+    logic_func()
