@@ -8,69 +8,25 @@ import requests
 from time import sleep
 from pathlib import Path
 
-
-def exception_handler(print_exception=False, exception=""):
-    """This function enhances default Python Error handling
-    It will print the line in code that the error occurred on"""
-    if print_exception is True:
-        print(exception)
-        exc_type, exc_obj, exc_tb = sys.exc_info()
-        del exc_type, exc_obj
-        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-        print("Exception on line: ", exc_tb.tb_lineno, " in ", fname)
-    return None
+##########################################################
+# DATA HANDLING
+##########################################################
 
 
-def verify_at_least_one_command_line_argument(arguments):
-    """Function checking the number of arguments"""
-    if len(arguments) > 1:
-        return arguments
-    return None
-
-
-def parse_arguments():
-    """Function used to parse arguments"""
-    parser = argparse.ArgumentParser()  # Create the parser to have arguments in the script
-    parser.add_argument('--string', type=str, )  # Adding string argument
-    parser.add_argument('--file', type=argparse.FileType('r'))  # Adding File argument
-    return parser.parse_args()  # Parse the argument
-
-
-def get_path(prompt):
-    """Get Path with input(), check if both path/file exist"""
-    try:
-        prompt = input("Please input the absolute path of your API key configuration file: ")
-        prompt = checking_path(prompt)
-    except ValueError as val_err:
-        exception_handler(True, val_err)
-        return None
-    return prompt
-
-
-def checking_path(raw_path):
-    """Function use to check if path and file exist"""
-    if os.path.exists(raw_path):
-        print("[+] The path is valid!")
-        parsed_path = Path(raw_path)
-        if parsed_path.is_file():
-            print("[+] We did find the API file!")
-            return parsed_path
-        else:
-            print("[-] We didn't found the API file!")
+def parse_filename(filename_parsed):
+    """Function used to get a filename as input and parse it until we got a proper one"""
+    while filename_parsed.isalnum() is False:
+        try:
+            filename = input(
+                "Please provide a filename for your report (without an extension / _ is accepted between chars): ")
+            filename_parsed = filename
+            if filename != '':
+                if filename[0] != '_' and filename[-1] != '_' and ('__' in filename) is not True:
+                    filename_parsed = filename.replace('_', '')
+        except ValueError as val_err:
+            exception_handler(True, val_err)
             return None
-    else:
-        print("[-] The path of the API File is not valid!")
-        return None
-
-
-def read_api_key(file):
-    """Read API Key from the file path provided in get_path()"""
-    try:
-        with open(file, "r", encoding="UTF-8") as api_file:
-            return api_file.readline()
-    except IOError as io_err:
-        exception_handler(True, io_err)
-    return None
+    return filename
 
 
 def search_api_request(key, data):
@@ -87,23 +43,6 @@ def search_api_request(key, data):
         sleep(60)
         search_api_request(key, data)
     print(f"[-] HTTP response wasn't successful: {response_search_api.status_code}")
-    return None
-
-
-def file_reputation_api_request(key, hash_file_reputation):
-    """Function to make api request to get a file report"""
-    url = f"https://www.virustotal.com/api/v3/files/{hash_file_reputation}"
-    headers = {"accept": "application/json",
-               "x-apikey": key
-               }
-    response_file_reputation = requests.get(url, headers=headers, timeout=10)
-    if response_file_reputation.status_code == 200:
-        return response_file_reputation.text
-    if response_file_reputation.status_code == 400:
-        print(f"[-] HTTP response wasn't successful: {response_file_reputation.status_code}, we made too many request, we need to wait 60 seconds...")
-        sleep(60)
-        file_reputation_api_request(key, hash_file_reputation)
-    print(f"[-] HTTP response wasn't successful: {response_file_reputation.status_code}")
     return None
 
 
@@ -148,20 +87,41 @@ def data_processing(string_parse_json, res_dic, analysis_stat, res_parse_json, r
     return None, report_data_dic
 
 
-def parse_filename(filename_parsed):
-    """Function used to get a filename as input and parse it until we got a proper one"""
-    while filename_parsed.isalnum() is False:
-        try:
-            filename = input(
-                "Please provide a filename for your report (without an extension / _ is accepted between chars): ")
-            filename_parsed = filename
-            if filename != '':
-                if filename[0] != '_' and filename[-1] != '_' and ('__' in filename) is not True:
-                    filename_parsed = filename.replace('_', '')
-        except ValueError as val_err:
-            exception_handler(True, val_err)
-            return None
-    return filename
+def file_reputation_api_request(key, hash_file_reputation):
+    """Function to make api request to get a file report"""
+    url = f"https://www.virustotal.com/api/v3/files/{hash_file_reputation}"
+    headers = {"accept": "application/json",
+               "x-apikey": key
+               }
+    response_file_reputation = requests.get(url, headers=headers, timeout=10)
+    if response_file_reputation.status_code == 200:
+        return response_file_reputation.text
+    if response_file_reputation.status_code == 400:
+        print(f"[-] HTTP response wasn't successful: {response_file_reputation.status_code}, we made too many request, we need to wait 60 seconds...")
+        sleep(60)
+        file_reputation_api_request(key, hash_file_reputation)
+    print(f"[-] HTTP response wasn't successful: {response_file_reputation.status_code}")
+    return None
+
+
+def handle_file_report(report_data_dic, string_argument):
+    """Function used to handle our file report"""
+    response = search_api_request(api_key, string_argument)
+    if response is None:  # If we receive nothing quit with error
+        print("[-] We didn't receive something from our search request.")
+        return 1
+    error, report_data_dic, string_parse_json, res_dic, analysis_stat, res_parse_json = parse_json(report_data_dic, response, string_argument)
+    if error is not True:
+        data_process_variable,  report_data_dic = data_processing(string_parse_json, res_dic, analysis_stat, res_parse_json, report_data_dic)
+        if data_process_variable is True:  # check if we need to call for file reputation
+            response_file_reputation = file_reputation_api_request(api_key, string_argument)
+            report_data_dic.append("[+] Response from File reputation request: \n")
+            report_data_dic.append(response_file_reputation)
+    return report_data_dic
+
+##########################################################
+# DATA FORMATTING + FILE WRITE
+##########################################################
 
 
 def append_report(filename_to_append_to, data_to_write):
@@ -171,19 +131,6 @@ def append_report(filename_to_append_to, data_to_write):
             file.write(data_to_write + "\n")
     except IOError as io_err:
         exception_handler(True, io_err)
-    return None
-
-
-def formating_file():
-    """ Checking if the file is well formatted (no blank line, a string on each line),
-    if not format the file"""
-    try:
-        with open(sys.argv[2], encoding="UTF-8") as in_file, open(sys.argv[2], 'r+', encoding="UTF-8") as out_file:
-            out_file.writelines(line for line in in_file if line.strip())
-            out_file.truncate()
-    except IOError as strip_err:
-        exception_handler(True, strip_err)
-        exit(1)
     return None
 
 
@@ -203,21 +150,90 @@ def handle_file():
     print(f"[+] The file report can be found as {filename}.txt in {Path.cwd()}")
     return 0
 
+##########################################################
+# HELPERS
+##########################################################
 
-def handle_file_report(report_data_dic, string_argument):
-    """Function used to handle our file report"""
-    response = search_api_request(api_key, string_argument)
-    if response is None:  # If we receive nothing quit with error
-        print("[-] We didn't receive something from our search request.")
-        return 1
-    error, report_data_dic, string_parse_json, res_dic, analysis_stat, res_parse_json = parse_json(report_data_dic, response, string_argument)
-    if error is not True:
-        data_process_variable,  report_data_dic = data_processing(string_parse_json, res_dic, analysis_stat, res_parse_json, report_data_dic)
-        if data_process_variable is True:  # check if we need to call for file reputation
-            response_file_reputation = file_reputation_api_request(api_key, string_argument)
-            report_data_dic.append("[+] Response from File reputation request: \n")
-            report_data_dic.append(response_file_reputation)
-    return report_data_dic
+
+def exception_handler(print_exception=False, exception=""):
+    """This function enhances default Python Error handling
+    It will print the line in code that the error occurred on"""
+    if print_exception is True:
+        print(exception)
+        exc_type, exc_obj, exc_tb = sys.exc_info()
+        del exc_type, exc_obj
+        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+        print("Exception on line: ", exc_tb.tb_lineno, " in ", fname)
+    return None
+
+
+def verify_at_least_one_command_line_argument(arguments):
+    """Function checking the number of arguments"""
+    if len(arguments) > 1:
+        return arguments
+    return None
+
+
+def formating_file():
+    """ Checking if the file is well formatted (no blank line, a string on each line),
+    if not format the file"""
+    try:
+        with open(sys.argv[2], encoding="UTF-8") as in_file, open(sys.argv[2], 'r+', encoding="UTF-8") as out_file:
+            out_file.writelines(line for line in in_file if line.strip())
+            out_file.truncate()
+    except IOError as strip_err:
+        exception_handler(True, strip_err)
+        exit(1)
+    return None
+
+
+def get_path(prompt):
+    """Get Path with input(), check if both path/file exist"""
+    try:
+        prompt = input("Please input the absolute path of your API key configuration file: ")
+        prompt = check_if_filepath_exists(prompt)
+    except ValueError as val_err:
+        exception_handler(True, val_err)
+        return None
+    return prompt
+
+
+def check_if_filepath_exists(raw_path):
+    """Function use to check if path and file exist"""
+    if os.path.exists(raw_path):
+        print("[+] The path is valid!")
+        parsed_path = Path(raw_path)
+        if parsed_path.is_file():
+            print("[+] We did find the file!")
+            return parsed_path
+        else:
+            print("[-] We didn't found the file!")
+            return None
+    else:
+        print("[-] The path of the File is not valid!")
+        return None
+
+
+def read_api_key(file):
+    """Read API Key from the file path provided in get_path()"""
+    try:
+        with open(file, "r", encoding="UTF-8") as api_file:
+            return api_file.readline()
+    except IOError as io_err:
+        exception_handler(True, io_err)
+    return None
+
+##########################################################
+# MAIN AND SETUP
+##########################################################
+
+
+def parse_arguments():
+    """Function used to parse arguments"""
+    parser = argparse.ArgumentParser()  # Create the parser to have arguments in the script
+    parser.add_argument('--string', type=str, )  # Adding string argument
+    parser.add_argument('--file', type=argparse.FileType('r'))  # Adding File argument
+    return parser.parse_args()  # Parse the argument
 
 
 if __name__ == '__main__':
