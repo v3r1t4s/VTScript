@@ -51,8 +51,7 @@
 [+] AVG : Win64:CrypterX-gen [Trj]
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
@@ -1065,15 +1064,13 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38"
     }
-}
-
+} 
 [+] 6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38 was flagged 43 times.
 
 [+] 6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38 is definitely malicious
 
 [+] Response from File reputation request: 
-
-{
+ {
     "data": {
         "attributes": {
             "type_description": "Win32 DLL",

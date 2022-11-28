@@ -7,8 +7,7 @@
 
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
@@ -611,8 +610,7 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=https:%2F%2Fwww.youtube.com%2Fresults%3Fsearch_query=a%0A"
     }
-}
-
+} 
 [+] https://www.youtube.com/results?search_query=a was flagged 0 times.
 [+] https://www.youtube.com/results?search_query=a doesn't seems to be malicious.
 
@@ -625,8 +623,7 @@
 
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
@@ -1969,8 +1966,7 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85%0A"
     }
-}
-
+} 
 [+] c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85 was flagged 0 times.
 [+] c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85 doesn't seems to be malicious.
 
@@ -1991,16 +1987,15 @@
 [+] VIPRE : malicious
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
                 "jarm": "27d3ed3ed0003ed1dc42d43d00041d6183ff1bfae51ebd88d70384363d525c",
                 "network": "1.1.1.0/24",
-                "last_https_certificate_date": 1669387254,
+                "last_https_certificate_date": 1669653630,
                 "tags": [],
-                "last_analysis_date": 1669386953,
+                "last_analysis_date": 1669653326,
                 "as_owner": "CLOUDFLARENET",
                 "last_analysis_stats": {
                     "harmless": 79,
@@ -2583,25 +2578,28 @@
                     }
                 },
                 "reputation": 77,
-                "last_modification_date": 1669411473,
+                "last_modification_date": 1669673726,
                 "total_votes": {
                     "harmless": 66,
                     "malicious": 11
                 },
                 "last_https_certificate": {
-                    "size": 1531,
                     "public_key": {
+                        "algorithm": "EC",
                         "ec": {
                             "oid": "secp256r1",
                             "pub": "04fc3e51ef741dc6da78baaea58a4addd90be6e25b573157ded3bfb6d98a3b4fd2545488cfbd2e65e766ebc5dfd0315452a72cee1286a39a66c1ea067903ba1bf0"
-                        },
-                        "algorithm": "EC"
+                        }
                     },
                     "thumbprint_sha256": "666773198478030c56fb23768e4819c2b75c322cd3bea4a8346bb03c228d4f18",
                     "tags": [],
-                    "cert_signature": {
-                        "signature": "3065023019d79a796e69cc196fddc3d036c854d04ef46f1d46c0ca2ffb221995f870750b59d9ad16316e1a261b16df710d55cd4a023100eadc2e0998feb1fb07f5315fb67c1abe38d9c5399a6a0b9d8f5467134bc11286262a116d98d3911d02ebe1777671378e",
-                        "signature_algorithm": "SHA384ECDSA"
+                    "signature_algorithm": "SHA384ECDSA",
+                    "subject": {
+                        "C": "US",
+                        "L": "San Francisco",
+                        "CN": "cloudflare-dns.com",
+                        "O": "Cloudflare, Inc.",
+                        "ST": "California"
                     },
                     "validity": {
                         "not_after": "2023-09-13 23:59:59",
@@ -2616,9 +2614,7 @@
                             "serverAuth",
                             "clientAuth"
                         ],
-                        "authority_key_identifier": {
-                            "keyid": "0abc0829178ca5396d7a0ece33c72eb3edfbc37a"
-                        },
+                        "tags": [],
                         "subject_alternative_name": [
                             "cloudflare-dns.com",
                             "*.cloudflare-dns.com",
@@ -2632,7 +2628,13 @@
                             "2606:4700:4700:0:0:0:0:64",
                             "2606:4700:4700:0:0:0:0:6400"
                         ],
-                        "tags": [],
+                        "authority_key_identifier": {
+                            "keyid": "0abc0829178ca5396d7a0ece33c72eb3edfbc37a"
+                        },
+                        "ca_information_access": {
+                            "CA Issuers": "http://cacerts.digicert.com/DigiCertTLSHybridECCSHA3842020CA1-1.crt",
+                            "OCSP": "http://ocsp.digicert.com"
+                        },
                         "subject_key_identifier": "d263ba94d6547f4c8514083a1c855629ef598fcc",
                         "crl_distribution_points": [
                             "http://crl3.digicert.com/DigiCertTLSHybridECCSHA3842020CA1-1.crl",
@@ -2642,13 +2644,12 @@
                             "ff"
                         ],
                         "1.3.6.1.4.1.11129.2.4.2": "0482016a0168007500e83ed0da3ef5063532e75728bc896bc903d3cbd1116bec",
-                        "CA": true,
-                        "ca_information_access": {
-                            "CA Issuers": "http://cacerts.digicert.com/DigiCertTLSHybridECCSHA3842020CA1-1.crt",
-                            "OCSP": "http://ocsp.digicert.com"
-                        }
+                        "CA": true
                     },
-                    "signature_algorithm": "SHA384ECDSA",
+                    "cert_signature": {
+                        "signature_algorithm": "SHA384ECDSA",
+                        "signature": "3065023019d79a796e69cc196fddc3d036c854d04ef46f1d46c0ca2ffb221995f870750b59d9ad16316e1a261b16df710d55cd4a023100eadc2e0998feb1fb07f5315fb67c1abe38d9c5399a6a0b9d8f5467134bc11286262a116d98d3911d02ebe1777671378e"
+                    },
                     "serial_number": "0d1c7af28e5f2717dbb27f410820bdf7",
                     "thumbprint": "d1d467e7bc0eaccdc887a612b8b2bc15c169046b",
                     "issuer": {
@@ -2656,13 +2657,7 @@
                         "CN": "DigiCert TLS Hybrid ECC SHA384 2020 CA1",
                         "O": "DigiCert Inc"
                     },
-                    "subject": {
-                        "C": "US",
-                        "ST": "California",
-                        "L": "San Francisco",
-                        "O": "Cloudflare, Inc.",
-                        "CN": "cloudflare-dns.com"
-                    }
+                    "size": 1531
                 },
                 "asn": 13335,
                 "whois": "Domain Name: one.one\r\nRegistry Domain ID: DB8D9612E99A84235AF9133FBE4EB27D5-ARI\r\nRegistrar WHOIS Server:\r\nRegistrar URL:\r\nUpdated Date: 2021-07-04T12:15:49Z\r\nCreation Date: 2015-05-20T12:15:44Z\r\nRegistry Expiry Date: 2022-05-20T12:15:44Z\r\nRegistrar: One.com A/S - ONE\r\nRegistrar IANA ID: 9998\r\nRegistrar Abuse Contact Email:\r\nRegistrar Abuse Contact Phone:\r\nDomain Status: ok https://icann.org/epp#ok\r\nRegistry Registrant ID: REDACTED FOR PRIVACY\r\nRegistrant Name: REDACTED FOR PRIVACY\r\nRegistrant Organization: One.com A/S\r\nRegistrant Street: REDACTED FOR PRIVACY\r\nRegistrant Street: REDACTED FOR PRIVACY\r\nRegistrant Street: REDACTED FOR PRIVACY\r\nRegistrant City: REDACTED FOR PRIVACY\r\nRegistrant State/Province:\r\nRegistrant Postal Code: REDACTED FOR PRIVACY\r\nRegistrant Country: dk\r\nRegistrant Phone: REDACTED FOR PRIVACY\r\nRegistrant Phone Ext: REDACTED FOR PRIVACY\r\nRegistrant Fax: REDACTED FOR PRIVACY\r\nRegistrant Fax Ext: REDACTED FOR PRIVACY\r\nRegistrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.\r\nRegistry Admin ID: REDACTED FOR PRIVACY\r\nAdmin Name: REDACTED FOR PRIVACY\r\nAdmin Organization: REDACTED FOR PRIVACY\r\nAdmin Street: REDACTED FOR PRIVACY\r\nAdmin Street: REDACTED FOR PRIVACY\r\nAdmin Street: REDACTED FOR PRIVACY\r\nAdmin City: REDACTED FOR PRIVACY\r\nAdmin State/Province: REDACTED FOR PRIVACY\r\nAdmin Postal Code: REDACTED FOR PRIVACY\r\nAdmin Country: REDACTED FOR PRIVACY\r\nAdmin Phone: REDACTED FOR PRIVACY\r\nAdmin Phone Ext: REDACTED FOR PRIVACY\r\nAdmin Fax: REDACTED FOR PRIVACY\r\nAdmin Fax Ext: REDACTED FOR PRIVACY\r\nAdmin Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.\r\nRegistry Tech ID: REDACTED FOR PRIVACY\r\nTech Name: REDACTED FOR PRIVACY\r\nTech Organization: REDACTED FOR PRIVACY\r\nTech Street: REDACTED FOR PRIVACY\r\nTech Street: REDACTED FOR PRIVACY\r\nTech Street: REDACTED FOR PRIVACY\r\nTech City: REDACTED FOR PRIVACY\r\nTech State/Province: REDACTED FOR PRIVACY\r\nTech Postal Code: REDACTED FOR PRIVACY\r\nTech Country: REDACTED FOR PRIVACY\r\nTech Phone: REDACTED FOR PRIVACY\r\nTech Phone Ext: REDACTED FOR PRIVACY\r\nTech Fax: REDACTED FOR PRIVACY\r\nTech Fax Ext: REDACTED FOR PRIVACY\r\nTech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.\r\nName Server: a.b-one-dns.net\r\nName Server: b.b-one-dns.net\r\nDNSSEC: signedDelegation\r\nURL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/\r\n>>> Last update of WHOIS database: 2021-09-14T06:12:51Z <<<\r\n\r\nFor more information on Whois status codes, please visit https://icann.org/epp\r\n\r\nThe Service is provided so that you may look up certain information in relation to domain names that we store in our database.\r\n\r\nUse of the Service is subject to our policies, in particular you should familiarise yourself with our Acceptable Use Policy and our Privacy Policy.\r\n\r\nThe information provided by this Service is 'as is' and we make no guarantee of it its accuracy.\r\n\r\nYou agree that by your use of the Service you will not use the information provided by us in a way which is:\r\n* inconsistent with any applicable laws,\r\n* inconsistent with any policy issued by us,\r\n* to generate, distribute, or facilitate unsolicited mass email, promotions, advertisings or other solicitations, or\r\n* to enable high volume, automated, electronic processes that apply to the Service.\r\n\r\nYou acknowledge that:\r\n* a response from the Service that a domain name is 'available', does not guarantee that is able to be registered,\r\n* we may restrict, suspend or terminate your access to the Service at any time, and\r\n* the copying, compilation, repackaging, dissemination or other use of the information provided by the Service is not permitted, without our express written consent.\r\n\r\nThis information has been prepared and published in order to represent administrative and technical management of the TLD.\r\n\r\nWe may discontinue or amend any part or the whole of these Terms of Service from time to time at our absolute discretion.\r\n"
@@ -2677,8 +2672,7 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=1.1.1.1%0A"
     }
-}
-
+} 
 [+] 1.1.1.1 was flagged 6 times.
 
 [+] 1.1.1.1 is definitely malicious
@@ -2699,8 +2693,7 @@
 [+] MaxSecure : Trojan.Malware.83556886.susgen
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
@@ -3803,15 +3796,13 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1%0A"
     }
-}
-
+} 
 [+] 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1 was flagged 5 times.
 
 [+] 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1 is definitely malicious
 
 [+] Response from File reputation request: 
-
-{
+ {
     "data": {
         "attributes": {
             "type_description": "Win32 EXE",
@@ -4915,24 +4906,18 @@
 [*] Checking google.com
 
 
-[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 83, 'malicious': 0, 'suspicious': 0, 'undetected': 13, 'timeout': 0}
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 84, 'malicious': 0, 'suspicious': 0, 'undetected': 12, 'timeout': 0}
 
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
                 "last_dns_records": [
                     {
                         "type": "A",
-                        "value": "173.194.211.102",
-                        "ttl": 300
-                    },
-                    {
-                        "type": "A",
-                        "value": "173.194.211.139",
+                        "value": "64.233.182.138",
                         "ttl": 300
                     },
                     {
@@ -4941,13 +4926,18 @@
                         "ttl": 3600
                     },
                     {
+                        "type": "AAAA",
+                        "value": "2607:f8b0:4001:c0a::65",
+                        "ttl": 300
+                    },
+                    {
                         "type": "TXT",
                         "value": "MS=E4A68B9AB2BB9670BCE15412F62916164C0B20BB",
                         "ttl": 3600
                     },
                     {
                         "type": "A",
-                        "value": "173.194.211.138",
+                        "value": "64.233.182.139",
                         "ttl": 300
                     },
                     {
@@ -4968,21 +4958,6 @@
                         "ttl": 3600
                     },
                     {
-                        "type": "AAAA",
-                        "value": "2607:f8b0:400c:c10::65",
-                        "ttl": 300
-                    },
-                    {
-                        "type": "A",
-                        "value": "173.194.211.113",
-                        "ttl": 300
-                    },
-                    {
-                        "type": "AAAA",
-                        "value": "2607:f8b0:400c:c10::8b",
-                        "ttl": 300
-                    },
-                    {
                         "type": "NS",
                         "value": "ns3.google.com",
                         "ttl": 21600
@@ -4998,6 +4973,17 @@
                         "ttl": 3600
                     },
                     {
+                        "rname": "dns-admin.google.com",
+                        "retry": 900,
+                        "refresh": 900,
+                        "minimum": 60,
+                        "value": "ns1.google.com",
+                        "expire": 1800,
+                        "ttl": 51,
+                        "serial": 491022771,
+                        "type": "SOA"
+                    },
+                    {
                         "type": "TXT",
                         "value": "facebook-domain-verification=22rm551cu4k0ab0bxsw536tlds4h95",
                         "ttl": 3600
@@ -5008,15 +4994,20 @@
                         "ttl": 21600
                     },
                     {
-                        "rname": "dns-admin.google.com",
-                        "retry": 900,
-                        "value": "ns1.google.com",
-                        "minimum": 60,
-                        "refresh": 900,
-                        "expire": 1800,
-                        "ttl": 5,
-                        "serial": 490697519,
-                        "type": "SOA"
+                        "type": "AAAA",
+                        "value": "2607:f8b0:4001:c0a::8a",
+                        "ttl": 300
+                    },
+                    {
+                        "type": "A",
+                        "value": "64.233.182.102",
+                        "ttl": 300
+                    },
+                    {
+                        "priority": 10,
+                        "type": "MX",
+                        "value": "smtp.google.com",
+                        "ttl": 237
                     },
                     {
                         "type": "TXT",
@@ -5025,12 +5016,17 @@
                     },
                     {
                         "type": "A",
-                        "value": "173.194.211.101",
+                        "value": "64.233.182.113",
                         "ttl": 300
                     },
                     {
                         "type": "A",
-                        "value": "173.194.211.100",
+                        "value": "64.233.182.100",
+                        "ttl": 300
+                    },
+                    {
+                        "type": "A",
+                        "value": "64.233.182.101",
                         "ttl": 300
                     },
                     {
@@ -5039,10 +5035,14 @@
                         "ttl": 21600
                     },
                     {
-                        "priority": 10,
-                        "type": "MX",
-                        "value": "smtp.google.com",
-                        "ttl": 159
+                        "type": "AAAA",
+                        "value": "2607:f8b0:4001:c0a::64",
+                        "ttl": 300
+                    },
+                    {
+                        "type": "AAAA",
+                        "value": "2607:f8b0:4001:c0a::66",
+                        "ttl": 300
                     },
                     {
                         "type": "TXT",
@@ -5068,51 +5068,41 @@
                         "type": "TXT",
                         "value": "onetrust-domain-verification=de01ed21f2fa4d8781cbc3ffb89cf4ef",
                         "ttl": 3600
-                    },
-                    {
-                        "type": "AAAA",
-                        "value": "2607:f8b0:400c:c10::64",
-                        "ttl": 300
-                    },
-                    {
-                        "type": "AAAA",
-                        "value": "2607:f8b0:400c:c10::71",
-                        "ttl": 300
                     }
                 ],
                 "jarm": "27d40d40d29d40d1dc42d43d00041d4689ee210389f4f6b4b5b1b93f92252d",
                 "whois": "Creation Date: 1997-09-15T04:00:00Z\nDNSSEC: unsigned\nDomain Name: GOOGLE.COM\nDomain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited\nDomain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited\nDomain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited\nDomain Status: serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited\nDomain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited\nDomain Status: serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited\nName Server: NS1.GOOGLE.COM\nName Server: NS2.GOOGLE.COM\nName Server: NS3.GOOGLE.COM\nName Server: NS4.GOOGLE.COM\nRegistrar Abuse Contact Email: abusecomplaints@markmonitor.com\nRegistrar Abuse Contact Phone: +1.2086851750\nRegistrar IANA ID: 292\nRegistrar URL: http://www.markmonitor.com\nRegistrar WHOIS Server: whois.markmonitor.com\nRegistrar: MarkMonitor Inc.\nRegistry Domain ID: 2138514_DOMAIN_COM-VRSN\nRegistry Expiry Date: 2028-09-14T04:00:00Z\nUpdated Date: 2019-09-09T15:39:04Z",
-                "last_https_certificate_date": 1669340084,
+                "last_https_certificate_date": 1669600101,
                 "tags": [],
                 "popularity_ranks": {
                     "Majestic": {
-                        "timestamp": 1669395482,
+                        "timestamp": 1669481886,
                         "rank": 1
                     },
                     "Statvoo": {
-                        "timestamp": 1669395481,
+                        "timestamp": 1669654681,
                         "rank": 1
                     },
                     "Alexa": {
-                        "timestamp": 1669309081,
+                        "timestamp": 1669481884,
                         "rank": 1
                     },
                     "Cisco Umbrella": {
-                        "timestamp": 1669395481,
-                        "rank": 1
+                        "timestamp": 1669654682,
+                        "rank": 7
                     },
                     "Quantcast": {
                         "timestamp": 1585755370,
                         "rank": 1
                     }
                 },
-                "last_analysis_date": 1669340084,
-                "last_dns_records_date": 1669340084,
+                "last_analysis_date": 1669600100,
+                "last_dns_records_date": 1669600101,
                 "last_analysis_stats": {
-                    "harmless": 83,
+                    "harmless": 84,
                     "malicious": 0,
                     "suspicious": 0,
-                    "undetected": 13,
+                    "undetected": 12,
                     "timeout": 0
                 },
                 "creation_date": 874296000,
@@ -5157,8 +5147,8 @@
                         "engine_name": "ViriBack"
                     },
                     "Comodo Valkyrie Verdict": {
-                        "category": "undetected",
-                        "result": "unrated",
+                        "category": "harmless",
+                        "result": "clean",
                         "method": "blacklist",
                         "engine_name": "Comodo Valkyrie Verdict"
                     },
@@ -5692,21 +5682,20 @@
                     }
                 },
                 "last_update_date": 1568043544,
-                "last_modification_date": 1669411800,
+                "last_modification_date": 1669677921,
                 "last_https_certificate": {
-                    "size": 3616,
                     "public_key": {
+                        "algorithm": "EC",
                         "ec": {
                             "oid": "secp256r1",
                             "pub": "04e7a5a1f8c1df9c18841d3242fed39bab221aa08855b1a57ba2b0434e80a15cfed744a689c5f4f81776bf165909488d1c6527967b4316cf4258a4bd479016454a"
-                        },
-                        "algorithm": "EC"
+                        }
                     },
                     "thumbprint_sha256": "599949976843bff607838ee014aaf9ab36d7124a1513e6aa83aba4e5dfa5aaaf",
                     "tags": [],
-                    "cert_signature": {
-                        "signature": "e12f0a82387178c543258fa55d301bde82080928dc24dff72928d4232db871d77e995cf573487d052480f9d0f2fff92956b0082c480975d2ac9c5d2c8dca39ae396b2fc7329f955618ee2cb4435f2b87105ba99bfbaa5860d4dfa5682522eea0a9e1fe06f3e3860a82dea84527f66e1dcea097e96c0381c24892b0f1e70a7ccd917b63093c5ff17894dd38dfbedfd0cc92c76276159c07aec0d729f367dcd7623e7543d2125cee959474a7ba0c423294bdce676469ab07156bef16c36e171618f37ddefe9f9fe5b1d15e499da203a57480a198b8ef96f70854484ab644afed176e7373e73bd1c98fb438b74819d6832706e065e025641025adea4d17ab9ca8af",
-                        "signature_algorithm": "sha256RSA"
+                    "signature_algorithm": "sha256RSA",
+                    "subject": {
+                        "CN": "*.google.com"
                     },
                     "validity": {
                         "not_after": "2023-01-25 13:43:08",
@@ -5721,9 +5710,7 @@
                         "extended_key_usage": [
                             "serverAuth"
                         ],
-                        "authority_key_identifier": {
-                            "keyid": "8a747faf85cdee95cd3d9cd0e24614f371351d27"
-                        },
+                        "tags": [],
                         "subject_alternative_name": [
                             "*.google.com",
                             "*.appengine.google.com",
@@ -5859,7 +5846,13 @@
                             "developers.android.google.cn",
                             "source.android.google.cn"
                         ],
-                        "tags": [],
+                        "authority_key_identifier": {
+                            "keyid": "8a747faf85cdee95cd3d9cd0e24614f371351d27"
+                        },
+                        "ca_information_access": {
+                            "CA Issuers": "http://pki.goog/repo/certs/gts1c3.der",
+                            "OCSP": "http://ocsp.pki.goog/gts1c3"
+                        },
                         "subject_key_identifier": "4e17794eaeac2a1d45701aff56189a5ac00246d6",
                         "crl_distribution_points": [
                             "http://crls.pki.goog/gts1c3/QqFxbi9M48c.crl"
@@ -5868,13 +5861,12 @@
                             "ff"
                         ],
                         "1.3.6.1.4.1.11129.2.4.2": "0481f200f0007600e83ed0da3ef5063532e75728bc896bc903d3cbd1116beceb",
-                        "CA": true,
-                        "ca_information_access": {
-                            "CA Issuers": "http://pki.goog/repo/certs/gts1c3.der",
-                            "OCSP": "http://ocsp.pki.goog/gts1c3"
-                        }
+                        "CA": true
                     },
-                    "signature_algorithm": "sha256RSA",
+                    "cert_signature": {
+                        "signature_algorithm": "sha256RSA",
+                        "signature": "e12f0a82387178c543258fa55d301bde82080928dc24dff72928d4232db871d77e995cf573487d052480f9d0f2fff92956b0082c480975d2ac9c5d2c8dca39ae396b2fc7329f955618ee2cb4435f2b87105ba99bfbaa5860d4dfa5682522eea0a9e1fe06f3e3860a82dea84527f66e1dcea097e96c0381c24892b0f1e70a7ccd917b63093c5ff17894dd38dfbedfd0cc92c76276159c07aec0d729f367dcd7623e7543d2125cee959474a7ba0c423294bdce676469ab07156bef16c36e171618f37ddefe9f9fe5b1d15e499da203a57480a198b8ef96f70854484ab644afed176e7373e73bd1c98fb438b74819d6832706e065e025641025adea4d17ab9ca8af"
+                    },
                     "serial_number": "ee642cf839979cc912425626a7c46d0a",
                     "thumbprint": "2bb5f049bb7adecb2f32672e10d5453ebe2c180b",
                     "issuer": {
@@ -5882,15 +5874,13 @@
                         "CN": "GTS CA 1C3",
                         "O": "Google Trust Services LLC"
                     },
-                    "subject": {
-                        "CN": "*.google.com"
-                    }
+                    "size": 3616
                 },
                 "categories": {
                     "Forcepoint ThreatSeeker": "search engines and portals",
                     "Sophos": "search engines",
                     "BitDefender": "searchengines",
-                    "Comodo Valkyrie Verdict": "media sharing",
+                    "Comodo Valkyrie Verdict": "mobile communications",
                     "alphaMountain.ai": "Search Engines/Portals"
                 },
                 "total_votes": {
@@ -5908,8 +5898,7 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=google.com%0A"
     }
-}
-
+} 
 [+] google.com was flagged 0 times.
 [+] google.com doesn't seems to be malicious.
 
@@ -5922,8 +5911,7 @@
 
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
@@ -6610,8 +6598,7 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=aefeb5761a5bbee998fa20a68213316522c7554796f47eb8c7eb2a5df1d4e73d%0A"
     }
-}
-
+} 
 [+] aefeb5761a5bbee998fa20a68213316522c7554796f47eb8c7eb2a5df1d4e73d was flagged 0 times.
 [+] aefeb5761a5bbee998fa20a68213316522c7554796f47eb8c7eb2a5df1d4e73d doesn't seems to be malicious.
 
@@ -6631,8 +6618,7 @@
 
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
@@ -6664,10 +6650,11 @@
                 "creation_date": 1649952623,
                 "names": [
                     "FurMark_1.31.0.0_Setup.exe",
-                    "FurMark_1.31.0.0_Setup (1).exe",
-                    "",
-                    "FurMark 1.31.0.0.exe",
                     "furmark-1-31-0-0.exe",
+                    "FurMark_1.31.0.0_Setup_.exe",
+                    "",
+                    "FurMark_1.31.0.0_Setup (1).exe",
+                    "FurMark 1.31.0.0.exe",
                     "furmark_1-31-0-0_fr_275258.exe",
                     "FurMark_1.31.0.0_Setup (2).exe",
                     "FurMark-RSLOAD.NET-.exe",
@@ -6689,9 +6676,7 @@
                     "GPU_BURNER FurMark_1.31.0.0_Setup.exe",
                     "furmark.exe",
                     "\u041d\u0435\u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043e 119337.crdownload",
-                    "furmark_13100.exe",
-                    "FurMark 1.31.exe",
-                    "FurMark_1.30.0.0_Setup.exe"
+                    "furmark_13100.exe"
                 ],
                 "signature_info": {
                     "product": "FurMark                                                     ",
@@ -6701,9 +6686,9 @@
                     "comments": "This installation was built with Inno Setup.",
                     "file version": "1.31.0.0            "
                 },
-                "last_modification_date": 1669408687,
+                "last_modification_date": 1669675510,
                 "type_tag": "peexe",
-                "times_submitted": 4095,
+                "times_submitted": 4221,
                 "total_votes": {
                     "harmless": 8,
                     "malicious": 0
@@ -6737,7 +6722,7 @@
                         }
                     ]
                 },
-                "last_submission_date": 1669408687,
+                "last_submission_date": 1669675510,
                 "sigma_analysis_results": [
                     {
                         "rule_title": "Python Initiated Connection",
@@ -7996,8 +7981,8 @@
                     "long-sleeps",
                     "direct-cpu-clock-access"
                 ],
-                "last_analysis_date": 1669399314,
-                "unique_sources": 3050,
+                "last_analysis_date": 1669649546,
+                "unique_sources": 3098,
                 "first_submission_date": 1659513959,
                 "sha1": "b6bc190e023d883401ae3c73d6b5acc6ecd0fdfb",
                 "ssdeep": "196608:wLDa+a89OrilnUAuqNPKCV5GbbDBCMy7gJFbPjQD2sNzZQtfQexaJfTnP:KWn9kUBnb3BCSfMF1P",
@@ -8264,8 +8249,8 @@
                         "offset": 832512,
                         "chi2": 294.74,
                         "filetype": "unknown",
-                        "size": 12038564,
-                        "md5": "97bb0320ddb7709e582d1295631ffdae"
+                        "md5": "97bb0320ddb7709e582d1295631ffdae",
+                        "size": 12038564
                     },
                     "resource_langs": {
                         "NEUTRAL": 14,
@@ -8279,9 +8264,9 @@
                             "name": ".text",
                             "chi2": 7600667.0,
                             "virtual_address": 4096,
-                            "flags": "rx",
-                            "raw_size": 735744,
                             "entropy": 6.36,
+                            "raw_size": 735744,
+                            "flags": "rx",
                             "virtual_size": 735716,
                             "md5": "43af0a9476ca224d8e8461f1e22c94da"
                         },
@@ -8289,9 +8274,9 @@
                             "name": ".itext",
                             "chi2": 95798.38,
                             "virtual_address": 741376,
-                            "flags": "rx",
-                            "raw_size": 6144,
                             "entropy": 5.97,
+                            "raw_size": 6144,
+                            "flags": "rx",
                             "virtual_size": 5768,
                             "md5": "185e04b9a1f554e31f7f848515dc890c"
                         },
@@ -8299,9 +8284,9 @@
                             "name": ".data",
                             "chi2": 526369.75,
                             "virtual_address": 749568,
-                            "flags": "rw",
-                            "raw_size": 14336,
                             "entropy": 5.05,
+                            "raw_size": 14336,
+                            "flags": "rw",
                             "virtual_size": 14244,
                             "md5": "cab2107c933b696aa5cf0cc6c3fd3980"
                         },
@@ -8309,9 +8294,9 @@
                             "name": ".bss",
                             "chi2": -1.0,
                             "virtual_address": 765952,
-                            "flags": "rw",
-                            "raw_size": 0,
                             "entropy": 0.0,
+                            "raw_size": 0,
+                            "flags": "rw",
                             "virtual_size": 28136,
                             "md5": "d41d8cd98f00b204e9800998ecf8427e"
                         },
@@ -8319,9 +8304,9 @@
                             "name": ".idata",
                             "chi2": 80427.12,
                             "virtual_address": 794624,
-                            "flags": "rw",
-                            "raw_size": 4096,
                             "entropy": 5.03,
+                            "raw_size": 4096,
+                            "flags": "rw",
                             "virtual_size": 4060,
                             "md5": "e7d1635e2624b124cfdce6c360ac21cd"
                         },
@@ -8329,9 +8314,9 @@
                             "name": ".didata",
                             "chi2": 55918.0,
                             "virtual_address": 798720,
-                            "flags": "rw",
-                            "raw_size": 512,
                             "entropy": 2.75,
+                            "raw_size": 512,
+                            "flags": "rw",
                             "virtual_size": 420,
                             "md5": "8ced971d8a7705c98b173e255d8c9aa7"
                         },
@@ -8339,9 +8324,9 @@
                             "name": ".edata",
                             "chi2": 78960.0,
                             "virtual_address": 802816,
-                            "flags": "r",
-                            "raw_size": 512,
                             "entropy": 1.88,
+                            "raw_size": 512,
+                            "flags": "r",
                             "virtual_size": 154,
                             "md5": "8d4e1e508031afe235bf121c80fd7d5f"
                         },
@@ -8349,9 +8334,9 @@
                             "name": ".tls",
                             "chi2": -1.0,
                             "virtual_address": 806912,
-                            "flags": "rw",
-                            "raw_size": 0,
                             "entropy": 0.0,
+                            "raw_size": 0,
+                            "flags": "rw",
                             "virtual_size": 24,
                             "md5": "d41d8cd98f00b204e9800998ecf8427e"
                         },
@@ -8359,9 +8344,9 @@
                             "name": ".rdata",
                             "chi2": 93355.0,
                             "virtual_address": 811008,
-                            "flags": "r",
-                            "raw_size": 512,
                             "entropy": 1.38,
+                            "raw_size": 512,
+                            "flags": "r",
                             "virtual_size": 93,
                             "md5": "8f2f090acd9622c88a6a852e72f94e96"
                         },
@@ -8369,9 +8354,9 @@
                             "name": ".rsrc",
                             "chi2": 5302156.5,
                             "virtual_address": 815104,
-                            "flags": "r",
-                            "raw_size": 69632,
                             "entropy": 3.7,
+                            "raw_size": 69632,
+                            "flags": "r",
                             "virtual_size": 69632,
                             "md5": "3c9bbbcfbfadd6285f8eaf2b12d28bd8"
                         }
@@ -8574,7 +8559,7 @@
                         "engine_version": "1.3.0.9899",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Lionic": {
                         "category": "undetected",
@@ -8582,7 +8567,7 @@
                         "engine_version": "7.5",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "tehtris": {
                         "category": "undetected",
@@ -8590,7 +8575,15 @@
                         "engine_version": "v0.1.4",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
+                    },
+                    "DrWeb": {
+                        "category": "undetected",
+                        "engine_name": "DrWeb",
+                        "engine_version": "7.0.58.8230",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20221128"
                     },
                     "MicroWorld-eScan": {
                         "category": "undetected",
@@ -8598,7 +8591,7 @@
                         "engine_version": "14.0.409.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "CMC": {
                         "category": "undetected",
@@ -8606,7 +8599,7 @@
                         "engine_version": "2.4.2022.1",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "CAT-QuickHeal": {
                         "category": "undetected",
@@ -8614,7 +8607,7 @@
                         "engine_version": "22.00",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "McAfee": {
                         "category": "undetected",
@@ -8622,7 +8615,7 @@
                         "engine_version": "6.0.6.653",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Cylance": {
                         "category": "undetected",
@@ -8630,7 +8623,7 @@
                         "engine_version": "2.3.1.101",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "VIPRE": {
                         "category": "undetected",
@@ -8638,7 +8631,7 @@
                         "engine_version": "6.0.0.35",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Sangfor": {
                         "category": "undetected",
@@ -8651,10 +8644,10 @@
                     "K7AntiVirus": {
                         "category": "undetected",
                         "engine_name": "K7AntiVirus",
-                        "engine_version": "12.52.45511",
+                        "engine_version": "12.53.45559",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "BitDefender": {
                         "category": "undetected",
@@ -8662,15 +8655,15 @@
                         "engine_version": "7.2",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "K7GW": {
                         "category": "undetected",
                         "engine_name": "K7GW",
-                        "engine_version": "12.52.45511",
+                        "engine_version": "12.52.45545",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221127"
                     },
                     "Cybereason": {
                         "category": "undetected",
@@ -8680,21 +8673,21 @@
                         "method": "blacklist",
                         "engine_update": "20210330"
                     },
-                    "Baidu": {
+                    "BitDefenderTheta": {
                         "category": "undetected",
-                        "engine_name": "Baidu",
-                        "engine_version": "1.0.0.2",
+                        "engine_name": "BitDefenderTheta",
+                        "engine_version": "7.2.37796.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20190318"
+                        "engine_update": "20221128"
                     },
                     "VirIT": {
                         "category": "undetected",
                         "engine_name": "VirIT",
-                        "engine_version": "9.5.333",
+                        "engine_version": "9.5.334",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Cyren": {
                         "category": "undetected",
@@ -8702,7 +8695,7 @@
                         "engine_version": "6.5.1.2",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "SymantecMobileInsight": {
                         "category": "type-unsupported",
@@ -8718,7 +8711,7 @@
                         "engine_version": "1.19.0.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221127"
                     },
                     "Elastic": {
                         "category": "undetected",
@@ -8731,26 +8724,26 @@
                     "ESET-NOD32": {
                         "category": "undetected",
                         "engine_name": "ESET-NOD32",
-                        "engine_version": "26315",
+                        "engine_version": "26328",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
-                    "Cynet": {
-                        "category": "type-unsupported",
-                        "engine_name": "Cynet",
-                        "engine_version": "4.0.0.27",
-                        "result": null,
-                        "method": "blacklist",
-                        "engine_update": "20221125"
-                    },
-                    "APEX": {
+                    "Zoner": {
                         "category": "undetected",
-                        "engine_name": "APEX",
-                        "engine_version": "6.359",
+                        "engine_name": "Zoner",
+                        "engine_version": "2.2.2.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221127"
+                    },
+                    "TrendMicro-HouseCall": {
+                        "category": "undetected",
+                        "engine_name": "TrendMicro-HouseCall",
+                        "engine_version": "10.0.0.1040",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20221128"
                     },
                     "Paloalto": {
                         "category": "undetected",
@@ -8758,7 +8751,7 @@
                         "engine_version": "0.9.0.1003",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "ClamAV": {
                         "category": "undetected",
@@ -8766,7 +8759,7 @@
                         "engine_version": "0.105.1.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Kaspersky": {
                         "category": "undetected",
@@ -8774,7 +8767,7 @@
                         "engine_version": "21.0.1.45",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Alibaba": {
                         "category": "undetected",
@@ -8790,7 +8783,15 @@
                         "engine_version": "1.0.146.25648",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
+                    },
+                    "Cynet": {
+                        "category": "type-unsupported",
+                        "engine_name": "Cynet",
+                        "engine_version": "4.0.0.27",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20221128"
                     },
                     "SUPERAntiSpyware": {
                         "category": "undetected",
@@ -8798,7 +8799,7 @@
                         "engine_version": "5.6.0.1032",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221119"
+                        "engine_update": "20221126"
                     },
                     "Avast": {
                         "category": "undetected",
@@ -8806,7 +8807,7 @@
                         "engine_version": "22.11.7701.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Rising": {
                         "category": "undetected",
@@ -8814,7 +8815,7 @@
                         "engine_version": "25.0.0.27",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Ad-Aware": {
                         "category": "undetected",
@@ -8822,7 +8823,7 @@
                         "engine_version": "3.0.21.193",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Trustlook": {
                         "category": "type-unsupported",
@@ -8830,15 +8831,7 @@
                         "engine_version": "1.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
-                    },
-                    "TACHYON": {
-                        "category": "undetected",
-                        "engine_name": "TACHYON",
-                        "engine_version": "2022-11-25.02",
-                        "result": null,
-                        "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Emsisoft": {
                         "category": "undetected",
@@ -8846,15 +8839,15 @@
                         "engine_version": "2022.6.0.32461",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Comodo": {
                         "category": "undetected",
                         "engine_name": "Comodo",
-                        "engine_version": "35187",
+                        "engine_version": "35194",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "F-Secure": {
                         "category": "undetected",
@@ -8862,23 +8855,23 @@
                         "engine_version": "18.10.1137.128",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
-                    "DrWeb": {
+                    "Baidu": {
                         "category": "undetected",
-                        "engine_name": "DrWeb",
-                        "engine_version": "7.0.58.8230",
+                        "engine_name": "Baidu",
+                        "engine_version": "1.0.0.2",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20190318"
                     },
                     "Zillya": {
                         "category": "undetected",
                         "engine_name": "Zillya",
-                        "engine_version": "2.0.0.4758",
+                        "engine_version": "2.0.0.4759",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "TrendMicro": {
                         "category": "undetected",
@@ -8886,7 +8879,7 @@
                         "engine_version": "11.0.0.1006",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "McAfee-GW-Edition": {
                         "category": "undetected",
@@ -8894,7 +8887,7 @@
                         "engine_version": "v2019.1.2+3728",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Trapmine": {
                         "category": "undetected",
@@ -8910,7 +8903,7 @@
                         "engine_version": "35.24.1.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Sophos": {
                         "category": "undetected",
@@ -8918,23 +8911,23 @@
                         "engine_version": "1.4.1.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
-                    "SentinelOne": {
+                    "Ikarus": {
                         "category": "undetected",
-                        "engine_name": "SentinelOne",
-                        "engine_version": "22.3.2.9",
+                        "engine_name": "Ikarus",
+                        "engine_version": "6.0.33.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221003"
+                        "engine_update": "20221128"
                     },
                     "Avast-Mobile": {
                         "category": "type-unsupported",
                         "engine_name": "Avast-Mobile",
-                        "engine_version": "221125-00",
+                        "engine_version": "221128-00",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Jiangmin": {
                         "category": "undetected",
@@ -8942,7 +8935,7 @@
                         "engine_version": "16.0.100",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221124"
+                        "engine_update": "20221127"
                     },
                     "Webroot": {
                         "category": "undetected",
@@ -8950,7 +8943,7 @@
                         "engine_version": "1.0.0.403",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Avira": {
                         "category": "undetected",
@@ -8958,7 +8951,15 @@
                         "engine_version": "8.3.3.16",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
+                    },
+                    "MAX": {
+                        "category": "undetected",
+                        "engine_name": "MAX",
+                        "engine_version": "2019.9.16.1",
+                        "result": null,
+                        "method": "blacklist",
+                        "engine_update": "20221128"
                     },
                     "Antiy-AVL": {
                         "category": "undetected",
@@ -8966,7 +8967,7 @@
                         "engine_version": "3.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Kingsoft": {
                         "category": "undetected",
@@ -8974,7 +8975,7 @@
                         "engine_version": "2017.9.26.565",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Microsoft": {
                         "category": "undetected",
@@ -8982,7 +8983,7 @@
                         "engine_version": "1.1.19800.4",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Gridinsoft": {
                         "category": "undetected",
@@ -8990,7 +8991,7 @@
                         "engine_version": "1.0.101.174",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Arcabit": {
                         "category": "undetected",
@@ -8998,7 +8999,7 @@
                         "engine_version": "2022.0.0.18",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "ViRobot": {
                         "category": "undetected",
@@ -9006,7 +9007,7 @@
                         "engine_version": "2014.3.20.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221124"
+                        "engine_update": "20221128"
                     },
                     "ZoneAlarm": {
                         "category": "undetected",
@@ -9014,23 +9015,23 @@
                         "engine_version": "1.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "GData": {
                         "category": "undetected",
                         "engine_name": "GData",
-                        "engine_version": "A:25.34587B:27.29670",
+                        "engine_version": "A:25.34612B:27.29704",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Google": {
                         "category": "undetected",
                         "engine_name": "Google",
-                        "engine_version": "1669395638",
+                        "engine_version": "1669644072",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "BitDefenderFalx": {
                         "category": "type-unsupported",
@@ -9046,7 +9047,7 @@
                         "engine_version": "3.22.2.10299",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Acronis": {
                         "category": "undetected",
@@ -9056,13 +9057,13 @@
                         "method": "blacklist",
                         "engine_update": "20221114"
                     },
-                    "BitDefenderTheta": {
+                    "VBA32": {
                         "category": "undetected",
-                        "engine_name": "BitDefenderTheta",
-                        "engine_version": "7.2.37796.0",
+                        "engine_name": "VBA32",
+                        "engine_version": "5.0.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221115"
+                        "engine_update": "20221128"
                     },
                     "ALYac": {
                         "category": "undetected",
@@ -9070,47 +9071,31 @@
                         "engine_version": "1.1.3.1",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
-                    "MAX": {
+                    "TACHYON": {
                         "category": "undetected",
-                        "engine_name": "MAX",
-                        "engine_version": "2019.9.16.1",
+                        "engine_name": "TACHYON",
+                        "engine_version": "2022-11-28.02",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
-                    },
-                    "VBA32": {
-                        "category": "undetected",
-                        "engine_name": "VBA32",
-                        "engine_version": "5.0.0",
-                        "result": null,
-                        "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Malwarebytes": {
                         "category": "undetected",
                         "engine_name": "Malwarebytes",
-                        "engine_version": "4.3.3.37",
+                        "engine_version": "4.4.4.52",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
-                    "Zoner": {
+                    "APEX": {
                         "category": "undetected",
-                        "engine_name": "Zoner",
-                        "engine_version": "2.2.2.0",
+                        "engine_name": "APEX",
+                        "engine_version": "6.360",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221124"
-                    },
-                    "TrendMicro-HouseCall": {
-                        "category": "undetected",
-                        "engine_name": "TrendMicro-HouseCall",
-                        "engine_version": "10.0.0.1040",
-                        "result": null,
-                        "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Tencent": {
                         "category": "undetected",
@@ -9118,7 +9103,7 @@
                         "engine_version": "1.0.0.1",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Yandex": {
                         "category": "undetected",
@@ -9126,15 +9111,15 @@
                         "engine_version": "5.5.2.24",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
-                    "Ikarus": {
+                    "SentinelOne": {
                         "category": "undetected",
-                        "engine_name": "Ikarus",
-                        "engine_version": "6.0.33.0",
+                        "engine_name": "SentinelOne",
+                        "engine_version": "22.3.2.9",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221003"
                     },
                     "MaxSecure": {
                         "category": "undetected",
@@ -9142,7 +9127,7 @@
                         "engine_version": "1.0.0.1",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221126"
                     },
                     "Fortinet": {
                         "category": "undetected",
@@ -9150,7 +9135,7 @@
                         "engine_version": "6.4.258.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "AVG": {
                         "category": "undetected",
@@ -9158,7 +9143,7 @@
                         "engine_version": "22.11.7701.0",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "Panda": {
                         "category": "undetected",
@@ -9166,7 +9151,7 @@
                         "engine_version": "4.6.4.2",
                         "result": null,
                         "method": "blacklist",
-                        "engine_update": "20221125"
+                        "engine_update": "20221128"
                     },
                     "CrowdStrike": {
                         "category": "undetected",
@@ -9196,8 +9181,7 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=052100564a8a9a9e8675a554053cbbabc2d4b6c680ebf69c1184054caaf10b30%0A"
     }
-}
-
+} 
 [+] 052100564a8a9a9e8675a554053cbbabc2d4b6c680ebf69c1184054caaf10b30 was flagged 0 times.
 [+] 052100564a8a9a9e8675a554053cbbabc2d4b6c680ebf69c1184054caaf10b30 doesn't seems to be malicious.
 
@@ -9218,8 +9202,7 @@
 
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
@@ -10595,8 +10578,7 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=fd7bfc7b8de7d5cd008fe53db5dc0df770875b759e966cca4f49635099ddb0dc%0A"
     }
-}
-
+} 
 [+] fd7bfc7b8de7d5cd008fe53db5dc0df770875b759e966cca4f49635099ddb0dc was flagged 0 times.
 [+] fd7bfc7b8de7d5cd008fe53db5dc0df770875b759e966cca4f49635099ddb0dc doesn't seems to be malicious.
 
@@ -10649,8 +10631,7 @@
 [+] CrowdStrike : win/malicious_confidence_100% (D)
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
@@ -11766,15 +11747,13 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845%0A"
     }
-}
-
+} 
 [+] 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845 was flagged 23 times.
 
 [+] 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845 is definitely malicious
 
 [+] Response from File reputation request: 
-
-{
+ {
     "data": {
         "attributes": {
             "type_description": "Win32 EXE",
@@ -12891,19 +12870,19 @@
 [*] Checking 182.119.212.22 
 
 
-[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 80, 'malicious': 5, 'suspicious': 0, 'undetected': 11, 'timeout': 0}
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 79, 'malicious': 6, 'suspicious': 0, 'undetected': 11, 'timeout': 0}
 
 [*] Detailed reports about 182.119.212.22  (engine name : result of the analysis): 
 
 [+] CMC Threat Intelligence : malware
 [+] CRDF : malicious
 [+] Fortinet : malware
+[+] alphaMountain.ai : malicious
 [+] CyRadar : malicious
 [+] Kaspersky : malware
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
@@ -12914,8 +12893,8 @@
                 "last_analysis_date": 1668529632,
                 "as_owner": "CHINA UNICOM China169 Backbone",
                 "last_analysis_stats": {
-                    "harmless": 80,
-                    "malicious": 5,
+                    "harmless": 79,
+                    "malicious": 6,
                     "suspicious": 0,
                     "undetected": 11,
                     "timeout": 0
@@ -13080,8 +13059,8 @@
                         "engine_name": "Fortinet"
                     },
                     "alphaMountain.ai": {
-                        "category": "harmless",
-                        "result": "clean",
+                        "category": "malicious",
+                        "result": "malicious",
                         "method": "blacklist",
                         "engine_name": "alphaMountain.ai"
                     },
@@ -13495,7 +13474,7 @@
                     }
                 },
                 "reputation": 0,
-                "last_modification_date": 1668529659,
+                "last_modification_date": 1669452471,
                 "total_votes": {
                     "harmless": 0,
                     "malicious": 0
@@ -13513,9 +13492,8 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=182.119.212.22%20%0A"
     }
-}
-
-[+] 182.119.212.22  was flagged 5 times.
+} 
+[+] 182.119.212.22  was flagged 6 times.
 
 [+] 182.119.212.22  is definitely malicious
 
@@ -13590,8 +13568,7 @@
 [+] CrowdStrike : win/malicious_confidence_100% (W)
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
@@ -14465,15 +14442,13 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74%0A"
     }
-}
-
+} 
 [+] 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74 was flagged 53 times.
 
 [+] 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74 is definitely malicious
 
 [+] Response from File reputation request: 
-
-{
+ {
     "data": {
         "attributes": {
             "type_description": "Win32 EXE",
@@ -15359,8 +15334,7 @@
 [+] Forcepoint ThreatSeeker : malicious
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
@@ -16033,8 +16007,7 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=138.68.132.110%0A"
     }
-}
-
+} 
 [+] 138.68.132.110 was flagged 5 times.
 
 [+] 138.68.132.110 is definitely malicious
@@ -16067,8 +16040,7 @@
 [+] ESET : malware
 
 [+] You can find the full report from the search request here: 
-
-{
+ {
     "data": [
         {
             "attributes": {
@@ -16667,8 +16639,7 @@
     "links": {
         "self": "https://www.virustotal.com/api/v3/search?query=http:%2F%2F182.119.212.22:40364%2Fmozi.m"
     }
-}
-
+} 
 [+] http://182.119.212.22:40364/mozi.m was flagged 11 times.
 
 [+] http://182.119.212.22:40364/mozi.m is definitely malicious
