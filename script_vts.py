@@ -162,11 +162,11 @@ def verify_at_least_x_command_line_arguments(arguments, argument_count):
     return None
 
 
-def opening_file_stripping_new_lines():
+def opening_file_stripping_new_lines(file):
     """ Checking if the file is well formatted (no blank line, a string on each line),
     if not format the file"""
     try:
-        with open(sys.argv[2], encoding="UTF-8") as in_file, open(sys.argv[2], 'r+', encoding="UTF-8") as out_file:
+        with open(file, encoding="UTF-8") as in_file, open(file, 'r+', encoding="UTF-8") as out_file:
             out_file.writelines(line for line in in_file if line.strip())
             out_file.truncate()
     except IOError as strip_err:
@@ -175,10 +175,10 @@ def opening_file_stripping_new_lines():
     return None
 
 
-def get_path_from_user(prompt):
+def get_path_from_user(prompt, text_for_input):
     """Get Path with input(), check if both path/file exist"""
     try:
-        prompt = input("Please input the absolute path of your API key configuration file: ")
+        prompt = input(text_for_input)
         if Helpers.check_if_filepath_exists(prompt) is None:
             exit(1)
     except ValueError as val_err:
@@ -210,11 +210,11 @@ if __name__ == '__main__':
 
     if args.file:  # Set to true if we find that it is used as cmdline argument, Remove any blank line so we can send proper string to the api_req()
         file_arg = True
-        opening_file_stripping_new_lines()
+        opening_file_stripping_new_lines(sys.argv[2])
 
     string = ""
 
-    path = get_path_from_user(string)  # Call the get_path function to have the path of the API Key File
+    path = get_path_from_user(string, "Please input the absolute path of your API key configuration file: ")  # Call the get_path function to have the path of the API Key File
 
     if path is None:  # If we receive nothing quit with error
         exit(1)
