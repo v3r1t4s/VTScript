@@ -1,0 +1,72 @@
+-----------------------------------------------------------------------
+[*] Checking 6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 5, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 2, 'malicious': 56, 'undetected': 13}
+
+[*] Detailed reports about 6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38 (engine name : result of the analysis): 
+
+[+] Lionic : Trojan.Win32.Emotet.L!c
+[+] Elastic : malicious (high confidence)
+[+] ClamAV : Win.Packed.Emotet-9977744-0
+[+] FireEye : Generic.mg.d703b20a6611cedb
+[+] CAT-QuickHeal : Trojan.Emotet.S28931060
+[+] McAfee : Artemis!D703B20A6611
+[+] Malwarebytes : Trojan.Emotet
+[+] Zillya : Trojan.Emotet.Win64.642
+[+] Sangfor : Spyware.Win64.Emotet.Vso3
+[+] K7AntiVirus : Trojan ( 00594f061 )
+[+] Alibaba : TrojanBanker:Win64/Emotet.a56c199d
+[+] K7GW : Trojan ( 00594f061 )
+[+] VirIT : Trojan.Win64.Emotet.DMP
+[+] Cyren : W64/S-a8a2b56b!Eldorado
+[+] Symantec : ML.Attribute.HighConfidence
+[+] ESET-NOD32 : Win64/Emotet.AL
+[+] Cynet : Malicious (score: 99)
+[+] Kaspersky : Trojan-Banker.Win64.Emotet.cmqf
+[+] BitDefender : Trojan.GenericKD.63592440
+[+] MicroWorld-eScan : Trojan.GenericKD.63592440
+[+] Avast : Win64:CrypterX-gen [Trj]
+[+] Tencent : Trojan-Banker.Win64.Emotet.hj
+[+] Ad-Aware : Trojan.GenericKD.63592440
+[+] TACHYON : Banker/W64.Emotet.528896
+[+] Sophos : Mal/Generic-S + Troj/Emotet-DCP
+[+] Comodo : Malware@#1xv2ed48n5j5p
+[+] F-Secure : Trojan.TR/AD.Nekark.njyqr
+[+] DrWeb : Trojan.Siggen19.6150
+[+] VIPRE : Trojan.GenericKD.63592440
+[+] TrendMicro : TrojanSpy.Win64.EMOTET.YXCKMZ
+[+] McAfee-GW-Edition : BehavesLike.Win64.Emotet.hh
+[+] Emsisoft : Trojan.GenericKD.63592440 (B)
+[+] Ikarus : Trojan.Win64.Emotet
+[+] GData : Trojan.GenericKD.63592440
+[+] Jiangmin : Trojan.Banker.Emotet.sav
+[+] Avira : TR/AD.Nekark.njyqr
+[+] Antiy-AVL : Trojan/Win32.Wacatac
+[+] Kingsoft : Win32.Troj.Banker.(kcloud)
+[+] Gridinsoft : Malware.Win64.Emotet.bot
+[+] Arcabit : Trojan.Generic.D3CA57F8
+[+] ViRobot : Trojan.Win32.Z.Agent.528896.EU
+[+] ZoneAlarm : Trojan-Banker.Win64.Emotet.cmqf
+[+] Microsoft : Trojan:Win64/Emotet.PBH!MTB
+[+] Google : Detected
+[+] AhnLab-V3 : Trojan/Win.Generic.R534172
+[+] Acronis : suspicious
+[+] ALYac : Trojan.Agent.Emotet
+[+] MAX : malware (ai score=100)
+[+] VBA32 : Trojan.Win64.Emotet
+[+] TrendMicro-HouseCall : TrojanSpy.Win64.EMOTET.YXCKMZ
+[+] Rising : Trojan.Kryptik!8.8 (TFE:5:JIKvebtQyY)
+[+] Yandex : Trojan.Emotet!9+6GgAzmH90
+[+] MaxSecure : Trojan.Malware.121218.susgen
+[+] Fortinet : W32/PossibleThreat
+[+] AVG : Win64:CrypterX-gen [Trj]
+[+] Panda : Trj/Chgt.AB
+
+[+] 6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38 was flagged 56 times.
+
+[+] 6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38 is definitely malicious
+
+[+] Getting you data of the file reputation response we got for 6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38:
+[*] The type_description of the hash is : Win32 DLL
+[*] The hash was provided to VirusTotal by 3 unique sources
+[*] The most meaningful name of the hash file found by VirusTotal is: output.208424152.txt
+[-] Check this link for more infos on your file: https://www.virustotal.com/gui/file/6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38
