@@ -95,7 +95,7 @@ def file_reputation_api_request(key, hash_file_reputation):
     return None
 
 
-def handle_file_report(report_dic, string_argument):
+def handle_file_report(report_dic, string_argument, quota, file_argument, last_element):
     """Function used to handle our file report"""
     response = search_api_request(api_key, string_argument)
     if response is None:
@@ -107,6 +107,12 @@ def handle_file_report(report_dic, string_argument):
     if parse_json_error == 0:
         call_to_file_reputation, report_dic = data_processing(string_argument, response_dictionary, analysis_stat, report_dic)
         if call_to_file_reputation == 1:
+            nb_of_request = 1
+            if file_argument is True and last_element is False:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             # We provide either 1 or 2, depending if its a string or a file for the script argument and if file is it last element or not
+                nb_of_request = 2
+            if check_quota(quota, nb_of_request) is None:
+                report_dic.append("[-] We had to skip the File reputation request because we exceeded the quota")
+                return 0, report_dic
             response_file_reputation = file_reputation_api_request(api_key, string_argument)
             if response_file_reputation is None:
                 report_dic.append("[-] The file reputation response we got had errors.")
@@ -130,19 +136,25 @@ def append_data_to_a_file(filename_to_append_to, file_type, data_to_write):
     return None
 
 
-def handle_file():
+def handle_file(quota):
     """This function is used to handle the functions to create our file"""
     prompt_filename = ""
     filename = input_and_parse_filename(prompt_filename, True, '_')
     report_dic = []
-    if file_arg:                                                                        # If user launched the script with the file cmdline arg, else then string cmdline argument scenario start
-        data_list = args.file.readlines()                                               # Create a list with each elements on each line
-        for d in data_list:                                                             # Using for loop to sent each element of the list to the api request function
-            error, report_dic = handle_file_report(report_dic, d)
+    if file_arg:                                                                                    # If user launched the script with the file cmdline arg, else then string cmdline argument scenario start
+        data_list = args.file.readlines()                                                           # Create a list with each elements on each line
+        len_data_list = len(data_list)                                                              # Calculating length of our list
+        count_of_each_argument = 1                                                                  # initialize the variable to 1 to catch the last element of the list
+        for d in data_list:                                                                         # Using for loop to sent each element of the list to the api request function
+            if count_of_each_argument != len_data_list:                                             # Using if to check if last eleemnt if not send false, if yes send True
+                error, report_dic = handle_file_report(report_dic, d, quota, file_arg, False)
+            else:
+                error, report_dic = handle_file_report(report_dic, d, quota, file_arg, True)
             if error == 1:
                 return 1
+            count_of_each_argument += 1
     else:
-        error, report_dic = handle_file_report(report_dic,  args.string)
+        error, report_dic = handle_file_report(report_dic,  args.string, quota, file_arg, True)
         if error == 1:
             return 1
     for r in report_dic:
@@ -280,7 +292,7 @@ if __name__ == '__main__':
     if check_quota(response_quota, number_of_arguments_to_check) is None:                                     # Calling check quota to check if the number of arguments we want to use for our API requests is greater than the quota available
         exit(1)
 
-    if handle_file() == 0:
+    if handle_file(response_quota) == 0:
         exit(0)
 
     exit(1)
