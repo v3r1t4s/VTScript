@@ -19,19 +19,16 @@
 -----------------------------------------------------------------------
 [*] Checking 1.1.1.1
 
-[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 79, 'malicious': 6, 'suspicious': 0, 'undetected': 11, 'timeout': 0}
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 80, 'malicious': 5, 'suspicious': 0, 'undetected': 11, 'timeout': 0}
 
 [*] Detailed reports about 1.1.1.1 (engine name : result of the analysis): 
-
 [+] CMC Threat Intelligence : malware
 [+] Comodo Valkyrie Verdict : malware
 [+] CRDF : malicious
 [+] Lumu : malware
-[+] Blueliv : malicious
 [+] VIPRE : malicious
 
-[+] 1.1.1.1 was flagged 6 times.
-
+[+] 1.1.1.1 was flagged 5 times.
 [+] 1.1.1.1 is definitely malicious
 
 -----------------------------------------------------------------------
@@ -40,7 +37,6 @@
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 5, 'undetected': 62}
 
 [*] Detailed reports about 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1 (engine name : result of the analysis): 
-
 [+] Bkav : W32.AIDetectNet.01
 [+] Cynet : Malicious (score: 100)
 [+] APEX : Malicious
@@ -48,7 +44,6 @@
 [+] MaxSecure : Trojan.Malware.83556886.susgen
 
 [+] 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1 was flagged 5 times.
-
 [+] 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1 is definitely malicious
 
 [+] Getting you data of the file reputation response we got for 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1
@@ -79,7 +74,7 @@
 -----------------------------------------------------------------------
 [*] Checking 052100564a8a9a9e8675a554053cbbabc2d4b6c680ebf69c1184054caaf10b30
 
-[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 5, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 0, 'undetected': 71}
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 5, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 1, 'failure': 0, 'malicious': 0, 'undetected': 70}
 
 
 [+] 052100564a8a9a9e8675a554053cbbabc2d4b6c680ebf69c1184054caaf10b30 was flagged 0 times.
@@ -100,7 +95,6 @@
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 23, 'undetected': 49}
 
 [*] Detailed reports about 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845 (engine name : result of the analysis): 
-
 [+] Bkav : W32.AIDetect.malware2
 [+] tehtris : Generic.Malware
 [+] Cylance : Unsafe
@@ -126,7 +120,6 @@
 [+] CrowdStrike : win/malicious_confidence_100% (D)
 
 [+] 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845 was flagged 23 times.
-
 [+] 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845 is definitely malicious
 
 [+] Getting you data of the file reputation response we got for 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845
@@ -142,7 +135,6 @@
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 79, 'malicious': 6, 'suspicious': 0, 'undetected': 11, 'timeout': 0}
 
 [*] Detailed reports about 182.119.212.22  (engine name : result of the analysis): 
-
 [+] CMC Threat Intelligence : malware
 [+] CRDF : malicious
 [+] Fortinet : malware
@@ -151,7 +143,6 @@
 [+] Kaspersky : malware
 
 [+] 182.119.212.22  was flagged 6 times.
-
 [+] 182.119.212.22  is definitely malicious
 
 -----------------------------------------------------------------------
@@ -160,7 +151,6 @@
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 53, 'undetected': 19}
 
 [*] Detailed reports about 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74 (engine name : result of the analysis): 
-
 [+] Bkav : W32.Usibine.PE
 [+] MicroWorld-eScan : Trojan.Patched.CZ
 [+] ClamAV : Win.Worm.VB-1038
@@ -216,7 +206,6 @@
 [+] CrowdStrike : win/malicious_confidence_100% (W)
 
 [+] 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74 was flagged 53 times.
-
 [+] 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74 is definitely malicious
 
 [+] Getting you data of the file reputation response we got for 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74
@@ -232,7 +221,6 @@
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 80, 'malicious': 5, 'suspicious': 0, 'undetected': 11, 'timeout': 0}
 
 [*] Detailed reports about 138.68.132.110 (engine name : result of the analysis): 
-
 [+] CMC Threat Intelligence : malware
 [+] CRDF : malicious
 [+] CyRadar : malicious
@@ -240,7 +228,6 @@
 [+] Forcepoint ThreatSeeker : malicious
 
 [+] 138.68.132.110 was flagged 5 times.
-
 [+] 138.68.132.110 is definitely malicious
 
 -----------------------------------------------------------------------
@@ -248,7 +235,6 @@
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 66, 'malicious': 11, 'suspicious': 0, 'undetected': 13, 'timeout': 0}
 
 [*] Detailed reports about http://182.119.212.22:40364/mozi.m (engine name : result of the analysis): 
-
 [+] Sophos : malware
 [+] CRDF : malicious
 [+] Fortinet : malware
@@ -262,6 +248,5 @@
 [+] ESET : malware
 
 [+] http://182.119.212.22:40364/mozi.m was flagged 11 times.
-
 [+] http://182.119.212.22:40364/mozi.m is definitely malicious
 
