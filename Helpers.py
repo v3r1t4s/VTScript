@@ -40,3 +40,44 @@ def exception_handler(print_exception=False, exception=""):
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
         print("Exception on line: ", exc_tb.tb_lineno, " in ", fname)
     return None
+
+def verify_at_least_x_command_line_arguments(arguments, argument_count):
+    """Function checking the number of arguments"""
+    if len(arguments) > argument_count:
+        return arguments
+    return None
+
+
+def opening_file_stripping_new_lines(file):
+    """ Checking if the file is well formatted (no blank line, a string on each line), if not format the file"""
+    try:
+        with open(file, encoding="UTF-8") as in_file, open(file, 'r+', encoding="UTF-8") as out_file:
+            out_file.writelines(line for line in in_file if line.strip())
+            out_file.truncate()
+    except IOError as strip_err:
+        exception_handler(True, strip_err)
+        exit(1)
+    return None
+
+
+def get_path_from_user(text_for_input):
+    """Get Path with input(), check if both path/file exist"""
+    try:
+        prompt = input(text_for_input)
+        if check_if_filepath_exists(prompt) is None:
+            exit(1)
+    except ValueError as val_err:
+        exception_handler(True, val_err)
+        return None
+    return prompt
+
+
+def counting_lines_of_file(filename_to_count_to):
+    """Function used to count number of lines in a file"""
+    try:
+        with open(filename_to_count_to, "r", encoding="UTF-8") as file:
+            nb_of_lines = len(file.readlines())
+            return nb_of_lines
+    except IOError as io_err:
+        exception_handler(True, io_err)
+    return None
