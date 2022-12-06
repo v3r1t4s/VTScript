@@ -1,8 +1,7 @@
-PS C:\Users\\Desktop\VTScript> python .\script_vts.py --file C:\Users\\Desktop\FILEVT.txt
-Please input the absolute path of your API key configuration file: C:\Users\\Desktop\VTSAPI.txt
+PS C:\Users\\Desktop\VTScript> python .\script_vts.py --file C:\Users\\Desktop\FILEVT.txt                      Please input the absolute path of your API key configuration file: C:\Users\\Desktop\VTSAPI.txt
 [+] The path is valid!
 [+] We did find the file!
-Please provide a filename for your report (without an extension / _ is accepted between chars): myreport_with_file_argument
+Please provide a filename for your report (without an extension / _ is accepted between chars): myreport_with_file_argument       
 ---------------------------------
 [*] Working on https://www.youtube.com/results?search_query=a
 
@@ -99,4 +98,4 @@ Please provide a filename for your report (without an extension / _ is accepted 
 [*] Working on http://182.119.212.22:40364/mozi.m
 
 [+] The file report can be found as myreport_with_file_argument.txt in C:\Users\\Desktop\VTScript
-PS C:\Users\\Desktop\VTScript> 
+PS C:\Users\\Desktop\VTScript>
