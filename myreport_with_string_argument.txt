@@ -1,5 +1,6 @@
 -----------------------------------------------------------------------
 [*] Checking 6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38
+
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 5, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 2, 'malicious': 56, 'undetected': 13}
 
 [*] Detailed reports about 6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38 (engine name : result of the analysis): 
@@ -63,8 +64,10 @@
 [+] 6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38 was flagged 56 times.
 [+] 6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38 is definitely malicious
 
+
 [+] Getting you data of the file reputation response we got for 6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38:
 [*] The type_description of the hash is : Win32 DLL
 [*] The hash was provided to VirusTotal by 3 unique sources
 [*] The most meaningful name of the hash file found by VirusTotal is: output.208424152.txt
-[-] Check this link for more infos on your file: https://www.virustotal.com/gui/file/6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38
+
+[*] Check this link for more infos on your file: https://www.virustotal.com/gui/file/6ed2cd2c88da28da5d789aefecde2c9270157107829dc67a32a6b265a8dcca38

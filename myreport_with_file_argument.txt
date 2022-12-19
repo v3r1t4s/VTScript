@@ -1,23 +1,24 @@
 -----------------------------------------------------------------------
 [*] Checking https://www.youtube.com/results?search_query=a
 
+
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 80, 'malicious': 0, 'suspicious': 1, 'undetected': 7, 'timeout': 0}
 
 
 [+] https://www.youtube.com/results?search_query=a was flagged 0 times.
 [+] https://www.youtube.com/results?search_query=a doesn't seems to be malicious.
-
 -----------------------------------------------------------------------
 [*] Checking c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85
+
 
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 0, 'undetected': 69}
 
 
 [+] c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85 was flagged 0 times.
 [+] c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85 doesn't seems to be malicious.
-
 -----------------------------------------------------------------------
 [*] Checking 1.1.1.1
+
 
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 80, 'malicious': 5, 'suspicious': 0, 'undetected': 11, 'timeout': 0}
 
@@ -30,9 +31,9 @@
 
 [+] 1.1.1.1 was flagged 5 times.
 [+] 1.1.1.1 is definitely malicious
-
 -----------------------------------------------------------------------
 [*] Checking 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1
+
 
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 5, 'undetected': 62}
 
@@ -46,51 +47,53 @@
 [+] 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1 was flagged 5 times.
 [+] 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1 is definitely malicious
 
+
 [+] Getting you data of the file reputation response we got for 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1
 :
 [*] The type_description of the hash is : Win32 EXE
 [*] The hash was provided to VirusTotal by 11 unique sources
 [*] The most meaningful name of the hash file found by VirusTotal is: Anomaly Updater.exe
-[-] Check this link for more infos on your file: https://www.virustotal.com/gui/file/1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1
 
+[*] Check this link for more infos on your file: https://www.virustotal.com/gui/file/1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1
 -----------------------------------------------------------------------
 [*] Checking google.com
+
 
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 84, 'malicious': 0, 'suspicious': 0, 'undetected': 12, 'timeout': 0}
 
 
 [+] google.com was flagged 0 times.
 [+] google.com doesn't seems to be malicious.
-
 -----------------------------------------------------------------------
 [*] Checking aefeb5761a5bbee998fa20a68213316522c7554796f47eb8c7eb2a5df1d4e73d
+
 
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 12, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 0, 'undetected': 64}
 
 
 [+] aefeb5761a5bbee998fa20a68213316522c7554796f47eb8c7eb2a5df1d4e73d was flagged 0 times.
 [+] aefeb5761a5bbee998fa20a68213316522c7554796f47eb8c7eb2a5df1d4e73d doesn't seems to be malicious.
-
 -----------------------------------------------------------------------
 [*] Checking 052100564a8a9a9e8675a554053cbbabc2d4b6c680ebf69c1184054caaf10b30
 
-[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 5, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 1, 'failure': 0, 'malicious': 0, 'undetected': 70}
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 5, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 0, 'undetected': 70}
 
 
 [+] 052100564a8a9a9e8675a554053cbbabc2d4b6c680ebf69c1184054caaf10b30 was flagged 0 times.
 [+] 052100564a8a9a9e8675a554053cbbabc2d4b6c680ebf69c1184054caaf10b30 doesn't seems to be malicious.
-
 -----------------------------------------------------------------------
 [*] Checking fd7bfc7b8de7d5cd008fe53db5dc0df770875b759e966cca4f49635099ddb0dc
+
 
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 0, 'undetected': 72}
 
 
 [+] fd7bfc7b8de7d5cd008fe53db5dc0df770875b759e966cca4f49635099ddb0dc was flagged 0 times.
 [+] fd7bfc7b8de7d5cd008fe53db5dc0df770875b759e966cca4f49635099ddb0dc doesn't seems to be malicious.
-
 -----------------------------------------------------------------------
 [*] Checking 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845
+
 
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 23, 'undetected': 49}
 
@@ -122,15 +125,17 @@
 [+] 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845 was flagged 23 times.
 [+] 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845 is definitely malicious
 
+
 [+] Getting you data of the file reputation response we got for 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845
 :
 [*] The type_description of the hash is : Win32 EXE
 [*] The hash was provided to VirusTotal by 1 unique sources
 [*] The most meaningful name of the hash file found by VirusTotal is: 1a3e75f815a61816acfea3a74ddef747.virus
-[-] Check this link for more infos on your file: https://www.virustotal.com/gui/file/19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845
 
+[*] Check this link for more infos on your file: https://www.virustotal.com/gui/file/19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845
 -----------------------------------------------------------------------
 [*] Checking 182.119.212.22 
+
 
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 79, 'malicious': 6, 'suspicious': 0, 'undetected': 11, 'timeout': 0}
 
@@ -144,9 +149,9 @@
 
 [+] 182.119.212.22  was flagged 6 times.
 [+] 182.119.212.22  is definitely malicious
-
 -----------------------------------------------------------------------
 [*] Checking 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74
+
 
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 53, 'undetected': 19}
 
@@ -208,15 +213,17 @@
 [+] 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74 was flagged 53 times.
 [+] 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74 is definitely malicious
 
+
 [+] Getting you data of the file reputation response we got for 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74
 :
 [*] The type_description of the hash is : Win32 EXE
 [*] The hash was provided to VirusTotal by 1 unique sources
 [*] The most meaningful name of the hash file found by VirusTotal is: hllp.exe
-[-] Check this link for more infos on your file: https://www.virustotal.com/gui/file/59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74
 
+[*] Check this link for more infos on your file: https://www.virustotal.com/gui/file/59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74
 -----------------------------------------------------------------------
 [*] Checking 138.68.132.110
+
 
 [*] Latest Analysis Statistics available counting the number of reports: {'harmless': 80, 'malicious': 5, 'suspicious': 0, 'undetected': 11, 'timeout': 0}
 
@@ -229,24 +236,28 @@
 
 [+] 138.68.132.110 was flagged 5 times.
 [+] 138.68.132.110 is definitely malicious
-
 -----------------------------------------------------------------------
 [*] Checking http://182.119.212.22:40364/mozi.m
-[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 66, 'malicious': 11, 'suspicious': 0, 'undetected': 13, 'timeout': 0}
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 63, 'malicious': 15, 'suspicious': 0, 'undetected': 13, 'timeout': 0}
 
 [*] Detailed reports about http://182.119.212.22:40364/mozi.m (engine name : result of the analysis): 
+[+] CMC Threat Intelligence : malware
 [+] Sophos : malware
 [+] CRDF : malicious
 [+] Fortinet : malware
+[+] alphaMountain.ai : malicious
 [+] Lionic : malicious
 [+] AICC (MONITORAPP) : malware
 [+] CyRadar : malicious
+[+] Emsisoft : malware
 [+] Webroot : malicious
-[+] URLhaus : malicious
+[+] Avira : malware
 [+] BitDefender : malware
 [+] G-Data : malware
+[+] VIPRE : malicious
 [+] ESET : malware
 
-[+] http://182.119.212.22:40364/mozi.m was flagged 11 times.
+[+] http://182.119.212.22:40364/mozi.m was flagged 15 times.
 [+] http://182.119.212.22:40364/mozi.m is definitely malicious
 

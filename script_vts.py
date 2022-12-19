@@ -66,18 +66,18 @@ def parse_vt_response(res_dic, string_argument):
 
 def data_processing(string_parse_json, res_dic, analysis_stat, report_dictionary):
     """Function used to process data"""
-    report_dictionary.append(f"-----------------------------------------------------------------------\n[*] Checking {string_parse_json}\n[*] Latest Analysis Statistics available counting the number of reports: {analysis_stat}\n")     # Parsing the output for last analysis statistics
+    report_dictionary.append(f"-----------------------------------------------------------------------\n[*] Checking {string_parse_json}\n\n[*] Latest Analysis Statistics available counting the number of reports: {analysis_stat}\n\n")     # Parsing the output for last analysis statistics
     string_parse_json = string_parse_json.strip('\n')                                                                                                                                                                                      # Removing \n character
     malicious = analysis_stat['malicious']
     malicious_count = 0
     if malicious:                                                                                                                                                                                                                          # Checking if malicious key has a hit
-        report_dictionary.append(f"[*] Detailed reports about {string_parse_json} (engine name : result of the analysis): ")
+        report_dictionary.append(f"[*] Detailed reports about {string_parse_json} (engine name : result of the analysis): \n")
         analysis_res = res_dic['data'][0]['attributes']['last_analysis_results']                                                                                                                                                           # Preparing the output for latest analysis results
         for value in analysis_res.values():                                                                                                                                                                                                # Analyzing the output and checking every analysis made to find malicious one
             if "malicious" in value['category']:
-                report_dictionary.append(f"[+] {value['engine_name']} : {value['result']}")
+                report_dictionary.append(f"[+] {value['engine_name']} : {value['result']}\n")
                 malicious_count += 1
-    report_dictionary.append(f"\n[+] {string_parse_json} was flagged {malicious} times.")
+    report_dictionary.append(f"\n[+] {string_parse_json} was flagged {malicious} times.\n")
     is_string_hash = not ('.' in string_parse_json)                                                                                                                                                                                        # Checking if string provided was a hash
     if malicious_count >= 3 and is_string_hash is True:
         report_dictionary.append(f"[+] {string_parse_json} is definitely malicious\n")
@@ -107,13 +107,13 @@ def get_vt_data(api_key_to_use, string_argument, report_dictionary, api_request_
     if api_request_type == "SEARCH":
         search_response = search_api_request(api_key_to_use, string_argument)
         if search_response is None:
-            report_dictionary.append("[-] The search response we got had errors.")
+            report_dictionary.append("\n[-] The search response we got had errors.")
             return 1, report_dictionary
         return 0, search_response
     if api_request_type == "FILE":
         file_reputation_response = file_reputation_api_request(api_key_to_use, string_argument)
         if file_reputation_response is None:
-            report_dictionary.append("[-] The file reputation response we got had errors.")
+            report_dictionary.append("\n[-] The file reputation response we got had errors.")
             return 1, report_dictionary
         return 0, file_reputation_response
     return 1, ""
@@ -124,11 +124,11 @@ def create_file_report(report_dictionary, string_argument, quota, api_key_to_use
     print(f"---------------------------------\n[*] Working on {string_argument}\n")
     num_of_requests = 2
     if check_quota(quota, num_of_requests) is None:
-        report_dictionary.append("[-] We've run out of quota")
-        return 0, report_dictionary
+        report_dictionary.append("\n[-] We've run out of quota")
+        return report_dictionary
     get_vt_data_error, search_response = get_vt_data(api_key_to_use, string_argument, report_dictionary, "SEARCH")
     if get_vt_data_error == 1:
-        return 0, search_response
+        return search_response
     response_dictionary = load_json(search_response)
     parse_vt_response_error, analysis_stat = parse_vt_response(response_dictionary, string_argument)
     if parse_vt_response_error == 0:
@@ -136,10 +136,10 @@ def create_file_report(report_dictionary, string_argument, quota, api_key_to_use
         if call_to_file_reputation == 1:
             get_vt_data_error, file_reputation_response = get_vt_data(api_key_to_use, string_argument, report_dictionary, "FILE")
             if get_vt_data_error == 1:
-                return 0, file_reputation_response
+                return file_reputation_response
             file_reputation_response = load_json(file_reputation_response)
-            report_dictionary.append(f"[+] Getting you data of the file reputation response we got for {string_argument}:\n[*] The type_description of the hash is : {file_reputation_response['data']['attributes']['type_description']}\n[*] The hash was provided to VirusTotal by {str(file_reputation_response['data']['attributes']['unique_sources'])} unique sources\n[*] The most meaningful name of the hash file found by VirusTotal is: {file_reputation_response['data']['attributes']['meaningful_name']}\n[-] Check this link for more infos on your file: https://www.virustotal.com/gui/file/{string_argument}")
-    return 0, report_dictionary
+            report_dictionary.append(f"\n\n[+] Getting you data of the file reputation response we got for {string_argument}:\n[*] The type_description of the hash is : {file_reputation_response['data']['attributes']['type_description']}\n[*] The hash was provided to VirusTotal by {str(file_reputation_response['data']['attributes']['unique_sources'])} unique sources\n[*] The most meaningful name of the hash file found by VirusTotal is: {file_reputation_response['data']['attributes']['meaningful_name']}\n\n[*] Check this link for more infos on your file: https://www.virustotal.com/gui/file/{string_argument}")
+    return report_dictionary
 
 ##########################################################
 # DATA FORMATTING + FILE WRITE
@@ -163,13 +163,9 @@ def handle_file(quota, api_key_to_use):
     if file_arg:                                                                                                                                    # If user launched the script with the file cmdline arg, else then string cmdline argument scenario start
         data_list = args.file.readlines()                                                                                                           # Create a list with each elements on each line
         for d in data_list:                                                                                                                         # Using for loop to sent each element of the list to the api request function
-            handle_file_report_error, report_dictionary = create_file_report(report_dictionary, d, quota, api_key_to_use)
-            if handle_file_report_error == 1:
-                return 1, "", ""
+            report_dictionary = create_file_report(report_dictionary, d, quota, api_key_to_use)
     else:
-        handle_file_report_error, report_dictionary = create_file_report(report_dictionary,  args.string, quota, api_key_to_use)
-        if handle_file_report_error == 1:
-            return 1, "", ""
+        report_dictionary = create_file_report(report_dictionary,  args.string, quota, api_key_to_use)
     print(f"[+] The file report can be found as {filename}.txt in {Path.cwd()}")
     return 0, filename, report_dictionary
 
@@ -262,8 +258,12 @@ if __name__ == '__main__':
     handle_file_error, filename_report, report = handle_file(response_quota, api_key)
 
     if handle_file_error == 0:
+        data_to_append = ""
+        
         for r in report:
-            append_data_to_a_file(filename_report, "txt", r)
+            data_to_append = data_to_append + r
+        
+        append_data_to_a_file(filename_report, "txt", data_to_append)
         exit(0)
 
     exit(1)
