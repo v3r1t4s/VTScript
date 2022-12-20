@@ -1,0 +1,12 @@
+1100 - Event Logging service  shut down
+1102 - Logs cleared
+5025 - Firewall service stopped
+4625 - Failed Login Attempts
+4697 - Service Installed
+4698 - Scheduled Task Created
+4720 - Account Creation
+4724 - Attempt to reset accounts password
+
+(If need more check here: https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/)
+
+Check Windows XML Event Logs (EVTX) with python to ingest all logs stored at C:\Windows\System32\winevt\Logs
