@@ -1,0 +1,44 @@
+{
+    "events": [
+        {
+            "ID": 1100,
+            "name": "The event logging service has shutdown."
+        },
+        {
+            "ID": 1102,
+            "name": "The audit log was cleared."
+        },
+        {
+            "ID": 4624,
+            "name": "An account was successfully logged on."
+        },
+        {
+            "ID": 4625,
+            "name": "An account failed to log on."
+        },
+        {
+            "ID": 4672,
+            "name": "Special privileges assigned to new logon."
+        },
+        {
+            "ID": 4697,
+            "name": "A service was installed in the system."
+        },
+        {
+            "ID": 4698,
+            "name": "A scheduled task was created."
+        },
+        {
+            "ID": 4720,
+            "name": "A user account was created."
+        },
+        {
+            "ID": 4724,
+            "name": "An attempt was made to reset an account's password."
+        },
+        {
+            "ID": 5025,
+            "name": "The Windows Firewall Service has been stopped."
+        }
+    ]
+}
