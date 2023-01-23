@@ -20,38 +20,38 @@ def admin():
         return False
 
 
+def is_valid_char(char):
+    """Function to check if each char of timestamp are valid"""
+    acceptable_chars = ['-', ' ', ':']
+    return char.isdigit() or char in acceptable_chars
+
+
+def get_chars_to_add(mode):
+    """Function used to return the string to add to our timestamp"""
+    chars_to_add = ""
+    if mode == 2:
+        chars_to_add = ":00"
+    elif mode == 3:
+        chars_to_add = ":00:00"
+    elif mode == 4:
+        chars_to_add = " 00:00:00"
+    elif mode == 5:
+        chars_to_add = "-01 00:00:00"
+    elif mode == 6:
+        chars_to_add = "-01-01 00:00:00"
+    return chars_to_add
+
+
 def parse_timestamp(timestamp_to_be_parsed, mode):
     """Function used to parse the input timestamp we had"""
     if timestamp_to_be_parsed is None:
         return None, None
-    timestamp_to_be_parsed = timestamp_to_be_parsed.split()
-    if len(timestamp_to_be_parsed) == 2:
-        timestamp_to_be_parsed = timestamp_to_be_parsed[0] + ' ' + timestamp_to_be_parsed[1]
-    else:
-        timestamp_to_be_parsed = timestamp_to_be_parsed[0]
-    acceptable_chars = ['-', ' ', ':']
-    for ttbp in timestamp_to_be_parsed:
-        if (ttbp.isdigit() or ttbp in acceptable_chars) is not True:
-            return None, None
+    timestamp_to_be_parsed = ' '.join(timestamp_to_be_parsed.split()[:2])
+    if not all(is_valid_char(c) for c in timestamp_to_be_parsed):
+        return None, None
     try:
-        chars_to_add = ""
-        len_to_remove = 0
-        match mode:
-            case 2:
-                chars_to_add = ":00"
-                len_to_remove = len(chars_to_add)
-            case 3:
-                chars_to_add = ":00:00"
-                len_to_remove = len(chars_to_add)
-            case 4:
-                chars_to_add = " 00:00:00"
-                len_to_remove = len(chars_to_add)
-            case 5:
-                chars_to_add = "-01 00:00:00"
-                len_to_remove = len(chars_to_add)
-            case 6:
-                chars_to_add = "-01-01 00:00:00"
-                len_to_remove = len(chars_to_add)
+        chars_to_add = get_chars_to_add(mode)
+        len_to_remove = len(chars_to_add)
         timestamp_parsed = datetime.datetime.strptime(timestamp_to_be_parsed + chars_to_add, "%Y-%m-%d %H:%M:%S")
     except ValueError:
         return None, None
@@ -69,38 +69,49 @@ def convert_time_in_utc(time_local_timezone):
     return time_utc
 
 
+def get_num_of_timestamps(input_mode_timestamp):
+    """Function used to get the number of timestamps the user wants to input"""
+    if input_mode_timestamp == "two":
+        return 2
+    return 1
+
+
+def get_input_mode(iteration_of_for_loop):
+    """Function used to get the input mode for a timestamp"""
+    mode_to_pass = ""
+    mode_to_check = ["1", "2", "3", "4", "5", "6"]
+    while mode_to_pass not in mode_to_check:
+        mode_to_pass = input(f"[{iteration_of_for_loop}] Please when you input your timestamp do you want to input 1) a full timestamp, 2) a timestamp with date, hour and minute, 3) a timestamp with date and hour, 4) a timestamp with date only, 5) a timestamp with year and month, 6) a timestamp with year (1/2/3/4/5/6): ")
+    return int(mode_to_pass)
+
+
 def get_input_timestamp(input_mode_timestamp):
     """Function used to get the timestamp the user want to check the events"""
     try:
-        prompt = None
-        num_of_timestamp = 0
-        if input_mode_timestamp == "two":
-            num_of_timestamp = 2
-        else:
-            num_of_timestamp = 1
-        mode_to_pass = ""
-        mode_to_check = ["1", "2", "3", "4", "5", "6"]
+        num_of_timestamps = get_num_of_timestamps(input_mode_timestamp)
         timestamp_utc = []
         len_timestamp_input = []
         iteration_of_for_loop = 1
-        for n_o_t in range(0, num_of_timestamp):
-            while mode_to_pass not in mode_to_check:
-                mode_to_pass = input(f"[{iteration_of_for_loop}] Please when you input your timestamp do you want to input 1) a full timestamp, 2) a timestamp with date, hour and minute, 3) a timestamp with date and hour, 4) a timestamp with date only, 5) a timestamp with year and month, 6) a timestamp with year (1/2/3/4/5/6): ")
+        for _ in range(num_of_timestamps):
+            input_mode = get_input_mode(iteration_of_for_loop)
             timestamp_parsed = None
             while timestamp_parsed is None:
                 prompt = input(f"[{iteration_of_for_loop}] Please input the timestamp to use for searching events: ")
-                timestamp_parsed, len_to_remove = parse_timestamp(prompt, int(mode_to_pass))
-            mode_to_pass = ""
+                timestamp_parsed, len_to_remove = parse_timestamp(prompt, input_mode)
             len_timestamp_input.append(len_to_remove)
             timestamp_parsed = str(timestamp_parsed)
             timestamp_utc.append(timestamp_parsed)
             if timestamp_utc is None:
                 return None
             iteration_of_for_loop += 1
+        print(timestamp_utc, len_timestamp_input)
         return timestamp_utc, len_timestamp_input
     except ValueError as val_err:
         Helpers.exception_handler(True, val_err)
         return None
+
+# Maybe impplement a logic to be sure that the second timestamp provided
+# (in case the user want to input two) is greater than the first one
 
 
 def load_events_list_json(json_event_file):
