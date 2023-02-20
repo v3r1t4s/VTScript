@@ -2,6 +2,7 @@
 import ctypes
 import Helpers
 import datetime
+import WinOutput
 import WinParser
 import WinAnalysis
 from dateutil import tz
@@ -184,7 +185,7 @@ if __name__ == '__main__':
             exit(1)
         
         print("[*] Launching the analysis engine, please wait...")
-        interesting_event_list = WinAnalysis.WinParserMain(interesting_event_list)
+        interesting_event_list = WinAnalysis.WinAnalysisMain(interesting_event_list)
         print("[+] Analysis is done.")
 
         if interesting_event_list is None:
@@ -192,21 +193,7 @@ if __name__ == '__main__':
             exit(1)
 
         # f"[*] (Event Nb {count_matched_event} found in the timestamp provided): " +
-        data_to_append = ""
-        if interesting_event_list == []:
-            data_to_append = "[+] Your system seems clean! The analysis engine didn't return any events!"
-        else:
-            for i in interesting_event_list:
-                data_to_append += i + "\n"
-        print("[*] Writing a report...")
-        try:
-            with open("REPORT.txt", "w", encoding="UTF-8") as file:
-                file.write(data_to_append + "\n")
-                print("[+] You report is done!")
-        except IOError as io_err:
-            Helpers.exception_handler(True, io_err)
-            print("[-] We couldn't write you a report.")
-            exit(1)
+        WinOutput.WinOutputMain(interesting_event_list)
     else:
         WinParser.WinParserMain(input_provided, None, None)
     exit(0)
