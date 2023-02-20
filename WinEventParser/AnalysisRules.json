@@ -1,0 +1,56 @@
+{
+    "rules": [
+        {
+            "ID": 1100,
+            "action": "alert",
+            "description": "The event logging service has shutdown. This could indicate a problem with the logging system or a potential security issue."
+        },
+        {
+            "ID": 1102,
+            "action": "alert",
+            "description": "The audit log was cleared. This could indicate an attempt to cover up malicious activity."
+        },
+        {
+            "ID": 4624,
+            "action": "log",
+            "description": "An account was successfully logged on. This is a normal event and should be logged for auditing purposes."
+        },
+        {
+            "ID": 4625,
+            "action": "log",
+            "count": 5,
+            "timeframe": "60 minutes",
+            "description": "If an account fails to log on 5 times within 60 minutes, it could indicate a potential brute-force attack."
+        },
+        {
+            "ID": 4672,
+            "action": "alert",
+            "description": "Special privileges were assigned to a new logon. This could indicate a security vulnerability or an attempted privilege escalation."
+        },
+        {
+            "ID": 4697,
+            "action": "alert",
+            "description": "A service was installed in the system. This could indicate an attempt to install malware or a potential security issue."
+        },
+        {
+            "ID": 4698,
+            "action": "alert",
+            "description": "A scheduled task was created. This could indicate an attempt to automate malicious activity or a potential security issue."
+        },
+        {
+            "ID": 4720,
+            "action": "log",
+            "description": "A user account was created. This is a normal event and should be logged for auditing purposes."
+        },
+        {
+            "ID": 4724,
+            "action": "alert",
+            "description": "An attempt was made to reset an account's password. This could indicate a potential security issue or unauthorized access attempt."
+        },
+        {
+            "ID": 5025,
+            "action": "alert",
+            "description": "The Windows Firewall Service has been stopped. This could indicate an attempt to disable security measures or a potential security issue."
+        }
+    ]
+}

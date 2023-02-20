@@ -1,0 +1,263 @@
+-----------------------------------------------------------------------
+[*] Checking https://www.youtube.com/results?search_query=a
+
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 80, 'malicious': 0, 'suspicious': 1, 'undetected': 7, 'timeout': 0}
+
+
+[+] https://www.youtube.com/results?search_query=a was flagged 0 times.
+[+] https://www.youtube.com/results?search_query=a doesn't seems to be malicious.
+-----------------------------------------------------------------------
+[*] Checking c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85
+
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 0, 'undetected': 69}
+
+
+[+] c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85 was flagged 0 times.
+[+] c4556a383a40a97900e110fdb0e24ac01868ea9accaed6e9b76bc9b0d0b55d85 doesn't seems to be malicious.
+-----------------------------------------------------------------------
+[*] Checking 1.1.1.1
+
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 80, 'malicious': 5, 'suspicious': 0, 'undetected': 11, 'timeout': 0}
+
+[*] Detailed reports about 1.1.1.1 (engine name : result of the analysis): 
+[+] CMC Threat Intelligence : malware
+[+] Comodo Valkyrie Verdict : malware
+[+] CRDF : malicious
+[+] Lumu : malware
+[+] VIPRE : malicious
+
+[+] 1.1.1.1 was flagged 5 times.
+[+] 1.1.1.1 is definitely malicious
+-----------------------------------------------------------------------
+[*] Checking 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1
+
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 5, 'undetected': 62}
+
+[*] Detailed reports about 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1 (engine name : result of the analysis): 
+[+] Bkav : W32.AIDetectNet.01
+[+] Cynet : Malicious (score: 100)
+[+] APEX : Malicious
+[+] SentinelOne : Static AI - Suspicious PE
+[+] MaxSecure : Trojan.Malware.83556886.susgen
+
+[+] 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1 was flagged 5 times.
+[+] 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1 is definitely malicious
+
+
+[+] Getting you data of the file reputation response we got for 1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1
+:
+[*] The type_description of the hash is : Win32 EXE
+[*] The hash was provided to VirusTotal by 11 unique sources
+[*] The most meaningful name of the hash file found by VirusTotal is: Anomaly Updater.exe
+
+[*] Check this link for more infos on your file: https://www.virustotal.com/gui/file/1e8bd74b952821cf5721105c6fff1143040a4883567f0fab4d06c07ee91a22d1
+-----------------------------------------------------------------------
+[*] Checking google.com
+
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 84, 'malicious': 0, 'suspicious': 0, 'undetected': 12, 'timeout': 0}
+
+
+[+] google.com was flagged 0 times.
+[+] google.com doesn't seems to be malicious.
+-----------------------------------------------------------------------
+[*] Checking aefeb5761a5bbee998fa20a68213316522c7554796f47eb8c7eb2a5df1d4e73d
+
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 12, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 0, 'undetected': 64}
+
+
+[+] aefeb5761a5bbee998fa20a68213316522c7554796f47eb8c7eb2a5df1d4e73d was flagged 0 times.
+[+] aefeb5761a5bbee998fa20a68213316522c7554796f47eb8c7eb2a5df1d4e73d doesn't seems to be malicious.
+-----------------------------------------------------------------------
+[*] Checking 052100564a8a9a9e8675a554053cbbabc2d4b6c680ebf69c1184054caaf10b30
+
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 5, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 0, 'undetected': 70}
+
+
+[+] 052100564a8a9a9e8675a554053cbbabc2d4b6c680ebf69c1184054caaf10b30 was flagged 0 times.
+[+] 052100564a8a9a9e8675a554053cbbabc2d4b6c680ebf69c1184054caaf10b30 doesn't seems to be malicious.
+-----------------------------------------------------------------------
+[*] Checking fd7bfc7b8de7d5cd008fe53db5dc0df770875b759e966cca4f49635099ddb0dc
+
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 0, 'undetected': 72}
+
+
+[+] fd7bfc7b8de7d5cd008fe53db5dc0df770875b759e966cca4f49635099ddb0dc was flagged 0 times.
+[+] fd7bfc7b8de7d5cd008fe53db5dc0df770875b759e966cca4f49635099ddb0dc doesn't seems to be malicious.
+-----------------------------------------------------------------------
+[*] Checking 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845
+
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 23, 'undetected': 49}
+
+[*] Detailed reports about 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845 (engine name : result of the analysis): 
+[+] Bkav : W32.AIDetect.malware2
+[+] tehtris : Generic.Malware
+[+] Cylance : Unsafe
+[+] Sangfor : Trojan.Win32.Save.a
+[+] Cybereason : malicious.65cc7a
+[+] Symantec : Packed.Generic.528
+[+] Elastic : malicious (high confidence)
+[+] APEX : Malicious
+[+] Kaspersky : VHO:Backdoor.Win32.Convagent.gen
+[+] Avast : BotX-gen [Trj]
+[+] McAfee-GW-Edition : BehavesLike.Win32.Lockbit.ch
+[+] Trapmine : malicious.moderate.ml.score
+[+] FireEye : Generic.mg.1a3e75f815a61816
+[+] Sophos : ML/PE-A + Troj/Krypt-QV
+[+] Google : Detected
+[+] Microsoft : Trojan:Win32/Sabsik.FL.B!ml
+[+] Cynet : Malicious (score: 100)
+[+] Acronis : suspicious
+[+] Rising : Trojan.Generic@AI.100 (RDML:LvSnapgKBUmApYH1aMlgGQ)
+[+] SentinelOne : Static AI - Suspicious PE
+[+] MaxSecure : Trojan.Malware.300983.susgen
+[+] AVG : BotX-gen [Trj]
+[+] CrowdStrike : win/malicious_confidence_100% (D)
+
+[+] 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845 was flagged 23 times.
+[+] 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845 is definitely malicious
+
+
+[+] Getting you data of the file reputation response we got for 19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845
+:
+[*] The type_description of the hash is : Win32 EXE
+[*] The hash was provided to VirusTotal by 1 unique sources
+[*] The most meaningful name of the hash file found by VirusTotal is: 1a3e75f815a61816acfea3a74ddef747.virus
+
+[*] Check this link for more infos on your file: https://www.virustotal.com/gui/file/19b99127baeef0331da845d9dc81f1e5ba75b9b0790b429ac68e934046d9d845
+-----------------------------------------------------------------------
+[*] Checking 182.119.212.22 
+
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 79, 'malicious': 6, 'suspicious': 0, 'undetected': 11, 'timeout': 0}
+
+[*] Detailed reports about 182.119.212.22  (engine name : result of the analysis): 
+[+] CMC Threat Intelligence : malware
+[+] CRDF : malicious
+[+] Fortinet : malware
+[+] alphaMountain.ai : malicious
+[+] CyRadar : malicious
+[+] Kaspersky : malware
+
+[+] 182.119.212.22  was flagged 6 times.
+[+] 182.119.212.22  is definitely malicious
+-----------------------------------------------------------------------
+[*] Checking 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74
+
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 0, 'type-unsupported': 4, 'suspicious': 0, 'confirmed-timeout': 0, 'timeout': 0, 'failure': 0, 'malicious': 53, 'undetected': 19}
+
+[*] Detailed reports about 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74 (engine name : result of the analysis): 
+[+] Bkav : W32.Usibine.PE
+[+] MicroWorld-eScan : Trojan.Patched.CZ
+[+] ClamAV : Win.Worm.VB-1038
+[+] CAT-QuickHeal : Trojan.Patched.MJ
+[+] ALYac : Trojan.Patched.CZ
+[+] Cylance : Unsafe
+[+] VIPRE : Trojan.Patched.CZ
+[+] Sangfor : Suspicious.Win32.Save.vb
+[+] Cybereason : malicious.4c0df1
+[+] Baidu : Win32.Worm-IM.VB.a
+[+] VirIT : Win32.Patched.L
+[+] Symantec : Downloader
+[+] Elastic : malicious (high confidence)
+[+] ESET-NOD32 : Win32/Small.NAC
+[+] Zoner : Trojan.Win32.34578
+[+] APEX : Malicious
+[+] Cynet : Malicious (score: 100)
+[+] Kaspersky : Virus.Win32.Downloader.bb
+[+] BitDefender : Trojan.Patched.CZ
+[+] NANO-Antivirus : Trojan.Win32.Cosmu.dssjcv
+[+] Avast : Win32:Agent-ABMT [Trj]
+[+] Tencent : Worm.Win32.VB.ahi
+[+] Ad-Aware : Trojan.Patched.CZ
+[+] Emsisoft : Trojan.Patched.CZ (B)
+[+] Comodo : Virus.Win32.Downloader.A@1cowhv
+[+] DrWeb : Win32.HLLW.Siggen.2905
+[+] McAfee-GW-Edition : BehavesLike.Win32.Generic.ch
+[+] Trapmine : malicious.high.ml.score
+[+] FireEye : Generic.mg.38c84ea4c0df1bb3
+[+] Sophos : Troj/Patch-M
+[+] SentinelOne : Static AI - Malicious PE
+[+] GData : Trojan.Patched.CZ
+[+] Jiangmin : TrojanDownloader.Agent.aaji
+[+] Avira : W32/Downloader.BB
+[+] MAX : malware (ai score=88)
+[+] Antiy-AVL : Trojan/Generic.ASVirus.9D
+[+] Gridinsoft : Trojan.Win32.Downloader.oa!s1
+[+] Arcabit : Trojan.Patched.CZ
+[+] Microsoft : Trojan:Win32/Patched.J
+[+] Google : Detected
+[+] AhnLab-V3 : Worm/Win32.AutoRun.R42596
+[+] Acronis : suspicious
+[+] McAfee : GenericRXAA-AA!38C84EA4C0DF
+[+] VBA32 : BScope.Trojan-Dropper.Inject
+[+] Malwarebytes : Lamer.Virus.FileInfector.DDS
+[+] Rising : Worm.DungCoi!1.CE99 (CLASSIC)
+[+] Yandex : Trojan.GenAsa!DRNug6UMc90
+[+] Ikarus : IM-Worm.Win32.VB
+[+] MaxSecure : Virus.W32.Downloader.BB
+[+] Fortinet : W32/CoiDung.A!worm
+[+] BitDefenderTheta : AI:Packer.714D80C61F
+[+] AVG : Win32:Agent-ABMT [Trj]
+[+] CrowdStrike : win/malicious_confidence_100% (W)
+
+[+] 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74 was flagged 53 times.
+[+] 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74 is definitely malicious
+
+
+[+] Getting you data of the file reputation response we got for 59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74
+:
+[*] The type_description of the hash is : Win32 EXE
+[*] The hash was provided to VirusTotal by 1 unique sources
+[*] The most meaningful name of the hash file found by VirusTotal is: hllp.exe
+
+[*] Check this link for more infos on your file: https://www.virustotal.com/gui/file/59d0e196f9d791ad1f3921faa0a9394abd21fad127151fe34f932af4f4b97e74
+-----------------------------------------------------------------------
+[*] Checking 138.68.132.110
+
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 80, 'malicious': 5, 'suspicious': 0, 'undetected': 11, 'timeout': 0}
+
+[*] Detailed reports about 138.68.132.110 (engine name : result of the analysis): 
+[+] CMC Threat Intelligence : malware
+[+] CRDF : malicious
+[+] CyRadar : malicious
+[+] Kaspersky : malware
+[+] Forcepoint ThreatSeeker : malicious
+
+[+] 138.68.132.110 was flagged 5 times.
+[+] 138.68.132.110 is definitely malicious
+-----------------------------------------------------------------------
+[*] Checking http://182.119.212.22:40364/mozi.m
+
+[*] Latest Analysis Statistics available counting the number of reports: {'harmless': 63, 'malicious': 15, 'suspicious': 0, 'undetected': 13, 'timeout': 0}
+
+[*] Detailed reports about http://182.119.212.22:40364/mozi.m (engine name : result of the analysis): 
+[+] CMC Threat Intelligence : malware
+[+] Sophos : malware
+[+] CRDF : malicious
+[+] Fortinet : malware
+[+] alphaMountain.ai : malicious
+[+] Lionic : malicious
+[+] AICC (MONITORAPP) : malware
+[+] CyRadar : malicious
+[+] Emsisoft : malware
+[+] Webroot : malicious
+[+] Avira : malware
+[+] BitDefender : malware
+[+] G-Data : malware
+[+] VIPRE : malicious
+[+] ESET : malware
+
+[+] http://182.119.212.22:40364/mozi.m was flagged 15 times.
+[+] http://182.119.212.22:40364/mozi.m is definitely malicious
+
