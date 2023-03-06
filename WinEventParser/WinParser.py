@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 
 
 def load_events_list_json(json_event_file):
-    """Read API Key from the file path provided in get_path()"""
+    """Function used to loads events from the first json file"""
     try:
         with open(json_event_file, "r", encoding="UTF-8") as json_file:
             data_event_file_json = json.load(json_file)

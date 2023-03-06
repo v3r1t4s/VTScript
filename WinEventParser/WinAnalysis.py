@@ -5,7 +5,7 @@ import Helpers
 
 
 def load_rules_list_json(json_event_file):
-    """Read API Key from the file path provided in get_path()"""
+    """Function used to load our rules from the second json file"""
     try:
         with open(json_event_file, "r", encoding="UTF-8") as json_file:
             data_event_file_json = json.load(json_file)
@@ -15,7 +15,8 @@ def load_rules_list_json(json_event_file):
     return None
 
 
-def WinParserMain(event_list):
+def WinAnalysisMain(event_list):
+    """Function acting as main for the WinAnalysis module"""
     rules = load_rules_list_json("AnalysisRules.json")
     if rules is None:
         print("[-] The file provided in the script can't be open.")
