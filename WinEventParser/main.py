@@ -1,4 +1,5 @@
 """import of modules"""
+import json
 import ctypes
 import Helpers
 import datetime
@@ -140,6 +141,17 @@ def get_time_back_in_local(utc_time):
     return local_time
 
 
+def load_rules_list_json(json_event_file):
+    """Function used to load our rules from the second json file"""
+    try:
+        with open(json_event_file, "r", encoding="UTF-8") as json_file:
+            data_event_file_json = json.load(json_file)
+            return data_event_file_json['rules']
+    except IOError as io_err:
+        Helpers.exception_handler(True, io_err)
+    return None
+
+
 if __name__ == '__main__':
     if admin() is False:
         print("[-] You should run the script as admin!")
@@ -183,15 +195,21 @@ if __name__ == '__main__':
         if interesting_event_list is None:
             print("[-] The checking rules engine return an exception.")
             exit(1)
-        
+
+        rules = load_rules_list_json("AnalysisRules.json")
+        if rules is None:
+            print("[-] The file provided in the script can't be open.")
+            exit(1)
+
         print("[*] Launching the analysis engine, please wait...")
-        interesting_event_list = WinAnalysis.WinAnalysisMain(interesting_event_list)
-        print("[+] Analysis is done.")
+        #interesting_event_list = WinAnalysis.WinAnalysisMain(interesting_event_list)
+        interesting_event_list = WinAnalysis.analysis_engine(interesting_event_list, rules)
 
         if interesting_event_list is None:
             print("[-] The Analysis engine return an exception.")
             exit(1)
 
+        print("[+] Analysis is done.")
         # f"[*] (Event Nb {count_matched_event} found in the timestamp provided): " +
         WinOutput.WinOutputMain(interesting_event_list)
     else:

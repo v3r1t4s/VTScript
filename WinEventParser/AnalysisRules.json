@@ -1,56 +1,316 @@
 {
     "rules": [
         {
+            "Type": "single_event",
+            "ID": 1076,
+            "action": "alert",
+            "description": "The system has been shutdown by a user. This could indicate a user attempting to cover up malicious activity."
+        },
+        {
+            "Type": "single_event",
             "ID": 1100,
             "action": "alert",
             "description": "The event logging service has shutdown. This could indicate a problem with the logging system or a potential security issue."
         },
         {
+            "Type": "single_event",
             "ID": 1102,
             "action": "alert",
             "description": "The audit log was cleared. This could indicate an attempt to cover up malicious activity."
         },
         {
+            "Type": "single_event",
+            "ID": 1105,
+            "action": "alert",
+            "description": "Event log automatic backup has started. This is a normal event and should be logged for auditing purposes."
+        },
+        {
+            "Type": "single_event",
+            "ID": 4609,
+            "action": "alert",
+            "description": "Windows is shutting down. This could indicate a power failure or a potential security issue."
+        },
+        {
+            "Type": "single_event",
+            "ID": 4616,
+            "action": "alert",
+            "description": "The system time was changed. This could potentially be used to cover up other activities or evade detection by security systems that rely on accurate time information."
+        },
+        {
+            "Type": "single_event",
             "ID": 4624,
             "action": "log",
             "description": "An account was successfully logged on. This is a normal event and should be logged for auditing purposes."
         },
         {
+            "Type": "single_event",
             "ID": 4625,
-            "action": "log",
-            "count": 5,
-            "timeframe": "60 minutes",
-            "description": "If an account fails to log on 5 times within 60 minutes, it could indicate a potential brute-force attack."
+            "action": "alert",
+            "description": "If an account fails to log, it could indicate a potential brute-force attack."
         },
         {
+            "Type": "single_event",
+            "ID": 4657,
+            "action": "alert",
+            "description": "A registry value was modified. This could indicate an attempt to automate malicious activity or a potential security issue."
+        },
+        {
+            "Type": "single_event",
             "ID": 4672,
             "action": "alert",
             "description": "Special privileges were assigned to a new logon. This could indicate a security vulnerability or an attempted privilege escalation."
         },
         {
+            "Type": "single_event",
+            "ID": 4688,
+            "action": "alert",
+            "description": "A new process has been created. This could indicate a potential security issue or malware execution."
+        },
+        {
+            "Type": "single_event",
             "ID": 4697,
             "action": "alert",
             "description": "A service was installed in the system. This could indicate an attempt to install malware or a potential security issue."
         },
         {
+            "Type": "single_event",
             "ID": 4698,
             "action": "alert",
             "description": "A scheduled task was created. This could indicate an attempt to automate malicious activity or a potential security issue."
         },
         {
+            "Type": "single_event",
+            "ID": 4700,
+            "action": "alert",
+            "description": "A scheduled task was enabled. This could indicate an attempt to automate malicious activity or a potential security issue."
+        },
+        {
+            "Type": "single_event",
             "ID": 4720,
             "action": "log",
             "description": "A user account was created. This is a normal event and should be logged for auditing purposes."
         },
         {
+            "Type": "single_event",
             "ID": 4724,
             "action": "alert",
             "description": "An attempt was made to reset an account's password. This could indicate a potential security issue or unauthorized access attempt."
         },
         {
+            "Type": "single_event",
+            "ID": 4732,
+            "action": "alert",
+            "description": "A member was added to a security-enabled local group. This could indicate a potential security issue or an attempt to elevate privileges."
+        },
+        {
+            "Type": "single_event",
+            "ID": 4769,
+            "action": "alert",
+            "description": "A Kerberos service ticket was requested. This could indicate an attempt to impersonate a user or elevate privileges."
+        },
+        {
+            "Type": "single_event",
+            "ID": 4776,
+            "action": "alert",
+            "description": "A domain controller attempted to validate the credentials of an account. This could indicate an attempt to brute-force a password."
+        },
+        {
+            "Type": "single_event",
+            "ID": 4798,
+            "action": "alert",
+            "description": "A user's local group membership was enumerated. This could indicate a potential security issue or an attempt to gather information for an attack."
+        },
+        {
+            "Type": "single_event",
+            "ID": 4864,
+            "action": "log",
+            "description": "A namespace collision was detected. This is a normal event and should be logged for auditing purposes."
+        },
+        {
+            "Type": "single_event",
             "ID": 5025,
             "action": "alert",
-            "description": "The Windows Firewall Service has been stopped. This could indicate an attempt to disable security measures or a potential security issue."
+            "description": "The Windows Firewall Service has been stopped. This could indicate a potential security issue or an attempt to disable security measures."
+        },
+        {
+            "Type": "single_event",
+            "ID": 5027,
+            "action": "alert",
+            "description": "The Windows Firewall Service was unable to start. This could indicate a potential security issue or an attempt to disable security measures."
+        },
+        {
+            "Type": "single_event",
+            "ID": 5140,
+            "action": "alert",
+            "description": "A network share object was accessed. This could indicate a potential security issue or an attempt to access sensitive information."
+        },
+        {
+            "Type": "single_event",
+            "ID": 5145,
+            "action": "alert",
+            "description": "A network share object was checked to see whether the client has the desired access. This could indicate an attempt to access sensitive information."
+        },
+        {
+            "Type": "single_event",
+            "ID": 5156,
+            "action": "alert",
+            "description": "The Windows Filtering Platform has blocked a packet. This could indicate a potential network attack or an attempt to access sensitive information."
+        },
+        {
+            "Type": "single_event",
+            "ID": 5158,
+            "action": "alert",
+            "description": "The Windows Filtering Platform has permitted a packet. This could indicate a potential network attack or an attempt to access sensitive information."
+        },
+        {
+            "Type": "single_event",
+            "ID": 7034,
+            "action": "alert",
+            "description": "A service was terminated unexpectedly. This could indicate a potential security issue or an attempt to disable security measures"
+        },
+        {
+            "Type": "single_event",
+            "ID": 7035,
+            "action": "alert",
+            "description": "A service was started or stopped. This could indicate a potential security issue or an attempt to disable security measures."
+        },
+        {
+            "Type": "single_event",
+            "ID": 8004,
+            "action": "alert",
+            "description": "A scheduled task was registered. This could indicate an attempt to automate malicious activity or a potential security issue."
+        },
+        {
+            "Type": "single_event",
+            "ID": 8005,
+            "action": "alert",
+            "description": "A scheduled task was deregistered. This could indicate an attempt to cover up malicious activity or a potential security issue."
+        },
+        {
+            "Type": "single_event",
+            "ID": 8006,
+            "action": "alert",
+            "description": "A scheduled task was changed. This could indicate an attempt to automate malicious activity or a potential security issue."
+        },
+        {
+            "Type": "count",
+            "ID": 4624,
+            "required_count": 3,
+            "window": "60",
+            "action": "log",
+            "description": "An account was successfully logged on. This is a normal event and should be logged for auditing purposes."
+        },
+        {
+            "Type": "count",
+            "ID": 4625,
+            "required_count": 5,
+            "window": "60",
+            "action": "alert",
+            "description": "If an account fails to log on 5 times within 60 minutes, it could indicate a potential brute-force attack."
+        },
+        {
+            "Type": "count",
+            "ID": 4672,
+            "required_count": 3,
+            "window": "60",
+            "action": "alert",
+            "description": "Special privileges were assigned to a new logon. This could indicate a security vulnerability or an attempted privilege escalation."
+        },
+        {
+            "Type": "count",
+            "ID": 4688,
+            "required_count": 3,
+            "window": "60",
+            "action": "alert",
+            "description": "A new process has been created. This could indicate a potential security issue or malware execution."
+        },
+        {
+            "Type": "count",
+            "ID": 4697,
+            "required_count": 3,
+            "window": "60",
+            "action": "alert",
+            "description": "A service was installed in the system. This could indicate an attempt to install malware or a potential security issue."
+        },
+        {
+            "Type": "ordered",
+            "ID": 1108,
+            "IDs": [1108, 1104, 1102, 1100],
+            "window": "60",
+            "action": "alert",
+            "description": "The event logging service encountered an error. The security Log is now full. The audit log was cleared. The event logging service has shut down. This could indicate an attempt to cover up malicious activity."
+        },
+        {
+            "Type": "ordered",
+            "ID": 4625,
+            "IDs": [4625, 4624, 5025, 4698],
+            "window": "60",
+            "action": "alert",
+            "description": "Account fails to log, Account was successfully logged on,  Windows Firewall Service has been stopped, Scheduled task was created. This scenario might indicate that the machine was compromised."
+        },
+        {
+            "Type": "ordered",
+            "ID": 4625,
+            "IDs": [4625, 4624, 5025, 4700],
+            "window": "60",
+            "action": "alert",
+            "description": "Account fails to log, Account was successfully logged on,  Windows Firewall Service has been stopped, Scheduled task was enabled. This scenario might indicate that the machine was compromised."
+        },
+        {
+            "Type": "ordered",
+            "ID": 4625,
+            "IDs": [4625, 4624, 5025, 4702],
+            "window": "60",
+            "action": "alert",
+            "description": "Account fails to log, Account was successfully logged on,  Windows Firewall Service has been stopped, Scheduled task was updated. This scenario might indicate that the machine was compromised."
+        },
+        {
+            "Type": "ordered",
+            "ID": 4625,
+            "IDs": [4625, 4624, 5025, 4657],
+            "window": "60",
+            "action": "alert",
+            "description": "Account fails to log, Account was successfully logged on,  Windows Firewall Service has been stopped, Registry value was modified. This scenario might indicate that the machine was compromised."
+        },
+        {
+            "Type": "unordered",
+            "ID": 1108,
+            "IDs": [1108, 1104, 1102, 1100],
+            "window": "60",
+            "action": "alert",
+            "description": "The event logging service encountered an error. The security Log is now full. The audit log was cleared. The event logging service has shut down. This could indicate an attempt to cover up malicious activity."
+        },
+        {
+            "Type": "unordered",
+            "ID": 4616,
+            "IDs": [4616, 4624, 5025, 4698],
+            "window": "60",
+            "action": "alert",
+            "description": "The system time was changed. Account was successfully logged on,  Windows Firewall Service has been stopped, Scheduled task was created. This scenario might indicate that the machine was compromised and we're dealing with a time based attack."
+        },
+        {
+            "Type": "unordered",
+            "ID": 4616,
+            "IDs": [4616, 4624, 5025, 4700],
+            "window": "60",
+            "action": "alert",
+            "description": "The system time was changed. Account was successfully logged on,  Windows Firewall Service has been stopped, Scheduled task was enabled. This scenario might indicate that the machine was compromised and we're dealing with a time based attack."
+        },
+        {
+            "Type": "unordered",
+            "ID": 4616,
+            "IDs": [4616, 4624, 5025, 4702],
+            "window": "60",
+            "action": "alert",
+            "description": "The system time was changed. Account was successfully logged on,  Windows Firewall Service has been stopped, Scheduled task was updated. This scenario might indicate that the machine was compromised and we're dealing with a time based attack"
+        },
+        {
+            "Type": "unordered",
+            "ID": 4616,
+            "IDs": [4616, 4624, 5025, 4657],
+            "window": "60",
+            "action": "alert",
+            "description": "The system time was changed. Account was successfully logged on,  Windows Firewall Service has been stopped, Registry value was modified. This scenario might indicate that the machine was compromised and we're dealing with a time based attack"
         }
     ]
 }
