@@ -1,12 +1,28 @@
 {
     "events": [
         {
+            "ID": 1076,
+            "name": "The system has been shutdown by a user."
+        },
+        {
             "ID": 1100,
             "name": "The event logging service has shutdown."
         },
         {
             "ID": 1102,
             "name": "The audit log was cleared."
+        },
+        {
+            "ID": 1105,
+            "name": "Event log automatic backup has started."
+        },
+        {
+            "ID": 4609,
+            "name": "Windows is shutting down."
+        },
+        {
+            "ID": 4616,
+            "name": "The system time was changed."
         },
         {
             "ID": 4624,
@@ -21,12 +37,20 @@
             "name": "Special privileges assigned to new logon."
         },
         {
+            "ID": 4688,
+            "name": "A new process has been created."
+        },
+        {
             "ID": 4697,
             "name": "A service was installed in the system."
         },
         {
             "ID": 4698,
             "name": "A scheduled task was created."
+        },
+        {
+            "ID": 4700,
+            "name": "A scheduled task was enabled."
         },
         {
             "ID": 4720,
@@ -37,8 +61,68 @@
             "name": "An attempt was made to reset an account's password."
         },
         {
+            "ID": 4732,
+            "name": "A member was added to a security-enabled local group."
+        },
+        {
+            "ID": 4769,
+            "name": "A Kerberos service ticket was requested."
+        },
+        {
+            "ID": 4776,
+            "name": "A domain controller attempted to validate the credentials of an account."
+        },
+        {
+            "ID": 4798,
+            "name": "A user's local group membership was enumerated."
+        },
+        {
+            "ID": 4864,
+            "name": "A namespace collision was detected."
+        },
+        {
             "ID": 5025,
             "name": "The Windows Firewall Service has been stopped."
+        },
+        {
+            "ID": 5027,
+            "name": "The Windows Firewall Service was unable to start."
+        },
+        {
+            "ID": 5140,
+            "name": "A network share object was accessed."
+        },
+        {
+            "ID": 5145,
+            "name": "A network share object was checked to see whether the client has the desired access."
+        },
+        {
+            "ID": 5156,
+            "name": "The Windows Filtering Platform has blocked a packet."
+        },
+        {
+            "ID": 5158,
+            "name": "The Windows Filtering Platform has permitted a packet."
+        },
+        {
+            "ID": 7034,
+            "name": "A service was terminated unexpectedly."
+        },
+        {
+            "ID": 7035,
+            "name": "A service was started or stopped."
+        },
+        {
+            "ID": 8004,
+            "name": "A scheduled task was registered."
+        },
+        {
+            "ID": 8005,
+            "name": "A scheduled task was deregistered."
+        },
+        {
+            "ID": 8006,
+            "name": "A scheduled task was changed."
         }
     ]
 }

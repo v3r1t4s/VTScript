@@ -33,21 +33,21 @@ def get_user_input_and_parse_filename(exclusion, excluded_character):
 
 def WinOutputMain(interesting_event_list):
     """Function used as main for the WinOutput module"""
+    filename_to_create = None
+    while filename_to_create is None:
+        filename_to_create = get_user_input_and_parse_filename(True, '_')
     data_to_append = ""
     if interesting_event_list == []:
         data_to_append = "[+] Your system seems clean! The analysis engine didn't return any events!"
     else:
-        filename_to_create = None
-        while filename_to_create is None:
-            filename_to_create = get_user_input_and_parse_filename(True, '_')
         for i in interesting_event_list:
-            data_to_append += i + "\n"
-        print(f"[*] Writing a report named {filename_to_create} in {Path.cwd()}...")
-        try:
-            with open(filename_to_create, "w", encoding="UTF-8") as file:
-                file.write(data_to_append + "\n")
-                print("[+] You report is done!")
-        except IOError as io_err:
-            Helpers.exception_handler(True, io_err)
-            print("[-] We couldn't write you a report.")
-            exit(1)
+            data_to_append += str(i) + "\n"
+    print(f"[*] Writing a report named {filename_to_create} in {Path.cwd()}...")
+    try:
+        with open(filename_to_create, "w", encoding="UTF-8") as file:
+            file.write(data_to_append + "\n")
+            print("[+] You report is done!")
+    except IOError as io_err:
+        Helpers.exception_handler(True, io_err)
+        print("[-] We couldn't write you a report.")
+        exit(1)
