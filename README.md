@@ -1,6 +1,6 @@
 # WELCOME to WinUnderIR
 
-This project is intend to be a toolkit for an Incident Responder or any type of blue team operator too!
+This project is intended to be a toolkit for an Incident Responder or any type of blue team operator too!
 
 As of this day (3/8/2023), you'll find:
 - VTScript
