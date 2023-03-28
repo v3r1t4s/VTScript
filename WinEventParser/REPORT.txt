@@ -1,1 +1,0 @@
-[+] Your system seems clean! The analysis engine didn't return any events!

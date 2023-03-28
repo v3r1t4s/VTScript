@@ -26,7 +26,17 @@ def get_user_input_and_parse_filename(exclusion, excluded_character):
         except ValueError as val_err:
             Helpers.exception_handler(True, val_err)
             return None
-    return filename
+    filename_txt = Path(filename + ".txt")
+    if filename_txt.is_file():
+        choice = ""
+        while choice not in ["overwrite", "change"]:
+            choice = input("[-] This file already exists on the system, do you want to overwrite or change the filename (overwrite/change): ")
+        if choice == "overwrite":
+            return filename
+        else:
+            return None
+    else:
+        return filename
 
 
 def search_api_request(key, data):
@@ -146,11 +156,11 @@ def create_file_report(report_dictionary, string_argument, quota, api_key_to_use
 ##########################################################
 
 
-def append_data_to_a_file(filename_to_append_to, file_type, data_to_write):
+def write_data_to_a_file(filename_to_append_to, file_type, data):
     """Appending data to a file"""
     try:
-        with open(f"{filename_to_append_to}.{file_type}", "a", encoding="UTF-8") as file:
-            file.write(data_to_write + "\n")
+        with open(f"{filename_to_append_to}.{file_type}", "w", encoding="UTF-8") as file:
+            file.write(data + "\n")
     except IOError as io_err:
         Helpers.exception_handler(True, io_err)
     return None
@@ -158,7 +168,9 @@ def append_data_to_a_file(filename_to_append_to, file_type, data_to_write):
 
 def handle_file(quota, api_key_to_use):
     """This function is used to handle the functions to create our file"""
-    filename = get_user_input_and_parse_filename(True, '_')
+    filename = None
+    while filename is None:
+        filename = get_user_input_and_parse_filename(True, '_')
     report_dictionary = []
     if file_arg:                                                                                                                                    # If user launched the script with the file cmdline arg, else then string cmdline argument scenario start
         data_list = args.file.readlines()                                                                                                           # Create a list with each elements on each line
@@ -258,12 +270,12 @@ if __name__ == '__main__':
     handle_file_error, filename_report, report = handle_file(response_quota, api_key)
 
     if handle_file_error == 0:
-        data_to_append = ""
+        data_to_write = ""
         
         for r in report:
-            data_to_append = data_to_append + r
+            data_to_write = data_to_write + r
         
-        append_data_to_a_file(filename_report, "txt", data_to_append)
+        write_data_to_a_file(filename_report, "txt", data_to_write)
         exit(0)
 
     exit(1)

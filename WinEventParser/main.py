@@ -29,16 +29,17 @@ def is_valid_char(char):
 def get_string_to_add_to_timestamp(mode):
     """Function used to return the string to add to our timestamp"""
     chars_to_add = ""
-    if mode == 2:
-        chars_to_add = ":00"
-    elif mode == 3:
-        chars_to_add = ":00:00"
-    elif mode == 4:
-        chars_to_add = " 00:00:00"
-    elif mode == 5:
-        chars_to_add = "-01 00:00:00"
-    elif mode == 6:
-        chars_to_add = "-01-01 00:00:00"
+    match mode:
+        case 2:
+            chars_to_add = ":00"
+        case 3:
+            chars_to_add = ":00:00"
+        case 4:
+            chars_to_add = " 00:00:00"
+        case 5:
+            chars_to_add = "-01 00:00:00"
+        case 6:
+            chars_to_add = "-01-01 00:00:00"
     return chars_to_add
 
 
@@ -92,15 +93,33 @@ def second_timestamp_not_greater_than_first_one(timestamp_from_check_function):
     return False
 
 
+def create_current_time():
+    """Function used to create a current time suitable to be compared with our timestamp"""
+    now = datetime.datetime.now()
+    current_time = now.strftime("%Y-%m-%d %H:%M:%S")
+    return current_time
+
+
 def checking_timestamp(timestamps_provided):
     """Implementing our logic in this function to check if second timestamp is not greater than first one"""
+    check = ""
+    current_time = create_current_time()
     if len(timestamps_provided) == 2:
+        for time_provided in timestamps_provided:
+            if time_provided > current_time:
+                print("[-] THE TIMESTAMP YOU PROVIDED IS IN THE FUTURE, WHAT ARE YOU DOING ?????")
+                check = None
         if second_timestamp_not_greater_than_first_one(timestamps_provided) is True:
-            return None
-        else:
-            return ""
+            print("[-] FIRST TIMESTAMP YOU INPUTED WAS GREATER THAN THE SECOND ONE, PLEASE INPUT BOTH TIMESTAMPS AGAIN")
+            check = None
     else:
+        if timestamps_provided[0] > current_time:
+            print("[-] THE TIMESTAMP YOU PROVIDED IS IN THE FUTURE, WHAT ARE YOU DOING???")
+            check = None
+    if check == "":
         return ""
+    else:
+        return None
 
 
 def get_input_timestamp(input_mode_timestamp):
@@ -122,8 +141,9 @@ def get_input_timestamp(input_mode_timestamp):
             timestamp_utc.append(timestamp_parsed)
             if timestamp_utc is None:
                 return None
-            if num_of_timestamps == 2 and checking_timestamp(timestamp_utc) is None:
-                print("[-] FIRST TIMESTAMP YOU INPUTED WAS GREATER THAN THE SECOND ONE, PLEASE INPUT BOTH TIMESTAMPS AGAIN")
+            if checking_timestamp(timestamp_utc) is None:
+                timestamp_utc = []
+                len_timestamp_input = []
                 iteration_of_for_loop = 0
         return timestamp_utc, len_timestamp_input
     except ValueError as val_err:
@@ -202,14 +222,13 @@ if __name__ == '__main__':
             exit(1)
 
         print("[*] Launching the analysis engine, please wait...")
-        #interesting_event_list = WinAnalysis.WinAnalysisMain(interesting_event_list)
-        interesting_event_list = WinAnalysis.analysis_engine(interesting_event_list, rules)
+        interesting_event_list = WinAnalysis.WinAnalysisMain(interesting_event_list)
+        print("[+] Analysis is done.")
 
         if interesting_event_list is None:
             print("[-] The Analysis engine return an exception.")
             exit(1)
 
-        print("[+] Analysis is done.")
         # f"[*] (Event Nb {count_matched_event} found in the timestamp provided): " +
         WinOutput.WinOutputMain(interesting_event_list)
     else:
