@@ -222,14 +222,15 @@ if __name__ == '__main__':
             exit(1)
 
         print("[*] Launching the analysis engine, please wait...")
-        interesting_event_list = WinAnalysis.WinAnalysisMain(interesting_event_list)
-        print("[+] Analysis is done.")
+
+        interesting_event_list = WinAnalysis.analysis_engine(interesting_event_list, rules)
 
         if interesting_event_list is None:
             print("[-] The Analysis engine return an exception.")
             exit(1)
 
-        # f"[*] (Event Nb {count_matched_event} found in the timestamp provided): " +
+        print("[+] Analysis is done.")
+
         WinOutput.WinOutputMain(interesting_event_list)
     else:
         WinParser.WinParserMain(input_provided, None, None)
