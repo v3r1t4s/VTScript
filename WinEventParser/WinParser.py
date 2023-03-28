@@ -44,6 +44,7 @@ def WinParserMain(input_provided, timestamp, number_of_occurences):
         read_count += len(events)
         if len(events) == 0:                                                                                                                                           # if there is no record break the loop
             break
+
         for event in events:
             xml_content = win32evtlog.EvtRender(event, win32evtlog.EvtRenderEventXml)
             xml = ET.fromstring(xml_content)                                                                                                                           # parse xml content
@@ -71,7 +72,6 @@ def WinParserMain(input_provided, timestamp, number_of_occurences):
                         return None
                     if found_something is True:
                         count_matched_event += 1
-                        event_data = {"index": count_matched_event, "event": xml_content, "timestamp": time_created, "human_readable_time": time_from_utc_to_local_zone, "Computer": computer, "id": event_id, "Channel": channel, "ProcessID": process_id, "ThreadID": thread_id}
                         event_list_to_return.append(event_data)
             else:
                 print(event_data)
